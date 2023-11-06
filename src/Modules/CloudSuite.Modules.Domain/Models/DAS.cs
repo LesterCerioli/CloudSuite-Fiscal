@@ -5,8 +5,8 @@ namespace CloudSuite.Modules.Domain.Models
     public class DAS : Entity, IAggregateRoot
     {
         public DAS(string? referenceMonth, DateTime? dueDate, 
-        string? referenceYear, string? paymentValue, 
-        string? documentNumber, string barCode)
+            string? referenceYear, string? paymentValue, 
+            string? documentNumber, string barCode)
         {
             ReferenceMonth = referenceMonth;
             DueDate = dueDate;
