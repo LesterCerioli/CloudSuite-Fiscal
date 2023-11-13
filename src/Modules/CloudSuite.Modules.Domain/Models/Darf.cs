@@ -6,17 +6,30 @@ namespace CloudSuite.Modules.Domain.Models
     public class Darf : Entity, IAggregateRoot
     {
         public Darf(string? referenceMonth, DateTime? dueDate, 
-            string? referenceYear, string? paymentValue, 
-            string? recuboDeclaroNumero, string? documentNumber,
-            string barCode)
+            string? referenceYear, decimal? darfPaymentValue, 
+            string? recuboDeclaroNumero, string? documentNumber, 
+            string? barCode, DateTime? validationDate, 
+            DateTime? periodoApuracao, Cnpj cnpj, 
+            string? receitaCode, string? mainValue, decimal? amountFine, 
+            decimal? interest, decimal? totalValue, Installment installment)
         {
             ReferenceMonth = referenceMonth;
-            DueDate = dueDate;
+            DueDate = DateTime.Now;
+            Installment = installment;
             ReferenceYear = referenceYear;
-            PaymentValue = paymentValue;
+            DarfPaymentValue = darfPaymentValue;
             RecuboDeclaroNumero = recuboDeclaroNumero;
             DocumentNumber = documentNumber;
             BarCode = barCode;
+            ValidationDate = DateTime.Now;
+            PeriodoApuracao = periodoApuracao;
+            Cnpj = cnpj;
+            ReceitaCode = receitaCode;
+            MainValue = mainValue;
+            AmountFine = amountFine;
+            Interest = interest;
+            TotalValue = totalValue;
+            
         }
 
         public string? ReferenceMonth { get; private set; }
@@ -25,7 +38,7 @@ namespace CloudSuite.Modules.Domain.Models
 
         public string? ReferenceYear { get; private set; }
 
-        public decimal? PaymentValue { get; private set; }
+        public decimal? DarfPaymentValue { get; private set; }
 
         public string? RecuboDeclaroNumero { get; private set; }
 
@@ -43,13 +56,17 @@ namespace CloudSuite.Modules.Domain.Models
 
         public string? MainValue { get; private set; }
 
-        //Valor de Multa
+        
         public decimal? AmountFine  { get; private set; }
-
-        //Juros
+        public bool? IsInstallment { get; private set; }
+        
         public decimal? Interest { get; private set; }
 
         public decimal? TotalValue { get; private set; }
+
+        public Installment Installment { get; private set; }
+
+        
 
 
 
