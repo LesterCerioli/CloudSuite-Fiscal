@@ -4,14 +4,14 @@ namespace CloudSuite.Modules.Domain.Contracts
 {
     public interface ICityRepository
     {
-         Task<City> GetByCityName(string cityName);
+        Task<City> GetByCityName(string cityName);
 
-         Task<IEnumerable<City>> GetList();
+        Task<IEnumerable<City>> GetList();
 
-         Task Add(City city);
+        Task Add(City city);
 
-         void Update(City city);
+        void Update(City city);
 
-         void Remove(City city);
+        void Remove(City city);
     }
 }

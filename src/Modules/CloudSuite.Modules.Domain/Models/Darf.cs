@@ -11,11 +11,10 @@ namespace CloudSuite.Modules.Domain.Models
             string? barCode, DateTime? validationDate, 
             DateTime? periodoApuracao, Cnpj cnpj, 
             string? receitaCode, string? mainValue, decimal? amountFine, 
-            decimal? interest, decimal? totalValue, Installment installment)
+            decimal? interest, decimal? totalValue)
         {
             ReferenceMonth = referenceMonth;
             DueDate = DateTime.Now;
-            Installment = installment;
             ReferenceYear = referenceYear;
             DarfPaymentValue = darfPaymentValue;
             RecuboDeclaroNumero = recuboDeclaroNumero;
@@ -64,7 +63,7 @@ namespace CloudSuite.Modules.Domain.Models
 
         public decimal? TotalValue { get; private set; }
 
-        public Installment Installment { get; private set; }
+        public Prestador Prestador { get; private set; }
 
         
 
