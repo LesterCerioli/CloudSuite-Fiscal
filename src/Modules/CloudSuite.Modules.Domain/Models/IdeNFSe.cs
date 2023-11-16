@@ -1,6 +1,6 @@
 namespace CloudSuite.Modules.Domain.Models
 {
-    public sealed class IdeNFSe 
+    public class IdeNFSe 
     {
         public string? Number { get; private set; }
 
@@ -8,7 +8,7 @@ namespace CloudSuite.Modules.Domain.Models
 
         public DateTime? EmissionDate { get; private set; }
 
-        public string? NfseModel { get; private set; }
+        public Note Note { get; private set; }
         
     }
 }
