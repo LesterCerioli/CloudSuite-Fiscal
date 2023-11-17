@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Workers", "Workers", "{5B4F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudSuite.Worker.Fiscal", "src\Workers\CloudSuite.Worker.Fiscal\CloudSuite.Worker.Fiscal.csproj", "{9031B13C-202B-45E2-BCF2-F25B6153653F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudSuite.Grpc.Fiscal", "src\Workers\CloudSuite.Grpc.Fiscal\CloudSuite.Grpc.Fiscal.csproj", "{6E70307F-4B21-413C-872E-11D091E5F0E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +80,10 @@ Global
 		{9031B13C-202B-45E2-BCF2-F25B6153653F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9031B13C-202B-45E2-BCF2-F25B6153653F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9031B13C-202B-45E2-BCF2-F25B6153653F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E70307F-4B21-413C-872E-11D091E5F0E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E70307F-4B21-413C-872E-11D091E5F0E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E70307F-4B21-413C-872E-11D091E5F0E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E70307F-4B21-413C-872E-11D091E5F0E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{89682C67-1470-4EF7-AF79-2D31A99E30FD} = {179300B1-41FE-4A55-80C7-065FE4B7B3CF}
@@ -93,5 +99,6 @@ Global
 		{9DB654C4-5E32-43EE-AB35-D1E4E9CB98DA} = {11F8FFBE-29DF-4CFD-9187-3ADC5C5DC2C0}
 		{5B4F96A7-FDBD-4898-9832-D577608B2675} = {179300B1-41FE-4A55-80C7-065FE4B7B3CF}
 		{9031B13C-202B-45E2-BCF2-F25B6153653F} = {5B4F96A7-FDBD-4898-9832-D577608B2675}
+		{6E70307F-4B21-413C-872E-11D091E5F0E3} = {5B4F96A7-FDBD-4898-9832-D577608B2675}
 	EndGlobalSection
 EndGlobal
