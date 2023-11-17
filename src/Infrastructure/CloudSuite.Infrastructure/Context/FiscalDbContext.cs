@@ -1,8 +1,10 @@
 using System.ComponentModel.DataAnnotations;
+using System.Reflection;
 using System.Reflection.Emit;
 using CloudSuite.Infrastructure.Mapping.EFCore;
 using CloudSuite.Modules.Domain.Models;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using NetDevPack.Messaging;
 
 namespace CloudSuite.Infrastructure.Context
@@ -78,6 +80,67 @@ namespace CloudSuite.Infrastructure.Context
             modelBuilder.ApplyConfiguration(new IdeNFSeEFCoremapping());
 
             modelBuilder.ApplyConfiguration(new NoteEFCoreMapping());
+
+            modelBuilder.Entity<Address>(c =>
+            {
+                c.ToTable("Addresses");
+            });
+
+            modelBuilder.Entity<CancelOrder>(c =>
+            {
+                c.ToTable("CancelOrders");
+            });
+
+            modelBuilder.Entity<City>(c =>
+            {
+                c.ToTable("Cities");
+            });
+
+            modelBuilder.Entity<Country>(c =>
+            {
+                c.ToTable("Countries");
+            });
+
+            modelBuilder.Entity<Darf>(c =>
+            {
+                c.ToTable("Darfs");
+            });
+
+            modelBuilder.Entity<DAS>(c =>
+            {
+                c.ToTable("DASes");
+            });
+
+            modelBuilder.Entity<DeclaracaoIR>(c =>
+            {
+                c.ToTable("DeclaracaoIRs");
+            });
+
+            modelBuilder.Entity<District>(c => 
+            {
+                c.ToTable("Districts");
+            });
+
+            modelBuilder.Entity<FederalTax>(c =>
+            {
+                c.ToTable("FederalTaxes");
+            });
+
+            modelBuilder.Entity<IdeCancelamento>(c =>
+            {
+                c.ToTable("IdeCancelamentos");
+            });
+
+            modelBuilder.Entity<IdeNFSe>(a =>
+            {
+                c.ToTable("IdeNFSes");
+            });
+
+            modelBuilder.Entity<Note>(c =>
+            {
+                c.ToTable("Notes");
+            });
+
 
             
             
