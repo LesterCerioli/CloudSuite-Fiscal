@@ -26,9 +26,6 @@ namespace CloudSuite.Modules.Domain.Models
 
         public Guid StateId { get; private set; }
         
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

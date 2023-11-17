@@ -25,8 +25,7 @@ namespace CloudSuite.Modules.Domain.Models
         [StringLength(100)]
         public string? ContactName { get; private set; }
 
-        public PostalCode PostalCodeal { get; set; }
-        
+                
         [Required(ErrorMessage = "The {0} field is required.")]
         [StringLength(450)]
         public string? AddressLine1 { get; private set; }
@@ -41,9 +40,6 @@ namespace CloudSuite.Modules.Domain.Models
 
         public IReadOnlyCollection<District> Districts => _districts.AsReadOnly();
         
-        protected override IEnumerable<object> GetEqualityComponents()
-        {
-            throw new NotImplementedException();
-        }
+        
     }
 }

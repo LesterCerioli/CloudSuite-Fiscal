@@ -1,47 +1,29 @@
 using CloudSuite.Modules.Common.Enums;
+using CloudSuite.Modules.Common.ValueObjects;
+using NetDevPack.Domain;
 
 namespace CloudSuite.Modules.Domain.Models
 {
-    public class Note
+    public class Note : Entity, IAggregateRoot
     {
-        
-        public NFSeSimNao IncentivadorCultural { get; set; }
+        public Note(TomadorServico tomadorServico, Address address, Country country, District district, Prestador prestador)
+        {
+            TomadorServico = tomadorServico;
+            Address = address;
+            Country = country;
+            District = district;
+            Prestador = prestador;
+        }
 
-        public NFSeSimNao Producao { get; set; }
+        public TomadorServico TomadorServico { get; private set; }
 
-        public SituacaoNFSeRps Situacao { get; set; }
+        public Address Address { get; private set; }
 
-        public TipoLocalServico LocalServico { get; set; }
+        public Country Country { get; private set; }
 
-        public int? NumeroLote { get; set; }
+        public District District { get; private set; }
 
-        //Protocolo
-        public string? Protocol { get; private set; }
-
-        public DateTime? Competence { get; private set; }
-
-        public string? Anotherinformation { get; private set; }
-
-        public string? TaxDescription { get; private set; }
-        
-        //Descricao Codigo Tributacao Municipio
-        public string? DescrCodeTaxMunicip { get; private set; }
-        
-
-        public decimal? CreditValue { get; private set; }
-
-        public EmissionType EmissionType { get; private set; }
-
-        public GlobalEnterpriseType GlobalEnterpriseType { get; private     set; }
-
-        public TaxationType TaxationType { get; private set; }
-
-        public string? Signature { get; private set; }
-
-        //public DFeSignature Signature { get; set; }
-
-        //public string? XmlOriginal { get; private set; }
-
+        public Prestador Prestador { get; private set; }
         
     }
 }
