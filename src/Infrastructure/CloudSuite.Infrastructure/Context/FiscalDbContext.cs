@@ -45,7 +45,7 @@ namespace CloudSuite.Infrastructure.Context
 
         public DbSet<TomadorServico> TomadorServicos {get; set;}
 
-        protected override void OodelCreating(ModelBuilder modelBuilder)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Ignore<ValidationResult>();
 
