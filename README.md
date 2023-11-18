@@ -1,20 +1,33 @@
 # Introduction 
-TODO: Give a short introduction of your project. Let this section explain the objectives or the motivation behind this project. 
 
-# Getting Started
-TODO: Guide users through getting your code up and running on their own system. In this section you can talk about:
-1.	Installation process
-2.	Software dependencies
-3.	Latest releases
-4.	API references
 
-# Build and Test
-TODO: Describe and show how to build your code and run the tests. 
-
-# Contribute
-TODO: Explain how other users and developers can contribute to make your code better. 
-
-If you want to learn more about creating good readme files then refer the following [guidelines](https://docs.microsoft.com/en-us/azure/devops/repos/git/create-a-readme?view=azure-devops). You can also seek inspiration from the below readme files:
-- [ASP.NET Core](https://github.com/aspnet/Home)
-- [Visual Studio Code](https://github.com/Microsoft/vscode)
-- [Chakra Core](https://github.com/Microsoft/ChakraCore)
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
+| Contabilidade  |  | Fiscal         |  | Administrativo |  | Vendas         |  | Desenvolvimento|  | Marketing      |  | Segurança da   |
+|                |  |                |  |                |  |                |  | Software      |  |                |  | Informação     |
+|                |  |                |  |                |  |                |  |               |  |                |  |                |
+|                |  |                |  |                |  |                |  |               |  |                |  |                |
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
+| Load Balancer 1 |  | Load Balancer 2 |  | Load Balancer 3 |  | Load Balancer 4 |  | Load Balancer 5 |  | Load Balancer 6 |  | Load Balancer 7 |
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
+| API Gateway 1  |  | API Gateway 2  |  | API Gateway 3  |  | API Gateway 4  |  | API Gateway 5  |  | API Gateway 6  |  | API Gateway 7  |
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
+        |                   |                   |                   |                   |                   |                   |
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
+| Frontend Client |  | Frontend Client |  | Frontend Client |  | Frontend Client |  | Frontend Client |  | Frontend Client |  | Frontend Client |
++----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+  +----------------+
