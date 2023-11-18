@@ -12,4 +12,3 @@ namespace CloudSuite.Infrastructure.Mapping.EFCore
         }
     }
 }
-}

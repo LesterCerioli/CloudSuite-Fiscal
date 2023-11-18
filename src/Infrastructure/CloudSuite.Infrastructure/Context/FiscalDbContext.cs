@@ -57,7 +57,7 @@ namespace CloudSuite.Infrastructure.Context
                     e => e.GetProperties().Where(p => p.ClrType == typeof(string))))
                 property.SetColumnType("varchar(100)");
 
-            modelBuilder.ApplyConfiguration(new AddressEFCoreMapping();
+            modelBuilder.ApplyConfiguration(new AddressEFCoreMapping());
             
             modelBuilder.ApplyConfiguration(new CancelOrderEFCoremapping());
 
@@ -131,7 +131,7 @@ namespace CloudSuite.Infrastructure.Context
                 c.ToTable("IdeCancelamentos");
             });
 
-            modelBuilder.Entity<IdeNFSe>(a =>
+            modelBuilder.Entity<IdeNFSe>(c =>
             {
                 c.ToTable("IdeNFSes");
             });
