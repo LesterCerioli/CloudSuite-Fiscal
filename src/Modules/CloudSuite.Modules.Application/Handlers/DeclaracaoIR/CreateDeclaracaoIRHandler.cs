@@ -35,28 +35,32 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
             {
                 try
                 {
-                    var DASReferenceMonth = await _dasRepository.GetByReferenceMonth(command.ReferenceMonth);
-                    var DASDueDate = await _dasRepository.GetByDueDate(command.DueDate);
-                    var DASDocumentNumber = await _dasRepository.GetByDocumentNumber(command.DocumentNumber);
-                    var DASReferenceYear = await _dasRepository.GetByReferenceYear(command.ReferenceYear);
+                    var declaracaoNum = await _declaracaoIRRepository.GetByDeclaracoaNumero(command.DeclaracoaNumero);
+                    var cnpj = await _declaracaoIRRepository.GetByCnpj(command.Cnpj);
+                    var cpf = await _declaracaoIRRepository.GetByCpf(command.Cpf);
+                    var totalIncome = await _declaracaoIRRepository.GetByTotalIncome(command.TotalIncome);
+                    var alimony = await _declaracaoIRRepository.GetByAlimony(command.Alimony);
+                    var profitsDividends = await _declaracaoIRRepository.GetByProfitsDividends(command.ProfitsDividends);
+                    var paidValue = await _declaracaoIRRepository.GetByPaidValueToBusiness(command.PaidValueToBusiness);
 
 
-                    if (DASReferenceMonth == null && DASDueDate == null && DASDocumentNumber == null && DASReferenceYear == null)
+                    if (declaracaoNum == null && cnpj == null && cpf == null && totalIncome == null && alimony == null 
+                        && profitsDividends == null && paidValue == null)
                     {
                         await _declaracaoIRRepository.Add(command.GetEntity());
-                        return new CreateDASResponse(command.Id, validationResult);
+                        return new CreateDeclaracaoIRResponse(command.Id, validationResult);
                     }
 
-                    return new CreateDASResponse(command.Id, "Address already registered");
+                    return new CreateDeclaracaoIRResponse(command.Id, "DeclaracaoIR already registered");
 
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Error creating extract");
-                    return new CreateDASResponse(command.Id, "Error creating Adress");
+                    return new CreateDeclaracaoIRResponse(command.Id, "Error creating Adress");
                 }
             }
-            return new CreateDASResponse(command.Id, validationResult);
+            return new CreateDeclaracaoIRResponse(command.Id, validationResult);
         }
     }
 }

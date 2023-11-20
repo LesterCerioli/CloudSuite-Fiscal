@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Domain.Models;
+﻿using CloudSuite.Modules.Application.Handlers.Country.Responses;
+using CloudSuite.Modules.Domain.Models;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace CloudSuite.Modules.Application.Handlers.Country
 {
     public class CreateCountryCommand : IRequest<CreateCountryResponse>
     {
+        public Guid Id { get; set; }
+
         [Required(ErrorMessage = "The {0} field is required.")]
         [StringLength(450)]
         public string? CountryName { get; private set; }

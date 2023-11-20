@@ -3,6 +3,7 @@ using CloudSuite.Modules.Application.Handlers.Address.Responses;
 using CloudSuite.Modules.Application.Handlers.Country.Responses;
 using CloudSuite.Modules.Application.Validations.Address;
 using CloudSuite.Modules.Application.Validations.Country;
+using CloudSuite.Modules.Domain.Contracts;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using NetDevPack.Messaging;
@@ -25,7 +26,7 @@ namespace CloudSuite.Modules.Application.Handlers.Country
             _countryRepository = countryRepository;
             _logger = logger;
         }
-        public Task<CreateCountryResponse> Handle(CreateCountryCommand command, CancellationToken cancellationToken)
+        public async Task<CreateCountryResponse> Handle(CreateCountryCommand command, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"CreateCountryCommand: {JsonSerializer.Serialize(command)}");
             var validationResult = new CreateCountryCommandValidation().Validate(command);
@@ -34,16 +35,15 @@ namespace CloudSuite.Modules.Application.Handlers.Country
             {
                 try
                 {
-                    var adressExistAdressLine = await _countryRepository.GetByAddressLine(command.AddressLine1);
-                    var adressExistContactName = await _countryRepository.GetByContactName(command.ContactName);
+                    var countryName = await _countryRepository.GetbyCountryName(command.CountryName);
 
-                    if (adressExistAdressLine == null && adressExistContactName == null)
+                    if (countryName == null)
                     {
                         await _countryRepository.Add(command.GetEntity());
                         return new CreateCountryResponse(command.Id, validationResult);
                     }
 
-                    return new CreateCountryResponse(command.Id, "Address already registered");
+                    return new CreateCountryResponse(command.Id, "Country already registered");
 
                 }
                 catch (Exception ex)

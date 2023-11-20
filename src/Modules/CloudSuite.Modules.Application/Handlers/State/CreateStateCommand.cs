@@ -1,4 +1,5 @@
 ﻿using CloudSuite.Modules.Application.Handlers.Note.Responses;
+using CloudSuite.Modules.Application.Handlers.State.Responses;
 using MediatR;
 using System;
 using System.Collections.Generic;
@@ -11,7 +12,7 @@ using StateEntity = CloudSuite.Modules.Domain.Models.State;
 
 namespace CloudSuite.Modules.Application.Handlers.State
 {
-    public class CreateStateCommand : IRequest<CreateNoteResponse>
+    public class CreateStateCommand : IRequest<CreateStateResponse>
     {
         public Guid Id { get; set; }
 
@@ -34,6 +35,7 @@ namespace CloudSuite.Modules.Application.Handlers.State
                 this.Id = Guid.NewGuid(),
                 this.UF,
                 this.StateName,
+                this.Country,
                 this.CountryId
                 );
         }

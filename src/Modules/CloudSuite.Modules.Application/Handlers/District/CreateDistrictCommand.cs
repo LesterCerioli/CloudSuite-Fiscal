@@ -9,12 +9,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DistrictEntity = CloudSuite.Modules.Domain.Models.District;
+using StateEntity = CloudSuite.Modules.Domain.Models.State;
 
 namespace CloudSuite.Modules.Application.Handlers.District
 {
     public class CreateDistrictCommand : IRequest<CreateDistrictResponse>
     {
-        public State State { get; set; }
+        public Guid Id { get; set; }
+
+        public StateEntity State { get; set; }
 
         public Guid StateId { get; private set; }
 

@@ -3,6 +3,7 @@ using CloudSuite.Modules.Application.Handlers.Address.Responses;
 using CloudSuite.Modules.Application.Handlers.City.Responses;
 using CloudSuite.Modules.Application.Validations.Address;
 using CloudSuite.Modules.Application.Validations.City;
+using CloudSuite.Modules.Domain.Contracts;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using NetDevPack.Messaging;
@@ -26,7 +27,7 @@ namespace CloudSuite.Modules.Application.Handlers.City
             _logger = logger;
         }
 
-        public Task<CreateCityResponse> Handle(CreateCityCommand command, CancellationToken cancellationToken)
+        public async Task<CreateCityResponse> Handle(CreateCityCommand command, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"CreateExtractCommand: {JsonSerializer.Serialize(command)}");
             var validationResult = new CreateCityCommandValidation().Validate(command);
@@ -35,16 +36,15 @@ namespace CloudSuite.Modules.Application.Handlers.City
             {
                 try
                 {
-                    var adressExistAdressLine = await _cityRepository.GetBy(command.AddressLine1);
-                    var adressExistContactName = await _cityRepository.GetBy(command.ContactName);
+                    var cityName = await _cityRepository.GetByCityName(command.CityName);
 
-                    if (adressExistAdressLine == null && adressExistContactName == null)
+                    if (cityName == null)
                     {
-                        await _addressRepository.Add(command.GetEntity());
+                        await _cityRepository.Add(command.GetEntity());
                         return new CreateCityResponse(command.Id, validationResult);
                     }
 
-                    return new CreateCityResponse(command.Id, "Address already registered");
+                    return new CreateCityResponse(command.Id, "city already registered");
 
                 }
                 catch (Exception ex)

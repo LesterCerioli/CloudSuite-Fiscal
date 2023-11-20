@@ -1,6 +1,7 @@
 ﻿using CloudSuite.Modules.Application.Handlers.DAS.Responses;
 using CloudSuite.Modules.Application.Handlers.District.Responses;
 using CloudSuite.Modules.Application.Validations.DeclaracaoIR;
+using CloudSuite.Modules.Application.Validations.District;
 using CloudSuite.Modules.Domain.Contracts;
 using MediatR;
 using Microsoft.Extensions.Logging;
@@ -25,22 +26,19 @@ namespace CloudSuite.Modules.Application.Handlers.District
             _logger = logger;
         }
 
-        public Task<CreateDistrictResponse> Handle(CreateDistrictCommand command, CancellationToken cancellationToken)
+        public async Task<CreateDistrictResponse> Handle(CreateDistrictCommand command, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"CreateDistrictCommand: {JsonSerializer.Serialize(command)}");
-            var validationResult = new CreateDeclaracaoIRCommandValidation().Validate(command);
+            var validationResult = new CreateDistrictCommandValidation().Validate(command);
 
             if (validationResult.IsValid)
             {
                 try
                 {
-                    var DASReferenceMonth = await _districtRepository.GetByReferenceMonth(command.ReferenceMonth);
-                    var DASDueDate = await _districtRepository.GetByDueDate(command.DueDate);
-                    var DASDocumentNumber = await _districtRepository.GetByDocumentNumber(command.DocumentNumber);
-                    var DASReferenceYear = await _districtRepository.GetByReferenceYear(command.ReferenceYear);
+                    var cityName = await _districtRepository.GetByName(command.Name);
 
 
-                    if (DASReferenceMonth == null && DASDueDate == null && DASDocumentNumber == null && DASReferenceYear == null)
+                    if (cityName == null)
                     {
                         await _districtRepository.Add(command.GetEntity());
                         return new CreateDistrictResponse(command.Id, validationResult);

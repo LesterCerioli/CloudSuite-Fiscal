@@ -3,6 +3,7 @@ using CloudSuite.Modules.Application.Handlers.District.Responses;
 using CloudSuite.Modules.Application.Handlers.IdeCancelamento.Responses;
 using CloudSuite.Modules.Application.Validations.DeclaracaoIR;
 using CloudSuite.Modules.Application.Validations.IdeCancelamento;
+using CloudSuite.Modules.Domain.Contracts;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using NetDevPack.Messaging;
@@ -17,15 +18,15 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
 {
     public class CreateIdeCancelamentoHandler : IRequestHandler<CreateIdeCancelamentoCommand, CreateIdeCancelamentoResponse>
     {
-        private readonly IIdeCancelamentoRepository _ideCancelamentoRepository;
+        private readonly IdeCancelamentoRepository _ideCancelamentoRepository;
         private readonly ILogger<CreateIdeCancelamentoHandler> _logger;
 
-        public CreateIdeCancelamentoHandler(IIdeCancelamentoRepository ideCancelamentoRepository, ILogger<CreateIdeCancelamentoHandler> logger)
+        public CreateIdeCancelamentoHandler(IdeCancelamentoRepository ideCancelamentoRepository, ILogger<CreateIdeCancelamentoHandler> logger)
         {
             _ideCancelamentoRepository = ideCancelamentoRepository;
             _logger = logger;
         }
-        public Task<CreateIdeCancelamentoResponse> Handle(CreateIdeCancelamentoCommand command, CancellationToken cancellationToken)
+        public async Task<CreateIdeCancelamentoResponse> Handle(CreateIdeCancelamentoCommand command, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"CreateIdeCancelamentoCommand: {JsonSerializer.Serialize(command)}");
             var validationResult = new CreateIdeCancelamentoCommandValidation().Validate(command);
@@ -34,28 +35,27 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
             {
                 try
                 {
-                    var DASReferenceMonth = await _ideCancelamentoRepository.GetByReferenceMonth(command.ReferenceMonth);
-                    var DASDueDate = await _ideCancelamentoRepository.GetByDueDate(command.DueDate);
-                    var DASDocumentNumber = await _ideCancelamentoRepository.GetByDocumentNumber(command.DocumentNumber);
-                    var DASReferenceYear = await _ideCancelamentoRepository.GetByReferenceYear(command.ReferenceYear);
+                    var IdCancelOrder = await _ideCancelamentoRepository.GetByCancelOrder(command.CancelOrder);
+                    var IdCancelReason = await _ideCancelamentoRepository.GetByCancelReason(command.CancelReason);
+                    var IdTimeDate = await _ideCancelamentoRepository.GetByTimeDate(command.TimeDate);
 
 
-                    if (DASReferenceMonth == null && DASDueDate == null && DASDocumentNumber == null && DASReferenceYear == null)
+                    if (IdCancelOrder == null && IdCancelReason == null && IdTimeDate == null)
                     {
                         await _ideCancelamentoRepository.Add(command.GetEntity());
-                        return new CreateDistrictResponse(command.Id, validationResult);
+                        return new CreateIdeCancelamentoResponse(command.Id, validationResult);
                     }
 
-                    return new CreateDistrictResponse(command.Id, "Address already registered");
+                    return new CreateIdeCancelamentoResponse(command.Id, "IdeCancelamento already registered");
 
                 }
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Error creating extract");
-                    return new CreateDistrictResponse(command.Id, "Error creating Adress");
+                    return new CreateIdeCancelamentoResponse(command.Id, "Error creating Adress");
                 }
             }
-            return new CreateDistrictResponse(command.Id, validationResult);
+            return new CreateIdeCancelamentoResponse(command.Id, validationResult);
 
         }
     }

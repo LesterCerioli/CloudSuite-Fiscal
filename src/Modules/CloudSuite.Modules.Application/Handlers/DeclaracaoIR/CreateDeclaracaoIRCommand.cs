@@ -12,6 +12,8 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
 {
     public class CreateDeclaracaoIRCommand : IRequest<CreateDeclaracaoIRResponse>
     {
+        public Guid Id { get; private set; }
+
         public string? DeclaracoaNumero { get; private set; }
 
         public Cnpj Cnpj { get; private set; }

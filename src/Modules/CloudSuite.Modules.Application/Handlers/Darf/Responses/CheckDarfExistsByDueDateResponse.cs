@@ -1,4 +1,5 @@
-﻿using FluentValidation.Results;
+﻿using CloudSuite.Modules.Application.Core;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;

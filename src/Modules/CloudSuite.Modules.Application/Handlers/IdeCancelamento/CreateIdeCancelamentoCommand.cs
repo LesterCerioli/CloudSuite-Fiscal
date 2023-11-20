@@ -12,6 +12,8 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
 {
     public class CreateIdeCancelamentoCommand : IRequest<CreateIdeCancelamentoResponse>
     {
+        public Guid Id { get; private set; }
+
         public CancelOrder CancelOrder { get; private set; }
 
         public string? CancelReason { get; private set; }

@@ -22,18 +22,9 @@
   <ItemGroup>
     <Folder Include="Handlers\Address\Requests\" />
     <Folder Include="Handlers\CancelOrder\" />
-    <Folder Include="Handlers\City\Requests\" />
-    <Folder Include="Handlers\Country\Requests\" />
-    <Folder Include="Handlers\DeclaracaoIR\Requests\" />
-    <Folder Include="Handlers\District\Requests\" />
-    <Folder Include="Handlers\FederalTax\Requests\" />
-    <Folder Include="Handlers\IdeCancelamento\Requests\" />
     <Folder Include="Handlers\IdeNFSe\Requests\" />
     <Folder Include="Handlers\Installment\Requests\" />
     <Folder Include="Handlers\Note\Requests\" />
-    <Folder Include="Handlers\State\Responses\" />
-    <Folder Include="Handlers\State\Requests\" />
-    <Folder Include="Handlers\TomadorServico\" />
   </ItemGroup>
 
 </Project>

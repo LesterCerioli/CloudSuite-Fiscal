@@ -11,15 +11,17 @@ namespace CloudSuite.Modules.Application.Handlers.FederalTax
 {
     public class CreateFederalTaxCommand : IRequest<CreateFederalTaxResponse>
     {
-        public decimal? VPIS { get; private set; }
+        public Guid Id { get; set; }
 
-        public decimal? VCOFINS { get; private set; }
+        public decimal VPIS { get; private set; }
 
-        public decimal? VIR { get; private set; }
+        public decimal VCOFINS { get; private set; }
 
-        public decimal? VINSS { get; private set; }
+        public decimal VIR { get; private set; }
 
-        public decimal? VCSLL { get; private set; }
+        public decimal VINSS { get; private set; }
+
+        public decimal VCSLL { get; private set; }
 
         public bool VPISSpecified { get; private set; }
 
