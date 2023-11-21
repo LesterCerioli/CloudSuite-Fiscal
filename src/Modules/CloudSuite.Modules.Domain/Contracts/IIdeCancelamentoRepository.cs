@@ -2,13 +2,11 @@ using CloudSuite.Modules.Domain.Models;
 
 namespace CloudSuite.Modules.Domain.Contracts
 {
-    public interface IdeCancelamentoRepository
+    public interface IIdeCancelamentoRepository
     {
-        Task<IdeCancelamento> GetByCancelOrder(string cancelOrder);
-
         Task<IdeCancelamento> GetByCancelReason(string cancelReason);
 
-        Task<IdeCancelamento> GetByTimeDate(DateTimeOffset timeDSate);
+        Task<IdeCancelamento> GetByTimeDate(DateTimeOffset timeDate);
         
         Task<IEnumerable<IdeCancelamento>> GetList();
 

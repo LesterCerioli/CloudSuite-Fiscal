@@ -5,9 +5,9 @@ namespace CloudSuite.Modules.Domain.Models
 {
     public class DeclaracaoIR : Entity, IAggregateRoot
     {
-        public DeclaracaoIR(string? declaracoaNumero, Cnpj cnpj, Cpf cpf, string? companyName, string? businessHeader, decimal? totalIncome, decimal? socialSecurity, decimal? complementContribution, decimal? alimony, string? taxWithheld, decimal? paidValueToBusiness, decimal? profitsDividends)
+        public DeclaracaoIR(string? declaracaoNumero, Cnpj cnpj, Cpf cpf, string? companyName, string? businessHeader, decimal? totalIncome, decimal? socialSecurity, decimal? complementContribution, decimal? alimony, string? taxWithheld, decimal? paidValueToBusiness, decimal? profitsDividends)
         {
-            DeclaracoaNumero = declaracoaNumero;
+            DeclaracaoNumero = declaracaoNumero;
             Cnpj = cnpj;
             Cpf = cpf;
             CompanyName = companyName;
@@ -21,7 +21,7 @@ namespace CloudSuite.Modules.Domain.Models
             ProfitsDividends = profitsDividends;
         }
 
-        public string? DeclaracoaNumero { get; private set; }
+        public string? DeclaracaoNumero { get; private set; }
 
         public Cnpj Cnpj { get; private set; }
 

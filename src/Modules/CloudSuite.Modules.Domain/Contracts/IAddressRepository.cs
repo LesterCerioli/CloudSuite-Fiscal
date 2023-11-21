@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Domain.Contracts
 
         void Update(Address address);
 
-        void remove(Address address);
+        void Remove(Address address);
 
 
     }
