@@ -34,17 +34,22 @@ namespace CloudSuite.Infrastructure.Repositories
 
 		public async Task<IEnumerable<District>> GetList()
 		{
-			throw new NotImplementedException();
+			return DbSet.ToList();
 		}
 
 		public void Remove(District district)
 		{
-			throw new NotImplementedException();
+			DbSet.Remove(district);
 		}
 
 		public void Update(District district)
 		{
-			throw new NotImplementedException();
+			DbSet.Update(district);	
+		}
+
+		public void Dispose()
+		{
+			Db.Dispose();
 		}
 	}
 }
