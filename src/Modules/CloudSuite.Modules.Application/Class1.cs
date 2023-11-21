@@ -1,5 +1,5 @@
 ﻿namespace CloudSuite.Modules.Application;
-public class Class
+public class Class1
 {
     
 }
