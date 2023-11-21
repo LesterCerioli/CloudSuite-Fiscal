@@ -2,7 +2,7 @@ using CloudSuite.Modules.Domain.Models;
 
 namespace CloudSuite.Modules.Domain.Contracts
 {
-    public interface ICoumtryRepository
+    public interface ICountryRepository
     {
         Task<Country> GetbyCountryName(string countryName);
 
