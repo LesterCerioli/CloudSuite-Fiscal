@@ -5,7 +5,7 @@ namespace CloudSuite.Modules.Domain.Contracts
 {
     public interface IDeclaracaoIRRepository
     {
-        Task<DeclaracaoIR> GetByDeclaracoaNumero(string declaracoaNumero);
+        Task<DeclaracaoIR> GetByDeclaracaoNumero(string declaracaoNumero);
 
         Task<DeclaracaoIR> GetByCnpj(Cnpj cnpj);
 
