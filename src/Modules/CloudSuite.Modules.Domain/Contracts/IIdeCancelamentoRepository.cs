@@ -2,7 +2,7 @@ using CloudSuite.Modules.Domain.Models;
 
 namespace CloudSuite.Modules.Domain.Contracts
 {
-    public interface IdeCancelamentoRepository
+    public interface IIdeCancelamentoRepository
     {
         Task<IdeCancelamento> GetByCancelOrder(string cancelOrder);
 
