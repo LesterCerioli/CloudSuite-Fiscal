@@ -34,10 +34,5 @@ namespace CloudSuite.Modules.Application.ViewModels
         [StringLength(450)]
         public string District { get; private set; }
 
-        [DisplayName("Id do Distrito")]
-        [Required(ErrorMessage = "Campo Id Distrito é obrigatorio.")]
-        [StringLength(450)]
-        public Guid DistrictId { get; private set; }
-
     }
 }

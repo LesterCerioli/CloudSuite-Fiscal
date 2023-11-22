@@ -45,9 +45,5 @@ namespace CloudSuite.Modules.Application.ViewModels
         [Required(ErrorMessage = "Campo Status da Distrito é obrigatorio.")]
         public bool IsDistrictEnabled { get; set; }
 
-        [DisplayName("Id Do Estado")]
-        [Required(ErrorMessage = "Campo Id Do Estado é obrigatorio.")]
-        public Guid StateId { get; private set; }
-
     }
 }

@@ -27,9 +27,5 @@ namespace CloudSuite.Modules.Application.ViewModels
         [Required(ErrorMessage = "Campo País é obrigatorio.")]
         public string Country { get; set; }
 
-        [DisplayName("Id do País")]
-        [Required(ErrorMessage = "Campo Id do País é obrigatorio.")]
-        public Guid CountryId { get; set; }
-
     }
 }
