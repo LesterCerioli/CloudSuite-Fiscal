@@ -22,7 +22,7 @@ namespace CloudSuite.Modules.Application.ViewModels
         [DisplayName("Endereço Completo")]
         [Required(ErrorMessage = "Campo Endereço Completo é obrigatorio.")]
         [StringLength(450)]
-        public string AddressLine1 { get; set; }
+        public string AddressLine { get; set; }
 
         [DisplayName("Cidade")]
         [Required(ErrorMessage = "Campo Cidade é obrigatorio.")]

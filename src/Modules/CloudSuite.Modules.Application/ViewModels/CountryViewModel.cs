@@ -23,7 +23,7 @@ namespace CloudSuite.Modules.Application.ViewModels
         [DisplayName("Codigo")]
         [Required(ErrorMessage = "Campo Codigo é obrigatorio.")]
         [StringLength(450)]
-        public string Code3 { get; set; }
+        public string Code { get; set; }
 
         [DisplayName("Status da Cobrança")]
         [Required(ErrorMessage = "Campo Status da Cobrança é obrigatorio.")]
