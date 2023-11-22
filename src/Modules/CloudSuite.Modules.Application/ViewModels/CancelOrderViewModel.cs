@@ -20,7 +20,7 @@ namespace CloudSuite.Modules.Application.ViewModels
         public string IdeCancelamento { get; set; }
 
         [DisplayName("Data da Requisição")]
-        [Required(ErrorMessage = "Campo RequestDate é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Data da Requisição é obrigatorio.")]
         public DateTimeOffset RequestDate { get; set; }
 
         [DisplayName("Cnpj")]

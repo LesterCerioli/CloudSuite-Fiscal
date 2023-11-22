@@ -19,23 +19,23 @@ namespace CloudSuite.Modules.Application.ViewModels
         [Required(ErrorMessage = "Campo Cnpj é obrigatorio.")]
         public string Cnpj { get; set; }
 
-        [DisplayName("Inscrição Municipal do Prestador de Serviço")]
+        [DisplayName("Inscrição Municipal")]
         [Required(ErrorMessage = "Campo Inscricao Municipal é obrigatorio.")]
         public string InscricaoMunicipal { get; set; }
 
-        [DisplayName("Inscrição Estadual do Prestador de Serviço")]
+        [DisplayName("Inscrição Estadual")]
         [Required(ErrorMessage = "Campo Inscricao Estadual é obrigatorio.")]
         public string InscricaoEstadual { get; set; }
 
-        [DisplayName("Documento Estrangeiro do Prestador de Serviço")]
-        [Required(ErrorMessage = "Campo DocTomadorEstrangeiro é obrigatorio.")]
+        [DisplayName("Documento Estrangeiro")]
+        [Required(ErrorMessage = "Campo Documento Estrangeiro é obrigatorio.")]
         public string DocTomadorEstrangeiro { get; set; }
 
-        [DisplayName("Razão Social do Prestador de Serviço")]
-        [Required(ErrorMessage = "Campo Social Reason é obrigatorio.")]
+        [DisplayName("Razão Social")]
+        [Required(ErrorMessage = "Campo Razão Social é obrigatorio.")]
         public string SocialReason { get; set; }
 
-        [DisplayName("Nome Fantasia do Prestador de Serviço")]
+        [DisplayName("Nome Fantasia")]
         [Required(ErrorMessage = "Campo Nome Fantasia é obrigatorio.")]
         public string NomeFantasia { get; set; }
 

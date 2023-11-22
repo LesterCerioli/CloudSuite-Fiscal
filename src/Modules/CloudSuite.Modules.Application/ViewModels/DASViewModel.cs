@@ -14,7 +14,7 @@ namespace CloudSuite.Modules.Application.ViewModels
         public Guid Id { get; private set; }
 
         [DisplayName("Mês de Referencia do DAS")]
-        [Required(ErrorMessage = "Campo Reference Month é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Mês de Referencia é obrigatorio.")]
         public string ReferenceMonth { get; set; }
 
         [DisplayName("Data de Vencimento do DAS")]

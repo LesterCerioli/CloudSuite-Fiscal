@@ -24,31 +24,31 @@ namespace CloudSuite.Modules.Application.ViewModels
         public string Address { get; set; }
 
         [DisplayName("País")]
-        [Required(ErrorMessage = "Campo Country é obrigatorio.")]
+        [Required(ErrorMessage = "Campo País é obrigatorio.")]
         public string Country { get; set; }
 
         [DisplayName("Distrito")]
-        [Required(ErrorMessage = "Campo District é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Distrito é obrigatorio.")]
         public string District { get; set; }
 
         [DisplayName("Prestador de Serviço")]
-        [Required(ErrorMessage = "Campo Prestador é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Prestador de Serviço é obrigatorio.")]
         public string Prestador { get; set; }
 
         [DisplayName("Cnpj")]
-        [Required(ErrorMessage = "Campo Prestador é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Cnpj é obrigatorio.")]
         public string Cnpj { get; set; }
 
         [DisplayName("Numero da Nota")]
-        [Required(ErrorMessage = "Campo Note Number é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Numero da Nota é obrigatorio.")]
         public string NoteNumber { get; set; }
 
         [DisplayName("Data de Emissão da Nota")]
-        [Required(ErrorMessage = "Campo Emission Date é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Data de Emissão da Nota é obrigatorio.")]
         public DateTime EmissionDate { get; set; }
 
         [DisplayName("Valor")]
-        [Required(ErrorMessage = "Campo Value é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Valor é obrigatorio.")]
         public decimal Value { get; set; }
     }
 }

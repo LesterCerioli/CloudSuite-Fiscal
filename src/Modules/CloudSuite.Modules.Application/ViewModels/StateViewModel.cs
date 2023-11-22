@@ -15,19 +15,19 @@ namespace CloudSuite.Modules.Application.ViewModels
         public Guid Id { get; set; }
 
         [DisplayName("Nome do Estado")]
-        [Required(ErrorMessage = "Campo StateName é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Nome do Estado é obrigatorio.")]
         [StringLength(100)]
         public string StateName { get; set; }
 
         [DisplayName("Unidade Federativa")]
-        [Required(ErrorMessage = "Campo UF é obrigatorio.")]
+        [Required(ErrorMessage = "Campo Unidade Federativa é obrigatorio.")]
         public string UF { get; set; }
 
         [DisplayName("País")]
-        [Required(ErrorMessage = "Campo Country é obrigatorio.")]
+        [Required(ErrorMessage = "Campo País é obrigatorio.")]
         public string Country { get; set; }
 
-        [DisplayName("País")]
+        [DisplayName("Id do País")]
         [Required(ErrorMessage = "Campo Id do País é obrigatorio.")]
         public Guid CountryId { get; set; }
 

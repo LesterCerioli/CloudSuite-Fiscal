@@ -19,6 +19,11 @@ namespace CloudSuite.Modules.Application.ViewModels
         [StringLength(450)]
         public string State { get; set; }
 
+        [DisplayName("Id do Estado")]
+        [Required(ErrorMessage = "Campo Id do Estado é obrigatorio.")]
+        [StringLength(450)]
+        public Guid StateId { get; set; }
+
         [DisplayName("Nome do Distrito")]
         [Required(ErrorMessage = "Campo Nome do Distrito é obrigatorio.")]
         [StringLength(450)]
