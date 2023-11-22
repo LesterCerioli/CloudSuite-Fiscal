@@ -13,15 +13,14 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class CancelOrderViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
-        
-        [DisplayName("Id de Cancelamento")]
-        public IdeCancelamento IdeCancelamento { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Data da Requisição")]
-        public DateTimeOffset? RequestDate { get; private set; }
+        [Required(ErrorMessage = "The {0} field is required.")]
+        public DateTimeOffset RequestDate { get; set; }
 
         [DisplayName("Cnpj do pedido")]
-        public Cnpj Cnpj { get; private set; }
+        [Required(ErrorMessage = "The {0} field is required.")]
+        public Cnpj Cnpj { get; set; }
     }
 }

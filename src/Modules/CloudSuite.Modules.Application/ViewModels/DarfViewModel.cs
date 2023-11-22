@@ -13,57 +13,67 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class DarfViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Mês de Referencia do Darf")]
-        public string? ReferenceMonth { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string ReferenceMonth { get; set; }
 
         [DisplayName("Data de Vencimento do Darf")]
-        public DateTime? DueDate { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public DateTime DueDate { get; private set; }
 
         [DisplayName("Ano de Referencia do Darf")]
-        public string? ReferenceYear { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string ReferenceYear { get; set; }
 
         [DisplayName("Valor de Pagamento no Darf")]
-        public decimal? DarfPaymentValue { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal DarfPaymentValue { get; set; }
 
         [DisplayName("Recibo Declarado no Darf")]
-        public string? RecuboDeclaroNumero { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string RecuboDeclaroNumero { get; set; }
 
         [DisplayName("Numero do Documento no Darf")]
-        public string? DocumentNumber { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string DocumentNumber { get; set; }
 
         [DisplayName("Codigo de Barras do Darf")]
-        public string? BarCode { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string BarCode { get; set; }
 
         [DisplayName("Data de Validade do Darf")]
-        public DateTime? ValidationDate { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public DateTime ValidationDate { get; set; }
 
         [DisplayName("Perido de Apuração do Darf")]
-        public DateTime? PeriodoApuracao { get; private set; }
-
-        [DisplayName("Cnpj no Darf")]
-        public Cnpj Cnpj { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public DateTime PeriodoApuracao { get; set; }
 
         [DisplayName("Codigo da Receito do Darf")]
-        public string? ReceitaCode { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string ReceitaCode { get; set; }
 
         [DisplayName("Valor Principal do Darf")]
-        public string? MainValue { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string MainValue { get; set; }
 
         [DisplayName("Quantidade de Multa do Darf")]
-        public decimal? AmountFine { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal AmountFine { get; set; }
 
         [DisplayName("Tipo de Pagamento do Darf")]
-        public bool? IsInstallment { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool IsInstallment { get; set; }
 
         [DisplayName("Taxa de Juros do Darf")]
-        public decimal? Interest { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal Interest { get; set; }
 
         [DisplayName("Valor total do Darf")]
-        public decimal? TotalValue { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal TotalValue { get; set; }
 
-        [DisplayName("Prestador de Serviço do Darf")]
-        public Prestador Prestador { get; private set; }
     }
 }

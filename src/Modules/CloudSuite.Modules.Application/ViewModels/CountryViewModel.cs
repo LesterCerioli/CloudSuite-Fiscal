@@ -13,34 +13,37 @@ namespace CloudSuite.Modules.Application.ViewModels
     {
 
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Nome do País")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required(ErrorMessage = "The field is required.")]
         [StringLength(450)]
-        public string? CountryName { get; private set; }
+        public string CountryName { get; set; }
 
         [DisplayName("Codigo")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required(ErrorMessage = "The field is required.")]
         [StringLength(450)]
-        public string? Code3 { get; private set; }
+        public string Code3 { get; set; }
 
         [DisplayName("Status da Cobrança")]
-        public bool? IsBillingEnabled { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool IsBillingEnabled { get; set; }
 
         [DisplayName("Status da Envio")]
-        public bool? IsShippingEnabled { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool IsShippingEnabled { get; set; }
 
         [DisplayName("Status da Cidade")]
-        public bool? IsCityEnabled { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool IsCityEnabled { get; set; }
 
         [DisplayName("Status do Codigo Postal")]
-        public bool? IsZipCodeEnabled { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool IsZipCodeEnabled { get; set; }
 
         [DisplayName("Status da Distrito")]
-        public bool? IsDistrictEnabled { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool IsDistrictEnabled { get; set; }
 
-        [DisplayName("Id do Estado")]
-        public Guid StateId { get; private set; }
     }
 }

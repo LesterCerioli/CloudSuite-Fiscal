@@ -11,36 +11,46 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class FederalTaxViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("VPIS dos Tributos Federais")]
-        public decimal? VPIS { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal VPIS { get; set; }
 
         [DisplayName("VCOFINS dos Tributos Federais")]
-        public decimal? VCOFINS { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal VCOFINS { get; set; }
 
         [DisplayName("VIR dos Tributos Federais")]
-        public decimal? VIR { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal VIR { get; set; }
 
         [DisplayName("VINSS dos Tributos Federais")]
-        public decimal? VINSS { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal VINSS { get; set; }
 
         [DisplayName("VCSLL dos Tributos Federais")]
-        public decimal? VCSLL { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal VCSLL { get; set; }
 
         [DisplayName("VPISSpecified dos Tributos Federais")]
-        public bool VPISSpecified { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool VPISSpecified { get; set; }
 
         [DisplayName("VCOFINSSpecified dos Tributos Federais")]
-        public bool VCOFINSSpecified { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool VCOFINSSpecified { get; set; }
 
         [DisplayName("VIRSpecified dos Tributos Federais")]
-        public bool VIRSpecified { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool VIRSpecified { get; set; }
 
         [DisplayName("VINSSSpecified dos Tributos Federais")]
-        public bool VINSSSpecified { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool VINSSSpecified { get; set; }
 
         [DisplayName("VCSLLSpecified dos Tributos Federais")]
-        public bool VCSLLSpecified { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public bool VCSLLSpecified { get; set; }
     }
 }

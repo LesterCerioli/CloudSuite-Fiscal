@@ -13,30 +13,30 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class PrestadorViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
-
-        [DisplayName("Cnpj do Prestador de serviço")]
-        public Cnpj Cnpj { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Inscrição Municipal do Prestador de Serviço")]
-        public string? InscricaoMunicipal { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string InscricaoMunicipal { get; set; }
 
         [DisplayName("Inscrição Estadual do Prestador de Serviço")]
-        public string? InscricaoEstadual { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string InscricaoEstadual { get; set; }
 
         [DisplayName("Documento Estrangeiro do Prestador de Serviço")]
-        public string? DocTomadorEstrangeiro { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string DocTomadorEstrangeiro { get; set; }
 
         [DisplayName("Razão Social do Prestador de Serviço")]
-        public string? SocialReason { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string SocialReason { get; set; }
 
         [DisplayName("Nome Fantasia do Prestador de Serviço")]
+        [Required(ErrorMessage = "The field is required.")]
         public string NomeFantasia { get; set; }
 
-        [DisplayName("Endereço do Prestador de Serviço")]
-        public Address Address { get; private set; }
-
         [DisplayName("Tipo")]
+        [Required(ErrorMessage = "The field is required.")]
         public int Tipo { get; set; }
 
     }

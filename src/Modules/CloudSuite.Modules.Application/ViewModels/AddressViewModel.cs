@@ -12,25 +12,17 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class AddressViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Nome do Contato")]
         [Required(ErrorMessage = "The {0} field is required.")]
         [StringLength(100)]
-        public string? ContactName { get; private set; }
+        public string ContactName { get; set; }
 
         [DisplayName("Endereço Completo")]
         [Required(ErrorMessage = "The {0} field is required.")]
         [StringLength(450)]
-        public string? AddressLine1 { get; private set; }
+        public string AddressLine1 { get; set; }
 
-        [DisplayName("Cidade")]
-        public City City { get; private set; }
-
-        [DisplayName("Bairro")]
-        public District District { get; private set; }
-
-        [DisplayName("Id do Dsitrito")]
-        public Guid DistrictId { get; private set; }
     }
 }

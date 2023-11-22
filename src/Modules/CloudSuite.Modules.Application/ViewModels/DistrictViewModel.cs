@@ -12,26 +12,20 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class DistrictViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
-
-        [DisplayName("Estado do Distrito")]
-        public State State { get; set; }
-
-        [DisplayName("Id do Estado")]
-        public Guid StateId { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Nome do Distrito")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required(ErrorMessage = "The field is required.")]
         [StringLength(450)]
-        public string? Name { get; private set; }
+        public string Name { get; set; }
 
         [DisplayName("Tipo do Distrito")]
-        [Required(ErrorMessage = "The {0} field is required.")]
-        public string? Type { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string Type { get; set; }
 
         [DisplayName("Localização do Distrito")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required(ErrorMessage = "The field is required.")]
         [StringLength(100)]
-        public string? Location { get; private set; }
+        public string Location { get; set; }
     }
 }

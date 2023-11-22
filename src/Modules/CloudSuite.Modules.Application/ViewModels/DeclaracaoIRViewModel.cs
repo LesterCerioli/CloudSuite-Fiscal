@@ -12,42 +12,46 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class DeclaracaoIRViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Numero da Declaração do Imposto de Renda")]
-        public string? DeclaracaoNumero { get; private set; }
-
-        [DisplayName("Cnpj da Declaração do Imposto de Renda")]
-        public Cnpj Cnpj { get; private set; }
-
-        [DisplayName("Cpf da Declaração do Imposto de Renda")]
-        public Cpf Cpf { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string DeclaracaoNumero { get; set; }
 
         [DisplayName("Nome da Companhia da Declaração do Imposto de Renda")]
-        public string? CompanyName { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string CompanyName { get; set; }
 
         [DisplayName("Header do negocio na Declaração do Imposto de Renda")]
-        public string? BusinessHeader { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string BusinessHeader { get; set; }
 
         [DisplayName("Renda Total na Declaração do Imposto de Renda")]
-        public decimal? TotalIncome { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal TotalIncome { get; set; }
 
         [DisplayName("Contribuição para a Segurança Social na Declaração do Imposto de Renda")]
-        public decimal? SocialSecurity { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal SocialSecurity { get; set; }
 
         [DisplayName("Contribuição para a Segurança Social na Declaração do Imposto de Renda")]
-        public decimal? ComplementContribution { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal ComplementContribution { get; set; }
 
         [DisplayName("pensão alimentícia na Declaração do Imposto de Renda")]
-        public decimal? Alimony { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal Alimony { get; set; }
 
         [DisplayName("Imposto Retido na Fonte na Declaração do Imposto de Renda")]
-        public string? TaxWithheld { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string TaxWithheld { get; set; }
 
         [DisplayName("valor pago ao negócio na Declaração do Imposto de Renda")]
-        public decimal? PaidValueToBusiness { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal PaidValueToBusiness { get; set; }
 
         [DisplayName("valor pago ao negócio na Declaração do Imposto de Renda")]
-        public decimal? ProfitsDividends { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public decimal ProfitsDividends { get; set; }
     }
 }

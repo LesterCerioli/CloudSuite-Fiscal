@@ -15,13 +15,16 @@ namespace CloudSuite.Modules.Application.ViewModels
         public Guid Id { get; private set; }
 
         [DisplayName("Ordem de Cancelamento")]
-        public CancelOrder CancelOrder { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public CancelOrder CancelOrder { get; set; }
 
         [DisplayName("Razão do Cancelamento")]
-        public string? CancelReason { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string CancelReason { get; set; }
 
         [DisplayName("Hora do Cancelamento")]
-        public DateTimeOffset? TimeDate { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public DateTimeOffset TimeDate { get; set; }
 
     }
 }

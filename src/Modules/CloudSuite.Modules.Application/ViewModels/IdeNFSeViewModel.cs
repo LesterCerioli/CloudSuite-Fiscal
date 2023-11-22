@@ -12,18 +12,19 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class IdeNFSeViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Numero do NFSe")]
-        public string? Number { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string Number { get; set; }
 
         [DisplayName("Chave do NFSe")]
-        public string? Key { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public string Key { get; set; }
 
         [DisplayName("Data de Emissão")]
-        public DateTime? EmissionDate { get; private set; }
+        [Required(ErrorMessage = "The field is required.")]
+        public DateTime EmissionDate { get; set; }
 
-        [DisplayName("Nota do NFSe")]
-        public Note Note { get; private set; }
     }
 }
