@@ -11,32 +11,30 @@ using System.Threading.Tasks;
 
 namespace CloudSuite.Modules.Application.Services.Implementation
 {
-    public class AddressAppService : IAddressAppService
+    public class CityAppService : ICityAppService
     {
-        private readonly IAddressRepository _addressRepository;
+        private readonly ICityRepository _cityRepository;
         private readonly IMapper _mapper;
         private readonly IMediatorHandler _mediator;
 
 
-        public AddressAppService(
-            IAddressRepository addressRepository,
+        public CityAppService(
+            ICityRepository cityRepository,
             IMediatorHandler mediator,
             IMapper mapper)
         {
-            _addressRepository = addressRepository;
+            _cityRepository = cityRepository;
             _mapper = mapper;
             _mediator = mediator;
-
+        }
+        public async Task<CityViewModel> GetByCityName(string cityName)
+        {
+            return _mapper.Map<CityViewModel>(await _cityRepository.GetByCityName(cityName));
         }
 
-        public async Task<AddressViewModel> GetByAddressLine1(string addressLine1)
+        public async Task Save(CreateCityCommand commandCreate)
         {
-            return _mapper.Map<AddressViewModel>(await _addressRepository.GetByAddressLine1(addressLine1));
-        }
-
-        public async Task Save(CreateAddressCommand commandCreate)
-        {
-             await _addressRepository.Add(commandCreate.GetEntity());
+            await _cityRepository.Add(commandCreate.GetEntity());
         }
 
     }
