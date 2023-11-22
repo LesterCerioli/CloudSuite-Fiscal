@@ -15,12 +15,17 @@ namespace CloudSuite.Modules.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
 
+        [DisplayName("Id de Cancelameto")]
+        [Required(ErrorMessage = "Campo IdeCancelamento é obrigatorio.")]
+        public string IdeCancelamento { get; set; }
+
         [DisplayName("Data da Requisição")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required(ErrorMessage = "Campo RequestDate é obrigatorio.")]
         public DateTimeOffset RequestDate { get; set; }
 
-        [DisplayName("Cnpj do pedido")]
-        [Required(ErrorMessage = "The {0} field is required.")]
-        public Cnpj Cnpj { get; set; }
+        [DisplayName("Cnpj")]
+        [Required(ErrorMessage = "Campo Cnpj é obrigatorio.")]
+        public string Cnpj { get; set; }
+
     }
 }

@@ -14,17 +14,22 @@ namespace CloudSuite.Modules.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
 
+        [DisplayName("Estado")]
+        [Required(ErrorMessage = "Campo Estado é obrigatorio.")]
+        [StringLength(450)]
+        public string State { get; set; }
+
         [DisplayName("Nome do Distrito")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Nome do Distrito é obrigatorio.")]
         [StringLength(450)]
         public string Name { get; set; }
 
         [DisplayName("Tipo do Distrito")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Tipo do Distrito é obrigatorio.")]
         public string Type { get; set; }
 
         [DisplayName("Localização do Distrito")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Localização do Distrito é obrigatorio.")]
         [StringLength(100)]
         public string Location { get; set; }
     }

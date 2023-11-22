@@ -15,16 +15,20 @@ namespace CloudSuite.Modules.Application.ViewModels
         public Guid Id { get; set; }
 
         [DisplayName("Numero do NFSe")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Number é obrigatorio.")]
         public string Number { get; set; }
 
         [DisplayName("Chave do NFSe")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Key é obrigatorio.")]
         public string Key { get; set; }
 
         [DisplayName("Data de Emissão")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo EmissionDate é obrigatorio.")]
         public DateTime EmissionDate { get; set; }
+
+        [DisplayName("Data de Emissão")]
+        [Required(ErrorMessage = "Campo Note é obrigatorio.")]
+        public string Note { get; set; }
 
     }
 }

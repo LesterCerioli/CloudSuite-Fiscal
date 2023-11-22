@@ -15,14 +15,29 @@ namespace CloudSuite.Modules.Application.ViewModels
         public Guid Id { get; set; }
 
         [DisplayName("Nome do Contato")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required(ErrorMessage = "Campo Nome do Contato é obrigatorio.")]
         [StringLength(100)]
         public string ContactName { get; set; }
 
         [DisplayName("Endereço Completo")]
-        [Required(ErrorMessage = "The {0} field is required.")]
+        [Required(ErrorMessage = "Campo Endereço Completo é obrigatorio.")]
         [StringLength(450)]
         public string AddressLine1 { get; set; }
+
+        [DisplayName("Cidade")]
+        [Required(ErrorMessage = "Campo Cidade é obrigatorio.")]
+        [StringLength(450)]
+        public string City { get; private set; }
+
+        [DisplayName("Distrito")]
+        [Required(ErrorMessage = "Campo Distrito é obrigatorio.")]
+        [StringLength(450)]
+        public string District { get; private set; }
+
+        [DisplayName("Id do Distrito")]
+        [Required(ErrorMessage = "Campo Distrito é obrigatorio.")]
+        [StringLength(450)]
+        public Guid DistrictId { get; private set; }
 
     }
 }

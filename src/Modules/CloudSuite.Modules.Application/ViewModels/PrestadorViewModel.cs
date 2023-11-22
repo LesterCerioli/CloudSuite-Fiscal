@@ -15,28 +15,32 @@ namespace CloudSuite.Modules.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
 
+        [DisplayName("Cnpj")]
+        [Required(ErrorMessage = "Campo Cnpj é obrigatorio.")]
+        public string Cnpj { get; set; }
+
         [DisplayName("Inscrição Municipal do Prestador de Serviço")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Inscricao Municipal é obrigatorio.")]
         public string InscricaoMunicipal { get; set; }
 
         [DisplayName("Inscrição Estadual do Prestador de Serviço")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Inscricao Estadual é obrigatorio.")]
         public string InscricaoEstadual { get; set; }
 
         [DisplayName("Documento Estrangeiro do Prestador de Serviço")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo DocTomadorEstrangeiro é obrigatorio.")]
         public string DocTomadorEstrangeiro { get; set; }
 
         [DisplayName("Razão Social do Prestador de Serviço")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Social Reason é obrigatorio.")]
         public string SocialReason { get; set; }
 
         [DisplayName("Nome Fantasia do Prestador de Serviço")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Nome Fantasia é obrigatorio.")]
         public string NomeFantasia { get; set; }
 
         [DisplayName("Tipo")]
-        [Required(ErrorMessage = "The field is required.")]
+        [Required(ErrorMessage = "Campo Tipo é obrigatorio.")]
         public int Tipo { get; set; }
 
     }

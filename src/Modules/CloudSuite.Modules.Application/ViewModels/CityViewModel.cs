@@ -15,8 +15,18 @@ namespace CloudSuite.Modules.Application.ViewModels
         public Guid Id { get; set; }
 
         [DisplayName("Nome da Cidade")]
-        [Required(ErrorMessage = "Este campo é de preenchimento obrigatório.")]
+        [Required(ErrorMessage = "Campo Nome da Cidade é obrigatorio.")]
         [MaxLength(100)]
         public string CityName { get; set; }
+
+        [DisplayName("Nome do Estado")]
+        [Required(ErrorMessage = "Campo Nome do Estado é obrigatorio.")]
+        [MaxLength(100)]
+        public string State { get; set; }
+
+        [DisplayName("Id do Estado")]
+        [Required(ErrorMessage = "Campo Id do Estado é obrigatorio.")]
+        [MaxLength(100)]
+        public Guid StateId { get; set; }
     }
 }
