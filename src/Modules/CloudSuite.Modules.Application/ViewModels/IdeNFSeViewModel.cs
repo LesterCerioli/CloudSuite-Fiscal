@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class IdeNFSeViewModel
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         [DisplayName("Numero do NFSe")]
         [Required(ErrorMessage = "Campo Numero é obrigatorio.")]

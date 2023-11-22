@@ -11,7 +11,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class FederalTaxViewModel
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         [DisplayName("VPIS dos Tributos Federais")]
         [Required(ErrorMessage = "Campo VPIS é obrigatorio.")]

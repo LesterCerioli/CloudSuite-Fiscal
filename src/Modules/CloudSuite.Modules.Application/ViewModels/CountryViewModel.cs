@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     {
 
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         [DisplayName("Nome do País")]
         [Required(ErrorMessage = "Campo Nome do País é obrigatorio.")]

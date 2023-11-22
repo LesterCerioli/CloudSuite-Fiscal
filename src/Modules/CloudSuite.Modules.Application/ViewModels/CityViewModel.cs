@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class CityViewModel
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         [DisplayName("Nome da Cidade")]
         [Required(ErrorMessage = "Campo Nome da Cidade é obrigatorio.")]

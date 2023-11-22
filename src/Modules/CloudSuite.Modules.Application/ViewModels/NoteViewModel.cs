@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class NoteViewModel
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         [DisplayName("Tomador de Serviço")]
         [Required(ErrorMessage = "Campo Tomador Servico é obrigatorio.")]

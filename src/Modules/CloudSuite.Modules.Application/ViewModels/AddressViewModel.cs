@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class AddressViewModel
     {
         [Key]
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         [DisplayName("Nome do Contato")]
         [Required(ErrorMessage = "Campo Nome do Contato é obrigatorio.")]
@@ -27,12 +27,12 @@ namespace CloudSuite.Modules.Application.ViewModels
         [DisplayName("Cidade")]
         [Required(ErrorMessage = "Campo Cidade é obrigatorio.")]
         [StringLength(450)]
-        public string City { get; private set; }
+        public string City { get; set; }
 
         [DisplayName("Distrito")]
         [Required(ErrorMessage = "Campo Distrito é obrigatorio.")]
         [StringLength(450)]
-        public string District { get; private set; }
+        public string District { get; set; }
 
     }
 }
