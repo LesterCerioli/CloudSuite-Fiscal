@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace CloudSuite.Infrastructure.Repositories
 {
-	public class CountryRepository : ICoumtryRepository
+	public class CountryRepository : ICountryRepository
 	{
 		protected readonly FiscalDbContext Db;
 
