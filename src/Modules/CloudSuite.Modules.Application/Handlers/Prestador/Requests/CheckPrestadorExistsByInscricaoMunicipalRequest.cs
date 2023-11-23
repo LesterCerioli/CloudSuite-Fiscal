@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador.Requests
 
         public string? InscricaoMunicipal { get; private set; }
 
-        public CheckPrestadorExistsByInscricaoMunicipalRequest(Guid id, string? inscricaoMunicipal)
+        public CheckPrestadorExistsByInscricaoMunicipalRequest(string? inscricaoMunicipal)
         {
             Id = Guid.NewGuid();
             InscricaoMunicipal = inscricaoMunicipal;

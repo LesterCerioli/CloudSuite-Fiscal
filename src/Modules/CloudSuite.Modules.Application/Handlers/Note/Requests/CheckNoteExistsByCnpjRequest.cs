@@ -16,7 +16,7 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
 
         public Cnpj Cnpj { get; set; }
 
-        public CheckNoteExistsByCnpjRequest(Guid id, Cnpj cnpj)
+        public CheckNoteExistsByCnpjRequest(Cnpj cnpj)
         {
             Id = Guid.NewGuid();
             Cnpj = cnpj;

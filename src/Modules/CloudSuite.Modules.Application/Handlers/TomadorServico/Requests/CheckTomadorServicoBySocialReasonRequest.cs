@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.TomadorServico.Requests
 
         public string? SocialReason { get; private set; }
 
-        public CheckTomadorServicoBySocialReasonRequest(Guid id, string? socialReason)
+        public CheckTomadorServicoBySocialReasonRequest(string? socialReason)
         {
             Id = Guid.NewGuid();
             SocialReason = socialReason;

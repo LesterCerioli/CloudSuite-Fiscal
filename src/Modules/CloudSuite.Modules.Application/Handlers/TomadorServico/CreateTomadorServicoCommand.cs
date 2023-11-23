@@ -31,6 +31,11 @@ namespace CloudSuite.Modules.Application.Handlers.TomadorServico
 
         public int Tipo { get; set; }
 
+        public CreateTomadorServicoCommand()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public TomadorServicoEntity GetEntity()
         {
             return new TomadorServicoEntity(

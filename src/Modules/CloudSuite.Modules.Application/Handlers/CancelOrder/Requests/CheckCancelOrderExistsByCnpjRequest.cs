@@ -12,13 +12,13 @@ namespace CloudSuite.Modules.Application.Handlers.CancelOrder.Requests
     public class CheckCancelOrderExistsByCnpjRequest : IRequest<CheckCancelOrderExistsByCnpjResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public Cnpj Cnpj { get; private set; }
+        public Cnpj Cnpj { get; set; }
 
-        public CheckCancelOrderExistsByCnpjRequest(Guid id, Cnpj cnpj)
+        public CheckCancelOrderExistsByCnpjRequest(Cnpj cnpj)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Cnpj = cnpj;
         }
 

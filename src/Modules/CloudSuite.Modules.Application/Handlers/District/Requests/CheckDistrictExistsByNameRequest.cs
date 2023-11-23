@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.District.Requests
 
         public string? Name { get; private set; }
 
-        public CheckDistrictExistsByNameRequest(Guid id, string? name)
+        public CheckDistrictExistsByNameRequest(string? name)
         {
             Id = Guid.NewGuid();
             Name = name;

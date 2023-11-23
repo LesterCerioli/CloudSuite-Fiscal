@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador.Requests
 
         public string NomeFantasia { get; set; }
 
-        public CheckPrestadorExistsByNomeFantasiaRequest(Guid id, string nomeFantasia)
+        public CheckPrestadorExistsByNomeFantasiaRequest(string nomeFantasia)
         {
             Id = Guid.NewGuid();
             NomeFantasia = nomeFantasia;

@@ -24,6 +24,11 @@ namespace CloudSuite.Modules.Application.Handlers.City
 
         public Guid StateId { get; private set; }
 
+        public CreateCityCommand()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public CityEntity GetEntity()
         {
             return new CityEntity(

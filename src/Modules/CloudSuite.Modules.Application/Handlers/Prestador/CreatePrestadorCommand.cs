@@ -31,6 +31,11 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador
 
         public int Tipo { get; set; }
 
+        public CreatePrestadorCommand()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public PrestadorEntity GetEntity()
         {
             return new PrestadorEntity(

@@ -11,11 +11,11 @@ namespace CloudSuite.Modules.Application.Handlers.Address.Requests
     public class CheckAddressExistsByAddressLineRequest : IRequest<CheckAddressExistsByAddressLineResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string? AddressLine1 { get; private set; }
+        public string? AddressLine1 { get; set; }
 
-        public CheckAddressExistsByAddressLineRequest(Guid id, string? addressLine1)
+        public CheckAddressExistsByAddressLineRequest(string? addressLine1)
         {
             Id = Guid.NewGuid();
             AddressLine1 = addressLine1;

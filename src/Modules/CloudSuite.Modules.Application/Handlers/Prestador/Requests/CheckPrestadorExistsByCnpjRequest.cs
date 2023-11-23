@@ -16,7 +16,7 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador.Requests
 
         public Cnpj Cnpj { get; private set; }
 
-        public CheckPrestadorExistsByCnpjRequest(Guid id, Cnpj cnpj)
+        public CheckPrestadorExistsByCnpjRequest(Cnpj cnpj)
         {
             Id = Guid.NewGuid();
             Cnpj = cnpj;

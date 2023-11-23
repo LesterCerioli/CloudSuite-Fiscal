@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador.Requests
 
         public string? DocTomadorEstrangeiro { get; private set; }
 
-        public CheckPrestadorExistsByTomadorEstrangeiroRequest(Guid id, string? docTomadorEstrangeiro)
+        public CheckPrestadorExistsByTomadorEstrangeiroRequest(string? docTomadorEstrangeiro)
         {
             Id = Guid.NewGuid();
             DocTomadorEstrangeiro = docTomadorEstrangeiro;

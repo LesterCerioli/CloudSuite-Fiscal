@@ -39,7 +39,10 @@ namespace CloudSuite.Modules.Application.Handlers.Note
 
         public decimal Value { get; private set; }
 
-
+        public CreateNoteCommand()
+        {
+            Id = Guid.NewGuid();
+        }
         public NoteEntity GetEntity()
         {
             return new NoteEntity(

@@ -38,6 +38,10 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
 
         public decimal ProfitsDividends { get; private set; }
 
+        public CreateDeclaracaoIRCommand()
+        {
+            Id = Guid.NewGuid();
+        }
 
         public DeclaracaoIREntity GetEntity()
         {

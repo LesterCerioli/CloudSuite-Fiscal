@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento.Requests
         
         public Guid Id { get; private set; }
 
-        public string? CancelReason { get; private set; }
+        public string? CancelReason { get; set; }
 
-        public CheckIdeCancelamentoExistsByCancelReasonRequest(Guid id, string? cancelReason)
+        public CheckIdeCancelamentoExistsByCancelReasonRequest(string? cancelReason)
         {
             Id = Guid.NewGuid();
             CancelReason = cancelReason;

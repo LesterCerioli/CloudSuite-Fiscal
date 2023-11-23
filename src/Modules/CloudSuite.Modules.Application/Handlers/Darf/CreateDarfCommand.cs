@@ -50,6 +50,11 @@ namespace CloudSuite.Modules.Application.Handlers.Darf
 
         public PrestadorEntity Prestador { get; private set; }
 
+        public CreateDarfCommand()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public DarfEntity GetEntity()
         {
             return new DarfEntity(

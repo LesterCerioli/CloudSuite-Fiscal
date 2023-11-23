@@ -33,6 +33,11 @@ namespace CloudSuite.Modules.Application.Handlers.FederalTax
 
         public bool VCSLLSpecified { get; private set; }
 
+        public CreateFederalTaxCommand()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public FederalTaxEntity GetEntity()
         {
             return new FederalTaxEntity(

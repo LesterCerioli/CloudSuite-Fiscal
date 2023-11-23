@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.FederalTax.Requests
 
         public Guid Id { get; private set; }
 
-        public decimal VPIS { get; private set; }
+        public decimal VPIS { get; set; }
 
-        public CheckFederalTaxExistsByVpisRequest(Guid id, decimal vPIS)
+        public CheckFederalTaxExistsByVpisRequest(decimal vPIS)
         {
             Id = Guid.NewGuid();
             VPIS = vPIS;

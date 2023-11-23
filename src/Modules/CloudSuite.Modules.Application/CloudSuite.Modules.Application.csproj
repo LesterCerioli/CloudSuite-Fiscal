@@ -19,8 +19,4 @@
     <ProjectReference Include="..\CloudSuite.Modules.Domain\CloudSuite.Modules.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Handlers\IdeNFSe\Requests\" />
-  </ItemGroup>
-
 </Project>

@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public decimal ProfitsDividends { get; private set; }
 
-        public CheckDeclaracaoIRExistsByProfitsDividendsRequest(Guid id, decimal profitsDividends)
+        public CheckDeclaracaoIRExistsByProfitsDividendsRequest(decimal profitsDividends)
         {
             Id = Guid.NewGuid();
             ProfitsDividends = profitsDividends;

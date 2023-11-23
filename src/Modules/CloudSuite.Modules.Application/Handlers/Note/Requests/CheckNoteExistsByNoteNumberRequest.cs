@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
 
         public string? NoteNumber { get; private set; }
 
-        public CheckNoteExistsByNoteNumberRequest(Guid id, string? noteNumber)
+        public CheckNoteExistsByNoteNumberRequest(string? noteNumber)
         {
             Id = Guid.NewGuid();
             NoteNumber = noteNumber;

@@ -13,11 +13,11 @@ namespace CloudSuite.Modules.Application.Handlers.City.Requests
 
         public Guid Id { get; set; }
 
-        public string CityName { get; set; }
+        public string? CityName { get; set; }
 
         public CheckCityExistsByNameRequest(Guid id, string cityName)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             CityName = cityName;
         }
     }

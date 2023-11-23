@@ -24,7 +24,10 @@ namespace CloudSuite.Modules.Application.Handlers.State
 
         public Guid CountryId { get; private set; }
 
-
+        public CreateStateCommand()
+        {
+            Id = Guid.NewGuid();
+        }
         public StateEntity GetEntity() 
         {
             return new StateEntity(

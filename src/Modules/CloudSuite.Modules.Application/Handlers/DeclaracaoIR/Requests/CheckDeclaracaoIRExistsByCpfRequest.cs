@@ -16,7 +16,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public Cpf Cpf { get; private set; }
 
-        public CheckDeclaracaoIRExistsByCpfRequest(Guid id, Cpf cpf)
+        public CheckDeclaracaoIRExistsByCpfRequest(Cpf cpf)
         {
             Id = Guid.NewGuid();
             Cpf = cpf;

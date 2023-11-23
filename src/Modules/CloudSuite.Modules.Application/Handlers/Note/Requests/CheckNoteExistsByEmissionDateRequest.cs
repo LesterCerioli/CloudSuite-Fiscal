@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
 
         public DateTime? EmissionDate { get; private set; }
 
-        public CheckNoteExistsByEmissionDateRequest(Guid id, DateTime? emissionDate)
+        public CheckNoteExistsByEmissionDateRequest(DateTime? emissionDate)
         {
             Id = Guid.NewGuid();
             EmissionDate = emissionDate;

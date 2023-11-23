@@ -16,7 +16,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public decimal PaidValueToBusiness { get; private set; }
 
-        public CheckDeclaracaoIRExistsByPaidValueToBusinessRequest(Guid id, decimal paidValueToBusiness)
+        public CheckDeclaracaoIRExistsByPaidValueToBusinessRequest(decimal paidValueToBusiness)
         {
             Id = Guid.NewGuid();
             PaidValueToBusiness = paidValueToBusiness;

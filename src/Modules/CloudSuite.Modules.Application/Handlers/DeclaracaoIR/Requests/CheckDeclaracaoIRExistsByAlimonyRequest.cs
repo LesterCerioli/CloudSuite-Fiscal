@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
        
         public Guid Id { get; private set; }
 
-        public decimal Alimony { get; private set; }
+        public decimal? Alimony { get; private set; }
 
-        public CheckDeclaracaoIRExistsByAlimonyRequest(Guid id, decimal alimony)
+        public CheckDeclaracaoIRExistsByAlimonyRequest(decimal alimony)
         {
             Id = Guid.NewGuid();
             Alimony = alimony;

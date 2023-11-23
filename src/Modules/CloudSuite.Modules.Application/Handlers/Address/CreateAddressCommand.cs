@@ -16,22 +16,22 @@ namespace CloudSuite.Modules.Application.Handlers.Address
 {
     public class CreateAddressCommand : IRequest<CreateAddressResponse>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        [Required(ErrorMessage = "The {0} field is required.")]
-        [StringLength(100)]
-        public string? ContactName { get; private set; }
+        public string? ContactName { get; set; }
 
-        [Required(ErrorMessage = "The {0} field is required.")]
-        [StringLength(450)]
-        public string? AddressLine1 { get; private set; }
+        public string? AddressLine1 { get; set; }
 
-        public CityEntity City { get; private set; }
+        public CityEntity? City { get; set; }
 
-        public DistrictEntity District { get; private set; }
+        public DistrictEntity? District { get; set; }
 
-        public Guid DistrictId { get; private set; }
+        public Guid DistrictId { get; set; }
 
+        public CreateAddressCommand()
+        {
+            Id = Guid.NewGuid();
+        }
 
         public AddressEntity GetEntity()
         {

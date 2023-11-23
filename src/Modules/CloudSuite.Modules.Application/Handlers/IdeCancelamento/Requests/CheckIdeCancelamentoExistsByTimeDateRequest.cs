@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento.Requests
 
         public DateTimeOffset TimeDate { get; private set; }
 
-        public CheckIdeCancelamentoExistsByTimeDateRequest(Guid id, DateTimeOffset timeDate)
+        public CheckIdeCancelamentoExistsByTimeDateRequest(DateTimeOffset timeDate)
         {
             Id = Guid.NewGuid();
             TimeDate = timeDate;

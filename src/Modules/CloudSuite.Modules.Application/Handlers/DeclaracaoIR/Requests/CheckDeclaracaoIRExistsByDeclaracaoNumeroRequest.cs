@@ -14,7 +14,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public string? DeclaracoaNumero { get; private set; }
 
-        public CheckDeclaracaoIRExistsByDeclaracaoNumeroRequest(Guid id, string? declaracoaNumero)
+        public CheckDeclaracaoIRExistsByDeclaracaoNumeroRequest(string? declaracoaNumero)
         {
             Id = Guid.NewGuid();
             DeclaracoaNumero = declaracoaNumero;

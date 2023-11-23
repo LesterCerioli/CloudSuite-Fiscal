@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
 
         public decimal Value { get; private set; }
 
-        public CheckNoteExistsByValueRequest(Guid id, decimal value)
+        public CheckNoteExistsByValueRequest(decimal value)
         {
             Id = Guid.NewGuid();
             Value = value;

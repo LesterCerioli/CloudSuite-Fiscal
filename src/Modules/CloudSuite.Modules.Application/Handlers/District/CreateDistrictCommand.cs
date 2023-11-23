@@ -27,7 +27,10 @@ namespace CloudSuite.Modules.Application.Handlers.District
 
         public string? Location { get; private set; }
 
-
+        public CreateDistrictCommand()
+        {
+            Id = Guid.NewGuid();
+        }
         public DistrictEntity GetEntity()
         {
             return new DistrictEntity(

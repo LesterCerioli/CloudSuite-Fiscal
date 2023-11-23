@@ -16,6 +16,10 @@ namespace CloudSuite.Modules.Application.Handlers.CancelOrder
 
         public Cnpj Cnpj { get; private set; }
 
+        public CreateCancelOrderCommand()
+        {
+            Id = Guid.NewGuid();
+        }
 
         public CancelOrderEntity GetEntity()
         {

@@ -26,6 +26,10 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
 
         public string? BarCode { get; private set; }
 
+        public CreateDASCommand()
+        {
+            Id = Guid.NewGuid();
+        }
 
         public DASEntity GetEntity()
         {

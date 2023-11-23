@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.FederalTax.Requests
         
         public Guid Id { get; private set; }
 
-        public decimal VCOFINS { get; private set; }
+        public decimal VCOFINS { get; set; }
 
-        public CheckFederalTaxExistsByVcofinsRequest(Guid id, decimal vCOFINS)
+        public CheckFederalTaxExistsByVcofinsRequest(decimal vCOFINS)
         {
             Id = Guid.NewGuid();
             VCOFINS = vCOFINS;

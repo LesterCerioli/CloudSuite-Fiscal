@@ -16,7 +16,7 @@ namespace CloudSuite.Modules.Application.Handlers.State.Requests
 
         public string? StateName { get; private set; }
 
-        public CheckStateExistsByNameRequest(Guid id, string? stateName)
+        public CheckStateExistsByNameRequest(string? stateName)
         {
             Id = Guid.NewGuid();
             StateName = stateName;

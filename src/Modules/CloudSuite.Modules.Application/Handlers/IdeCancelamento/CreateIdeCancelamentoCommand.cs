@@ -21,6 +21,11 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
 
         public DateTimeOffset TimeDate { get; private set; }
 
+        public CreateIdeCancelamentoCommand()
+        {
+            Id = Guid.NewGuid();
+        }
+
         public IdeCancelamentoEntity GetEntity()
         {
             return new IdeCancelamentoEntity(

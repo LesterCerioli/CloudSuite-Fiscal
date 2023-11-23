@@ -11,11 +11,11 @@ namespace CloudSuite.Modules.Application.Handlers.CancelOrder.Requests
     public class CheckCancelOrderExistsByRequestDateRequest : IRequest<CheckCancelOrderExistsByRequestDateResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public DateTimeOffset RequestDate { get; private set; }
+        public DateTimeOffset RequestDate { get; set; }
 
-        public CheckCancelOrderExistsByRequestDateRequest(Guid id, DateTimeOffset requestDate)
+        public CheckCancelOrderExistsByRequestDateRequest(DateTimeOffset requestDate)
         {
             Id = Guid.NewGuid();
             RequestDate = requestDate;

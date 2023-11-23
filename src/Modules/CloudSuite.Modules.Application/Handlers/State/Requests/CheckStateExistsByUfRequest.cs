@@ -15,10 +15,10 @@ namespace CloudSuite.Modules.Application.Handlers.State.Requests
 
         public string? UF { get; private set; }
 
-        public CheckStateExistsByUfRequest(Guid id, string? uF)
+        public CheckStateExistsByUfRequest(string? uf)
         {
             Id = Guid.NewGuid();
-            UF = uF;
+            UF = uf;
         }
     }
 }

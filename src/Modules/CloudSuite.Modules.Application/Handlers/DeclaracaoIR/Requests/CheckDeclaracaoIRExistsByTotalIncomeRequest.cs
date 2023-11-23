@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public decimal TotalIncome { get; private set; }
 
-        public CheckDeclaracaoIRExistsByTotalIncomeRequest(Guid id, decimal totalIncome)
+        public CheckDeclaracaoIRExistsByTotalIncomeRequest(decimal totalIncome)
         {
             Id = Guid.NewGuid();
             TotalIncome = totalIncome;
