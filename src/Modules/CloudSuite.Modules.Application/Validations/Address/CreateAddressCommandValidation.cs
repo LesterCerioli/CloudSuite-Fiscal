@@ -38,6 +38,24 @@ namespace CloudSuite.Modules.Application.Validations.Address
             .Must(city => Regex.IsMatch(city.CityName, @"^[a-zA-Z\s]*$"))
             .WithMessage("O nome da cidade só pode conter letras e espaços.");
 
+            RuleFor(a => a.City.State.StateName)
+            .NotNull()
+            .WithMessage("O nome do estado não pode ser nulo.")
+            .MaximumLength(100)
+            .WithMessage("O nome do estado não pode ter mais de 100 caracteres.")
+            .MinimumLength(2)
+            .WithMessage("O nome do estado deve ter pelo menos 2 caracteres.")
+            .Matches(@"^[a-zA-Z\s]*$")
+            .WithMessage("O nome do estado só pode conter letras e espaços.");
+
+            RuleFor(a => a.City.State.UF)
+            .NotNull()
+            .WithMessage("A UF não pode ser nula.")
+            .Length(2)
+            .WithMessage("A UF deve ter exatamente 2 caracteres.")
+            .Matches(@"^[A-Z]*$")
+            .WithMessage("A UF só pode conter letras maiúsculas.");
+
             RuleFor(a => a.District.Name)
             .NotNull()
             .WithMessage("O nome não pode ser nulo.")

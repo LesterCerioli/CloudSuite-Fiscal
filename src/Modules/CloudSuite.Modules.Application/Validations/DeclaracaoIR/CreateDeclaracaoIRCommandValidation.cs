@@ -19,10 +19,14 @@ namespace CloudSuite.Modules.Application.Validations.DeclaracaoIR
                 .WithMessage("O número da declaração não pode ter mais de 100 caracteres.");
 
             RuleFor(a => a.Cnpj)
+                .NotNull()
+                .WithMessage("A Contribuição complementar não pode ser nula.")
                 .Must(cnpj => IsValidCnpj(cnpj.CnpjNumber))
                 .WithMessage("O campo Cnpj é inválido.");
 
             RuleFor(a => a.Cpf)
+                .NotNull()
+                .WithMessage("A Contribuição complementar não pode ser nula.")
                 .Must(cpf => IsValidCpf(cpf.CpfNumber))
                 .WithMessage("O campo Cnpj é inválido.");
 
@@ -59,18 +63,26 @@ namespace CloudSuite.Modules.Application.Validations.DeclaracaoIR
                 .WithMessage("A contribuição complementar deve ser maior ou igual a 0.");
 
             RuleFor(a => a.Alimony)
+                .NotNull()
+                .WithMessage("A Contribuição complementar não pode ser nula.")
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("A pensão alimentícia deve ser maior ou igual a 0.");
 
             RuleFor(a => a.TaxWithheld)
+                .NotNull()
+                .WithMessage("A Contribuição complementar não pode ser nula.")
                 .MaximumLength(100)
                 .WithMessage("O imposto retido na fonte não pode ter mais de 100 caracteres.");
 
             RuleFor(a => a.PaidValueToBusiness)
+                .NotNull()
+                .WithMessage("A Contribuição complementar não pode ser nula.")
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("O valor pago ao negócio deve ser maior ou igual a 0.");
 
             RuleFor(a => a.ProfitsDividends)
+                .NotNull()
+                .WithMessage("A Contribuição complementar não pode ser nula.")
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("Os lucros e dividendos devem ser maior ou igual a 0.");
         }

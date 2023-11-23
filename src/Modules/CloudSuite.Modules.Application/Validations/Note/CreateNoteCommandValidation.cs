@@ -229,9 +229,6 @@ namespace CloudSuite.Modules.Application.Validations.Note
                 .GreaterThanOrEqualTo(0)
                 .WithMessage("O valor deve ser maior ou igual a 0.");
 
-            RuleFor(a => a.Cnpj)
-                .Must(cnpj => IsValid(cnpj.CnpjNumber))
-                .WithMessage("O campo Cnpj é inválido.");
         }
         private bool IsValid(string cnpj)
         {

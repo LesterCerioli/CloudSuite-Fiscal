@@ -39,6 +39,42 @@ namespace CloudSuite.Modules.Application.Validations.City
             .WithMessage("A UF deve ter exatamente 2 caracteres.")
             .Matches(@"^[A-Z]*$")
             .WithMessage("A UF só pode conter letras maiúsculas.");
+
+            RuleFor(a => a.State.Country.CountryName)
+           .NotNull()
+           .WithMessage("O nome do país não pode ser nulo.")
+           .MaximumLength(100)
+           .WithMessage("O nome do país não pode ter mais de 100 caracteres.")
+           .MinimumLength(2)
+           .WithMessage("O nome do país deve ter pelo menos 2 caracteres.")
+           .Matches(@"^[a-zA-Z\s]*$")
+           .WithMessage("O nome do país só pode conter letras e espaços.");
+
+            RuleFor(a => a.State.Country.Code3)
+            .NotNull()
+            .WithMessage("O código de 3 letras não pode ser nulo.")
+            .Matches(@"^[A-Z]*$")
+            .WithMessage("O código de 3 letras só pode conter letras maiúsculas.");
+
+            RuleFor(a => a.State.Country.IsBillingEnabled)
+            .NotNull()
+            .WithMessage("A habilitação para faturamento não pode ser nula.");
+
+            RuleFor(a => a.State.Country.IsShippingEnabled)
+            .NotNull()
+            .WithMessage("A habilitação para envio não pode ser nula.");
+
+            RuleFor(a => a.State.Country.IsCityEnabled)
+            .NotNull()
+            .WithMessage("A habilitação para cidade não pode ser nula.");
+
+            RuleFor(a => a.State.Country.IsZipCodeEnabled)
+            .NotNull()
+            .WithMessage("A habilitação para código postal não pode ser nula.");
+
+            RuleFor(a => a.State.Country.IsDistrictEnabled)
+            .NotNull()
+            .WithMessage("A habilitação para distrito não pode ser nula.");
         }
     }
 }
