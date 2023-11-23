@@ -10,5 +10,11 @@ namespace CloudSuite.Modules.Application.Validations.DeclaracaoIR
 {
     public class CheckDeclaracaoIRExistsByProfitsDividendsRequestValidation : AbstractValidator<CheckDeclaracaoIRExistsByProfitsDividendsRequest>
     {
+        public CheckDeclaracaoIRExistsByProfitsDividendsRequestValidation()
+        {
+            RuleFor(a => a.ProfitsDividends)
+                .GreaterThanOrEqualTo(0)
+                .WithMessage("Os lucros e dividendos devem ser maior ou igual a 0.");
+        }
     }
 }

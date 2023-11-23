@@ -10,6 +10,13 @@ namespace CloudSuite.Modules.Application.Validations.Darf
 {
     public class CheckDarfExistsByValidationDateRequestValidation : AbstractValidator<CheckDarfExistsByValidationDateRequest>
     {
+        public CheckDarfExistsByValidationDateRequestValidation()
+        {
+            RuleFor(a => a.ValidationDate)
+                .NotNull()
+                .WithMessage("A data de validação não pode ser nula.");
+        }
+
 
     }
 }

@@ -10,5 +10,12 @@ namespace CloudSuite.Modules.Application.Validations.Note
 {
     public class CheckNoteExistsByEmissionDateRequestValidation : AbstractValidator<CheckNoteExistsByEmissionDateRequest>
     {
+        public CheckNoteExistsByEmissionDateRequestValidation()
+        {
+            RuleFor(a => a.EmissionDate)
+                .LessThanOrEqualTo(DateTime.Now)
+                .When(a => a.EmissionDate.HasValue)
+                .WithMessage("A data de emissão não pode ser no futuro.");
+        }
     }
 }

@@ -10,5 +10,11 @@ namespace CloudSuite.Modules.Application.Validations.DeclaracaoIR
 {
     public class CheckDeclaracaoIRExistsByPaidValueToBusinessRequestValidation : AbstractValidator<CheckDeclaracaoIRExistsByPaidValueToBusinessRequest>
     {
+        public CheckDeclaracaoIRExistsByPaidValueToBusinessRequestValidation()
+        {
+            RuleFor(a => a.PaidValueToBusiness)
+                .GreaterThanOrEqualTo(0)
+                .WithMessage("O valor pago ao negócio deve ser maior ou igual a 0.");
+        }
     }
 }

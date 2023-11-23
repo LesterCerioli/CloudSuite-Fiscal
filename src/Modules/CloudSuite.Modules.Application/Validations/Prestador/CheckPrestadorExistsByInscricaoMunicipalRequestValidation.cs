@@ -10,5 +10,11 @@ namespace CloudSuite.Modules.Application.Validations.Prestador
 {
     public class CheckPrestadorExistsByInscricaoMunicipalRequestValidation : AbstractValidator<CheckPrestadorExistsByInscricaoMunicipalRequest>
     {
+        public CheckPrestadorExistsByInscricaoMunicipalRequestValidation()
+        {
+            RuleFor(a => a.InscricaoMunicipal)
+            .MaximumLength(100)
+            .WithMessage("A inscrição municipal não pode ter mais de 100 caracteres.");
+        }
     }
 }

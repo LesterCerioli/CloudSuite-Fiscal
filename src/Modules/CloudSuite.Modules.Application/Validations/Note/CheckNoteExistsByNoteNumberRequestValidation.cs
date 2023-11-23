@@ -10,6 +10,11 @@ namespace CloudSuite.Modules.Application.Validations.Note
 {
     public class CheckNoteExistsByNoteNumberRequestValidation : AbstractValidator<CheckNoteExistsByNoteNumberRequest>
     {
-
+        public CheckNoteExistsByNoteNumberRequestValidation() 
+        {
+            RuleFor(a => a.NoteNumber)
+                .MaximumLength(100)
+                .WithMessage("O número da nota não pode ter mais de 100 caracteres.");
+        }
     }
 }

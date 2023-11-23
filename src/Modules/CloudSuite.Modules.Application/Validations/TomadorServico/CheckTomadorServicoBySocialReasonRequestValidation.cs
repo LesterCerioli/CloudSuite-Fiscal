@@ -10,5 +10,13 @@ namespace CloudSuite.Modules.Application.Validations.TomadorServico
 {
     public class CheckTomadorServicoBySocialReasonRequestValidation : AbstractValidator<CheckTomadorServicoBySocialReasonRequest>
     {
+        public CheckTomadorServicoBySocialReasonRequestValidation ()
+        {
+            RuleFor(a => a.SocialReason)
+                .NotNull()
+                .WithMessage("A razão social não pode ser nula.")
+                .MaximumLength(100)
+                .WithMessage("A razão social não pode ter mais de 100 caracteres.");
+        }
     }
 }

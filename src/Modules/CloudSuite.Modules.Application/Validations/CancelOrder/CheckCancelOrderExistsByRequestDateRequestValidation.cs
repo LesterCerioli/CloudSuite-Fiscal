@@ -10,5 +10,13 @@ namespace CloudSuite.Modules.Application.Validations.CancelOrder
 {
     public class CheckCancelOrderExistsByRequestDateRequestValidation : AbstractValidator<CheckCancelOrderExistsByRequestDateRequest>
     {
+        public CheckCancelOrderExistsByRequestDateRequestValidation()
+        {
+                RuleFor(a => a.RequestDate)
+                .NotEmpty()
+                .WithMessage("A data de solicitação não pode estar vazia.")
+                .Must(date => date != default(DateTimeOffset))
+                .WithMessage("A data de solicitação deve ser uma data válida.");
+        }
     }
 }

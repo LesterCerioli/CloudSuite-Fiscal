@@ -10,5 +10,13 @@ namespace CloudSuite.Modules.Application.Validations.FederalTax
 {
     public class CheckFederalTaxExistsByVpisRequestValidation : AbstractValidator<CheckFederalTaxExistsByVpisRequest>
     {
+        public CheckFederalTaxExistsByVpisRequestValidation()
+        {
+            RuleFor(a => a.VPIS)
+                .NotNull()
+                .WithMessage("VPISSpecified não pode ser nulo.")
+                .GreaterThanOrEqualTo(0)
+                .WithMessage("O valor do VPIS deve ser maior ou igual a 0.");
+        }
     }
 }

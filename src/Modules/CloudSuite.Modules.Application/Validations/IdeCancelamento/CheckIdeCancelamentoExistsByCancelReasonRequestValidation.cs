@@ -10,5 +10,11 @@ namespace CloudSuite.Modules.Application.Validations.IdeCancelamento
 {
     public class CheckIdeCancelamentoExistsByCancelReasonRequestValidation : AbstractValidator<CheckIdeCancelamentoExistsByCancelReasonRequest>
     {
+        public CheckIdeCancelamentoExistsByCancelReasonRequestValidation()
+        {
+            RuleFor(a => a.CancelReason)
+            .MaximumLength(200)
+            .WithMessage("O motivo do cancelamento não pode ter mais de 200 caracteres.");
+        }
     }
 }

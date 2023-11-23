@@ -10,6 +10,11 @@ namespace CloudSuite.Modules.Application.Validations.DAS
 {
     public class CheckDASExistsByDueDateRequestValidation : AbstractValidator<CheckDASExistsByDueDateRequest>
     {
-
+        public CheckDASExistsByDueDateRequestValidation()
+        {
+            RuleFor(a => a.DueDate)
+                .NotNull()
+                .WithMessage("A data de vencimento não pode ser nula.");
+        }
     }
 }

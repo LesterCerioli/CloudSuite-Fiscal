@@ -10,5 +10,11 @@ namespace CloudSuite.Modules.Application.Validations.Prestador
 {
     public class CheckPrestadorExistsByTomadorEstrangeiroRequestValidation : AbstractValidator<CheckPrestadorExistsByTomadorEstrangeiroRequest>
     {
+        public CheckPrestadorExistsByTomadorEstrangeiroRequestValidation()
+        {
+            RuleFor(a => a.DocTomadorEstrangeiro)
+                .MaximumLength(100)
+                .WithMessage("O documento do tomador estrangeiro não pode ter mais de 100 caracteres.");
+        }
     }
 }
