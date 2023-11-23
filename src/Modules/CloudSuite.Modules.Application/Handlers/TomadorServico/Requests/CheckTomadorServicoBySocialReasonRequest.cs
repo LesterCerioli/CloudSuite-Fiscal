@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.Handlers.TomadorServico.Requests
 
         public Guid Id { get; private set; }
 
-        public string? SocialReason { get; private set; }
+        public string? SocialReason { get; set; }
 
         public CheckTomadorServicoBySocialReasonRequest(string? socialReason)
         {

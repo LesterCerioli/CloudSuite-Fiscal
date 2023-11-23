@@ -48,8 +48,8 @@ namespace CloudSuite.Modules.Application.Handlers.Country
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateCountryResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating Country");
+                    return new CreateCountryResponse(command.Id, "Error creating Country");
                 }
             }
             return new CreateCountryResponse(command.Id, validationResult);

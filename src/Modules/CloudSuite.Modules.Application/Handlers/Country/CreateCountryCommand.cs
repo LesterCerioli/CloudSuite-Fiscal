@@ -13,23 +13,23 @@ namespace CloudSuite.Modules.Application.Handlers.Country
 {
     public class CreateCountryCommand : IRequest<CreateCountryResponse>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string? CountryName { get; private set; }
+        public string? CountryName { get; set; }
 
-        public string? Code3 { get; private set; }
+        public string? Code3 { get; set; }
 
-        public bool? IsBillingEnabled { get; private set; }
+        public bool? IsBillingEnabled { get; set; }
 
-        public bool? IsShippingEnabled { get; private set; }
+        public bool? IsShippingEnabled { get; set; }
 
-        public bool? IsCityEnabled { get; private set; }
+        public bool? IsCityEnabled { get; set; }
 
-        public bool? IsZipCodeEnabled { get; private set; }
+        public bool? IsZipCodeEnabled { get; set; }
 
-        public bool? IsDistrictEnabled { get; private set; }
+        public bool? IsDistrictEnabled { get; set; }
 
-        public Guid StateId { get; private set; }
+        public Guid StateId { get; set; }
 
         public CreateCountryCommand()
         {

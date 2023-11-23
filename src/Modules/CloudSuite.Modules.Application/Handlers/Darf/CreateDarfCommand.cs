@@ -14,41 +14,41 @@ namespace CloudSuite.Modules.Application.Handlers.Darf
 {
     public class CreateDarfCommand : IRequest<CreateDarfResponse>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string ReferenceMonth { get; private set; }
+        public string ReferenceMonth { get; set; }
 
-        public DateTime DueDate { get; private set; }
+        public DateTime DueDate { get; set; }
 
-        public string ReferenceYear { get; private set; }
+        public string ReferenceYear { get; set; }
 
-        public decimal? DarfPaymentValue { get; private set; }
+        public decimal? DarfPaymentValue { get; set; }
 
-        public string? RecuboDeclaroNumero { get; private set; }
+        public string? RecuboDeclaroNumero { get; set; }
 
-        public string DocumentNumber { get; private set; }
+        public string DocumentNumber { get; set; }
 
-        public string? BarCode { get; private set; }
+        public string? BarCode { get; set; }
 
-        public DateTime ValidationDate { get; private set; }
+        public DateTime ValidationDate { get; set; }
 
-        public DateTime? PeriodoApuracao { get; private set; }
+        public DateTime? PeriodoApuracao { get; set; }
 
-        public Cnpj Cnpj { get; private set; }
+        public Cnpj Cnpj { get; set; }
 
-        public string? ReceitaCode { get; private set; }
+        public string? ReceitaCode { get; set; }
 
-        public string? MainValue { get; private set; }
+        public string? MainValue { get; set; }
 
-        public decimal? AmountFine { get; private set; }
+        public decimal? AmountFine { get; set; }
         
-        public bool? IsInstallment { get; private set; }
+        public bool? IsInstallment { get; set; }
         
-        public decimal? Interest { get; private set; }
+        public decimal? Interest { get; set; }
 
-        public decimal? TotalValue { get; private set; }
+        public decimal? TotalValue { get; set; }
 
-        public PrestadorEntity Prestador { get; private set; }
+        public PrestadorEntity Prestador { get; set; }
 
         public CreateDarfCommand()
         {

@@ -11,11 +11,11 @@ namespace CloudSuite.Modules.Application.Handlers.Darf.Requests
     public class CheckDarfExistsByDocumentNumberRequest : IRequest<CheckDarfExistsByDocumentNumberResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string? DocumentNumber { get; private set; }
+        public string? DocumentNumber { get; set; }
 
-        public CheckDarfExistsByDocumentNumberRequest(Guid id, string? documentNumber)
+        public CheckDarfExistsByDocumentNumberRequest(string?documentNumber)
         {
             Id = Guid.NewGuid();
             DocumentNumber = documentNumber;

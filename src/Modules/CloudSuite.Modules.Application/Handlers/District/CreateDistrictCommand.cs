@@ -15,17 +15,17 @@ namespace CloudSuite.Modules.Application.Handlers.District
 {
     public class CreateDistrictCommand : IRequest<CreateDistrictResponse>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         public StateEntity State { get; set; }
 
-        public Guid StateId { get; private set; }
+        public Guid StateId { get; set; }
 
-        public string? Name { get; private set; }
+        public string? Name { get; set; }
 
-        public string? Type { get; private set; }
+        public string? Type { get; set; }
 
-        public string? Location { get; private set; }
+        public string? Location { get; set; }
 
         public CreateDistrictCommand()
         {

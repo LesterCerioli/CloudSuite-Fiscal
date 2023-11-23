@@ -44,13 +44,13 @@ namespace CloudSuite.Modules.Application.Handlers.City
                         return new CreateCityResponse(command.Id, validationResult);
                     }
 
-                    return new CreateCityResponse(command.Id, "city already registered");
+                    return new CreateCityResponse(command.Id, "City already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateCityResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating City");
+                    return new CreateCityResponse(command.Id, "Error creating City");
                 }
             }
             return new CreateCityResponse(command.Id, validationResult);

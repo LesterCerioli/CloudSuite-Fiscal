@@ -14,15 +14,13 @@ namespace CloudSuite.Modules.Application.Handlers.City
 {
     public class CreateCityCommand : IRequest<CreateCityResponse>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        [Required(ErrorMessage = "Este campo é de preenchimento obrigatório.")]
-        [MaxLength(100)]
-        public string? CityName { get; private set; }
+        public string? CityName { get; set; }
 
-        public StateEntity State { get; private set; }
+        public StateEntity State { get; set; }
 
-        public Guid StateId { get; private set; }
+        public Guid StateId { get; set; }
 
         public CreateCityCommand()
         {

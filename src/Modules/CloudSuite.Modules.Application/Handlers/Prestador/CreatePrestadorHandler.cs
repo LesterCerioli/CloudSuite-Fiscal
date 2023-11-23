@@ -54,8 +54,8 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreatePrestadorResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating Prestador");
+                    return new CreatePrestadorResponse(command.Id, "Error creating Prestador");
                 }
             }
             return new CreatePrestadorResponse(command.Id, validationResult);

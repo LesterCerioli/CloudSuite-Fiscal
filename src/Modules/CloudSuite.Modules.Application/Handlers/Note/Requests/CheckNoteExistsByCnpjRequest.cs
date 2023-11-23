@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
     public class CheckNoteExistsByCnpjRequest : IRequest<CheckNoteExistsByCnpjResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         public Cnpj Cnpj { get; set; }
 

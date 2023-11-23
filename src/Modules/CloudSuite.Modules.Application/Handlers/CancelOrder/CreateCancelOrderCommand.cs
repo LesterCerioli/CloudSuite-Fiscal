@@ -10,11 +10,11 @@ namespace CloudSuite.Modules.Application.Handlers.CancelOrder
     {
         public Guid Id { get; private set; }
 
-        public IdeCancelamentoEntity IdeCancelamento { get; private set; }
+        public IdeCancelamentoEntity IdeCancelamento { get; set; }
 
-        public DateTimeOffset RequestDate { get; private set; }
+        public DateTimeOffset RequestDate { get; set; }
 
-        public Cnpj Cnpj { get; private set; }
+        public Cnpj Cnpj { get; set; }
 
         public CreateCancelOrderCommand()
         {

@@ -14,29 +14,29 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
     {
         public Guid Id { get; private set; }
 
-        public string? DeclaracoaNumero { get; private set; }
+        public string? DeclaracoaNumero { get; set; }
 
-        public Cnpj Cnpj { get; private set; }
+        public Cnpj Cnpj { get; set; }
 
-        public Cpf Cpf { get; private set; }
+        public Cpf Cpf { get; set; }
 
-        public string? CompanyName { get; private set; }
+        public string? CompanyName { get; set; }
 
-        public string? BusinessHeader { get; private set; }
+        public string? BusinessHeader { get; set; }
 
-        public decimal TotalIncome { get; private set; }
+        public decimal TotalIncome { get; set; }
 
-        public decimal? SocialSecurity { get; private set; }
+        public decimal? SocialSecurity { get; set; }
 
-        public decimal? ComplementContribution { get; private set; }
+        public decimal? ComplementContribution { get; set; }
 
-        public decimal Alimony { get; private set; }
+        public decimal Alimony { get; set; }
 
-        public string? TaxWithheld { get; private set; }
+        public string? TaxWithheld { get; set; }
 
-        public decimal PaidValueToBusiness { get; private set; }
+        public decimal PaidValueToBusiness { get; set; }
 
-        public decimal ProfitsDividends { get; private set; }
+        public decimal ProfitsDividends { get; set; }
 
         public CreateDeclaracaoIRCommand()
         {

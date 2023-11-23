@@ -11,9 +11,9 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador.Requests
     public class CheckPrestadorExistsByInscricaoEstadualRequest : IRequest<CheckPrestadorExistsByInscricaoEstadualResponse>
     {
         
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string? InscricaoEstadual { get; private set; }
+        public string? InscricaoEstadual { get; set; }
 
         public CheckPrestadorExistsByInscricaoEstadualRequest(string? inscricaoEstadual)
         {

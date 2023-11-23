@@ -12,19 +12,19 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
 {
     public class CreateDASCommand : IRequest<CreateDASResponse>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string ReferenceMonth { get; private set; }
+        public string ReferenceMonth { get; set; }
 
-        public DateTime DueDate { get; private set; }
+        public DateTime DueDate { get; set; }
 
-        public string? ReferenceYear { get; private set; }
+        public string? ReferenceYear { get; set; }
 
-        public string? PaymentValue { get; private set; }
+        public string? PaymentValue { get; set; }
 
-        public string? DocumentNumber { get; private set; }
+        public string? DocumentNumber { get; set; }
 
-        public string? BarCode { get; private set; }
+        public string? BarCode { get; set; }
 
         public CreateDASCommand()
         {

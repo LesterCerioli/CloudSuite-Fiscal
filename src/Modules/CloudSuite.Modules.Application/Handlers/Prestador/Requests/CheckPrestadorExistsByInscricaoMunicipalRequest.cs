@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador.Requests
 
         public Guid Id { get; private set; }
 
-        public string? InscricaoMunicipal { get; private set; }
+        public string? InscricaoMunicipal { get; set; }
 
         public CheckPrestadorExistsByInscricaoMunicipalRequest(string? inscricaoMunicipal)
         {

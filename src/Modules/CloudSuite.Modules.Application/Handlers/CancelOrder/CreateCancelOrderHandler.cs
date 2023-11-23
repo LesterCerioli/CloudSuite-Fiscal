@@ -44,13 +44,13 @@ namespace CloudSuite.Modules.Application.Handlers.CancelOrder
                         return new CreateCancelOrderResponse(command.Id, validationResult);
                     }
 
-                    return new CreateCancelOrderResponse(command.Id, "Address already registered");
+                    return new CreateCancelOrderResponse(command.Id, "Cancel Order already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateCancelOrderResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating Cancel Order");
+                    return new CreateCancelOrderResponse(command.Id, "Error creating Cancel Order");
                 }
             }
             return new CreateCancelOrderResponse(command.Id, validationResult);

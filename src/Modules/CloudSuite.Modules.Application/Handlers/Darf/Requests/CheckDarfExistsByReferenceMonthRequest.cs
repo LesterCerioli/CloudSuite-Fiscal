@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.Handlers.Darf.Requests
     {
         public Guid Id { get; private set; }
 
-        public string? ReferenceMonth { get; private set; }
+        public string? ReferenceMonth { get; set; }
 
         public CheckDarfExistsByReferenceMonthRequest(string referenceMonth)
         {

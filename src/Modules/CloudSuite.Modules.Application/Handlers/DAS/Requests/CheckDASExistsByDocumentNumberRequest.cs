@@ -12,11 +12,11 @@ namespace CloudSuite.Modules.Application.Handlers.DAS.Requests
     public class CheckDASExistsByDocumentNumberRequest : IRequest<CheckDASExistsByDocumentNumberResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string DocumentNumber { get; private set; }
+        public string DocumentNumber { get; set; }
 
-        public CheckDASExistsByDocumentNumberRequest(Guid id, string documentNumber)
+        public CheckDASExistsByDocumentNumberRequest(string documentNumber)
         {
             Id = Guid.NewGuid();
             DocumentNumber = documentNumber;

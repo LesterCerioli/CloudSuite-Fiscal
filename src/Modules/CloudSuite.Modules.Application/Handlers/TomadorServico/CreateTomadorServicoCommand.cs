@@ -15,19 +15,19 @@ namespace CloudSuite.Modules.Application.Handlers.TomadorServico
     {
         public Guid Id { get; private set; }
 
-        public Cnpj Cnpj { get; private set; }
+        public Cnpj Cnpj { get; set; }
 
-        public string? InscricaoMunicipal { get; private set; }
+        public string? InscricaoMunicipal { get; set; }
 
-        public string? InscricaoEstadual { get; private set; }
+        public string? InscricaoEstadual { get; set; }
 
-        public string? DocTomadorEstrangeiro { get; private set; }
+        public string? DocTomadorEstrangeiro { get; set; }
 
-        public string? SocialReason { get; private set; }
+        public string? SocialReason { get; set; }
 
         public string NomeFantasia { get; set; }
 
-        public AddressEntity Address { get; private set; }
+        public AddressEntity Address { get; set; }
 
         public int Tipo { get; set; }
 

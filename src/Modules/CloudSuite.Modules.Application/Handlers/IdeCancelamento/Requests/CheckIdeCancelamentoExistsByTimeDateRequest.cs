@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento.Requests
 
         public Guid Id { get; private set; }
 
-        public DateTimeOffset TimeDate { get; private set; }
+        public DateTimeOffset TimeDate { get; set; }
 
         public CheckIdeCancelamentoExistsByTimeDateRequest(DateTimeOffset timeDate)
         {

@@ -11,9 +11,9 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
     public class CheckNoteExistsByNoteNumberRequest : IRequest<CheckNoteExistsByNoteNumberResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string? NoteNumber { get; private set; }
+        public string? NoteNumber { get; set; }
 
         public CheckNoteExistsByNoteNumberRequest(string? noteNumber)
         {

@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador.Requests
 
         public Guid Id { get; private set; }
 
-        public string? DocTomadorEstrangeiro { get; private set; }
+        public string? DocTomadorEstrangeiro { get; set; }
 
         public CheckPrestadorExistsByTomadorEstrangeiroRequest(string? docTomadorEstrangeiro)
         {

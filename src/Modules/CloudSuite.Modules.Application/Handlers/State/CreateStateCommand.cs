@@ -14,15 +14,15 @@ namespace CloudSuite.Modules.Application.Handlers.State
 {
     public class CreateStateCommand : IRequest<CreateStateResponse>
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string? StateName { get; private set; }
+        public string? StateName { get; set; }
 
-        public string? UF { get; private set; }
+        public string? UF { get; set; }
 
-        public CountryEntity Country { get; private set; }
+        public CountryEntity Country { get; set; }
 
-        public Guid CountryId { get; private set; }
+        public Guid CountryId { get; set; }
 
         public CreateStateCommand()
         {

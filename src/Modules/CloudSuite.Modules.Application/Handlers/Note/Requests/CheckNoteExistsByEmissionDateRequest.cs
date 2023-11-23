@@ -11,9 +11,9 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
     public class CheckNoteExistsByEmissionDateRequest : IRequest<CheckNoteExistsByEmissionDateResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public DateTime? EmissionDate { get; private set; }
+        public DateTime? EmissionDate { get; set; }
 
         public CheckNoteExistsByEmissionDateRequest(DateTime? emissionDate)
         {

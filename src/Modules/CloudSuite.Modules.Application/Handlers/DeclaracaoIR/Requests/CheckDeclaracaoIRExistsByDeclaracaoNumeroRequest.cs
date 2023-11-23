@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
     {
         public Guid Id { get; private set; }
 
-        public string? DeclaracoaNumero { get; private set; }
+        public string? DeclaracoaNumero { get; set; }
 
         public CheckDeclaracaoIRExistsByDeclaracaoNumeroRequest(string? declaracoaNumero)
         {

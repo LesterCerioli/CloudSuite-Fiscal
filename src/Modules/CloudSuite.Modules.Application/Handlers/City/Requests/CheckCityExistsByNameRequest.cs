@@ -11,11 +11,11 @@ namespace CloudSuite.Modules.Application.Handlers.City.Requests
     public class CheckCityExistsByNameRequest : IRequest<CheckCityExistsByNameResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
         public string? CityName { get; set; }
 
-        public CheckCityExistsByNameRequest(Guid id, string cityName)
+        public CheckCityExistsByNameRequest(string cityName)
         {
             Id = Guid.NewGuid();
             CityName = cityName;

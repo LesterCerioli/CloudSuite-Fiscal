@@ -11,9 +11,9 @@ namespace CloudSuite.Modules.Application.Handlers.Note.Requests
     public class CheckNoteExistsByValueRequest : IRequest<CheckNoteExistsByValueResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public decimal Value { get; private set; }
+        public decimal Value { get; set; }
 
         public CheckNoteExistsByValueRequest(decimal value)
         {

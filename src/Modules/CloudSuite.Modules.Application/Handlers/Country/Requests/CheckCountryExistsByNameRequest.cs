@@ -11,11 +11,11 @@ namespace CloudSuite.Modules.Application.Handlers.Country.Requests
     public class CheckCountryExistsByNameRequest : IRequest<CheckCountryExistsByNameResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string? CountryName { get; private set; }
+        public string? CountryName { get; set; }
 
-        public CheckCountryExistsByNameRequest(Guid id, string? countryName)
+        public CheckCountryExistsByNameRequest(string? countryName)
         {
             Id = Guid.NewGuid();
             CountryName = countryName;

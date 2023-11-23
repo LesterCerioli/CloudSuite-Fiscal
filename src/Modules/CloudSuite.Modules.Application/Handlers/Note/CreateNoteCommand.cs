@@ -21,28 +21,29 @@ namespace CloudSuite.Modules.Application.Handlers.Note
     {
         public Guid Id { get; private set; }
 
-        public TomadorServicoEntity TomadorServico { get; private set; }
+        public TomadorServicoEntity TomadorServico { get; set; }
 
-        public AddressEntity Address { get; private set; }
+        public AddressEntity Address { get; set; }
 
-        public CountryEntity Country { get; private set; }
+        public CountryEntity Country { get; set; }
 
-        public DistrictEntity District { get; private set; }
+        public DistrictEntity District { get; set; }
 
-        public PrestadorEntity Prestador { get; private set; }
+        public PrestadorEntity Prestador { get; set; }
 
-        public Cnpj Cnpj { get; private set; }
+        public Cnpj Cnpj { get; set; }
 
-        public string? NoteNumber { get; private set; }
+        public string? NoteNumber { get; set; }
 
-        public DateTime? EmissionDate { get; private set; }
+        public DateTime? EmissionDate { get; set; }
 
-        public decimal Value { get; private set; }
+        public decimal Value { get; set; }
 
         public CreateNoteCommand()
         {
             Id = Guid.NewGuid();
         }
+
         public NoteEntity GetEntity()
         {
             return new NoteEntity(

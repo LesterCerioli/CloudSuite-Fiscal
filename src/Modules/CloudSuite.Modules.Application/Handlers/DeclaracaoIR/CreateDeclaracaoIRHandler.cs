@@ -56,8 +56,8 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateDeclaracaoIRResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating DeclaracaoIR");
+                    return new CreateDeclaracaoIRResponse(command.Id, "Error creating DeclaracaoIR");
                 }
             }
             return new CreateDeclaracaoIRResponse(command.Id, validationResult);

@@ -51,7 +51,7 @@ namespace CloudSuite.Modules.Application.Handlers.State
                 catch (Exception ex)
                 {
                     _logger.LogError(ex, "Error creating State");
-                    return new CreateStateResponse(command.Id, "Error creating Adress");
+                    return new CreateStateResponse(command.Id, "Error creating State");
                 }
             }
             return new CreateStateResponse(command.Id, validationResult);

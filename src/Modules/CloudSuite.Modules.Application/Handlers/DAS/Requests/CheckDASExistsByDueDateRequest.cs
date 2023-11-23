@@ -11,11 +11,11 @@ namespace CloudSuite.Modules.Application.Handlers.DAS.Requests
     public class CheckDASExistsByDueDateRequest : IRequest<CheckDASExistsByDueDateResponse>
     {
         
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public DateTime DueDate { get; private set; }
+        public DateTime DueDate { get; set; }
 
-        public CheckDASExistsByDueDateRequest(Guid id, DateTime dueDate)
+        public CheckDASExistsByDueDateRequest(DateTime dueDate)
         {
             Id = Guid.NewGuid();
             DueDate = dueDate;

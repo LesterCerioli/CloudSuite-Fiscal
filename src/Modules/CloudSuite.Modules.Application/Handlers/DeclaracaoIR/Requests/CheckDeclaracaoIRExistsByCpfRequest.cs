@@ -14,7 +14,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public Guid Id { get; private set; }
 
-        public Cpf Cpf { get; private set; }
+        public Cpf Cpf { get; set; }
 
         public CheckDeclaracaoIRExistsByCpfRequest(Cpf cpf)
         {

@@ -14,7 +14,7 @@ namespace CloudSuite.Modules.Application.Handlers.TomadorServico.Requests
 
         public Guid Id { get; private set; }
 
-        public Cnpj Cnpj { get; private set; }
+        public Cnpj Cnpj { get; set; }
 
         public CheckTomadorServicoByCnpjRequest(Cnpj cnpj)
         {

@@ -11,11 +11,11 @@ namespace CloudSuite.Modules.Application.Handlers.DAS.Requests
     public class CheckDASExistsByReferenceYearRequest : IRequest<CheckDASExistsByReferenceYearResponse>
     {
 
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public string ReferenceYear { get; private set; }
+        public string ReferenceYear { get; set; }
 
-        public CheckDASExistsByReferenceYearRequest(Guid id, string referenceYear)
+        public CheckDASExistsByReferenceYearRequest(string referenceYear)
         {
             Id = Guid.NewGuid();
             ReferenceYear = referenceYear;

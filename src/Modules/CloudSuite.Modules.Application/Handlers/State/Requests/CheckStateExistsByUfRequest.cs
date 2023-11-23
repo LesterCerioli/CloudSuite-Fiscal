@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.Handlers.State.Requests
 
         public Guid Id { get; private set; }
 
-        public string? UF { get; private set; }
+        public string? UF { get; set; }
 
         public CheckStateExistsByUfRequest(string? uf)
         {

@@ -45,13 +45,13 @@ namespace CloudSuite.Modules.Application.Handlers.TomadorServico
                         return new CreateTomadorServicoResponse(command.Id, validationResult);
                     }
 
-                    return new CreateTomadorServicoResponse(command.Id, "Prestador already registered");
+                    return new CreateTomadorServicoResponse(command.Id, "TomadorServico already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateTomadorServicoResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating TomadorServico");
+                    return new CreateTomadorServicoResponse(command.Id, "Error creating TomadorServico");
                 }
             }
             return new CreateTomadorServicoResponse(command.Id, validationResult);
