@@ -16,11 +16,7 @@ namespace CloudSuite.Modules.Application.Handlers.State
     {
         public Guid Id { get; set; }
 
-        [Required(ErrorMessage = "Este campo é de preenchimento obrigatório.")]
-        [StringLength(100)]
         public string? StateName { get; private set; }
-
-        [Required(ErrorMessage = "Este cmapo é de preenchimento obrigatório.")]
 
         public string? UF { get; private set; }
 

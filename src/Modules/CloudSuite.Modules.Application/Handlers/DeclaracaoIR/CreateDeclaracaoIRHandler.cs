@@ -35,7 +35,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
             {
                 try
                 {
-                    var declaracaoNum = await _declaracaoIRRepository.GetByDeclaracoaNumero(command.DeclaracoaNumero);
+                    var declaracaoNum = await _declaracaoIRRepository.GetByDeclaracaoNumero(command.DeclaracoaNumero);
                     var cnpj = await _declaracaoIRRepository.GetByCnpj(command.Cnpj);
                     var cpf = await _declaracaoIRRepository.GetByCpf(command.Cpf);
                     var totalIncome = await _declaracaoIRRepository.GetByTotalIncome(command.TotalIncome);

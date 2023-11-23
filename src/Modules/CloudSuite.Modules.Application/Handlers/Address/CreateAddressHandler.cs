@@ -1,5 +1,6 @@
 ﻿using CloudSuite.Modules.Application.Handlers.Address.Responses;
 using CloudSuite.Modules.Application.Validations.Address;
+using CloudSuite.Modules.Domain.Contracts;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using NetDevPack.Messaging;
@@ -14,12 +15,12 @@ namespace CloudSuite.Modules.Application.Handlers.Address
 {
     public class CreateAddressHandler : IRequestHandler<CreateAddressCommand, CreateAddressResponse>
     {
-        private readonly IAdressRepository _adressRepository;
+        private readonly IAddressRepository _addressRepository;
         private readonly ILogger<CreateAddressHandler> _logger;
 
-        public CreateAddressHandler(IAdressRepository adressRepository, ILogger<CreateAddressHandler> logger)
+        public CreateAddressHandler(IAddressRepository adressRepository, ILogger<CreateAddressHandler> logger)
         {
-            _adressRepository = adressRepository;
+            _addressRepository = adressRepository;
             _logger = logger;
         }
 
@@ -32,10 +33,9 @@ namespace CloudSuite.Modules.Application.Handlers.Address
             {
                 try
                 {
-                    var adressExistAdressLine = await _addressRepository.GetByAddressLine(command.AddressLine1);
-                    var adressExistContactName = await _addressRepository.GetByContactName(command.ContactName);
+                    var adressExistAdressLine = await _addressRepository.GetByAddressLine1(command.AddressLine1);
 
-                    if (adressExistAdressLine == null && adressExistContactName == null)
+                    if (adressExistAdressLine == null)
                     {
                         await _addressRepository.Add(command.GetEntity());
                         return new CreateAddressResponse(command.Id, validationResult);

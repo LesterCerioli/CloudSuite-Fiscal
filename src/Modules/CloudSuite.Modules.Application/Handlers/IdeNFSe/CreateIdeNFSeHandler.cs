@@ -1,7 +1,6 @@
 ﻿using CloudSuite.Modules.Application.Handlers.District.Responses;
 using CloudSuite.Modules.Application.Handlers.IdeNFSe.Responses;
 using CloudSuite.Modules.Application.Validations.DeclaracaoIR;
-using CloudSuite.Modules.Application.Validations.IdeNFSe;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using NetDevPack.Messaging;
@@ -13,9 +12,10 @@ using System.Text.Json;
 using System.Threading.Tasks;
 
 namespace CloudSuite.Modules.Application.Handlers.IdeNFSe
-{
+{/*
     public class CreateIdeNFSeHandler : IRequestHandler<CreateIdeNFSeCommand, CreateIdeNFSeResponse>
     {
+        
         private readonly IIdeNFSeRepository _ideNFSeRepository;
         private readonly ILogger<CreateIdeNFSeHandler> _logger;
 
@@ -57,5 +57,5 @@ namespace CloudSuite.Modules.Application.Handlers.IdeNFSe
             }
             return new CreateIdeNFSeResponse(command.Id, validationResult);
         }
-    }
+    }*/
 }

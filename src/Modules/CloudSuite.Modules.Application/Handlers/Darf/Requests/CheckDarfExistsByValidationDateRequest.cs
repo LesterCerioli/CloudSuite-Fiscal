@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.Darf.Requests
 
         public Guid Id { get; set; }
 
-        public DateTime? ValidationDate { get; private set; }
+        public DateTime ValidationDate { get; private set; }
 
-        public CheckDarfExistsByValidationDateRequest(Guid id, DateTime? validationDate)
+        public CheckDarfExistsByValidationDateRequest(Guid id, DateTime validationDate)
         {
             Id = Guid.NewGuid();
             ValidationDate = validationDate;

@@ -35,9 +35,9 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
             {
                 try
                 {
-                    var cityName = await _dasRepository.GetByReferenceMonth(request.ReferenceMonth);
+                    var referenceMonth = await _dasRepository.GetByReferenceMonth(request.ReferenceMonth);
 
-                    if (cityName != null)
+                    if (referenceMonth != null)
                     {
                         return await Task.FromResult(new CheckDASExistsByReferenceMonthResponse(request.Id, true, validationResult));
                     }

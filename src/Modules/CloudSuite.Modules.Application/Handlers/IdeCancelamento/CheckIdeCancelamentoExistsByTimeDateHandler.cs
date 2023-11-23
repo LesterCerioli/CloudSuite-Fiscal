@@ -15,10 +15,10 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
 {
     public class CheckIdeCancelamentoExistsByTimeDateHandler : IRequestHandler<CheckIdeCancelamentoExistsByTimeDateRequest, CheckIdeCancelamentoExistsByTimeDateResponse>
     {
-        private readonly IdeCancelamentoRepository _ideCancelamentoRepository;
-        private readonly ILogger<CheckIdeCancelamentoExistsByCancelOrderHandler> _logger;
+        private readonly IIdeCancelamentoRepository _ideCancelamentoRepository;
+        private readonly ILogger<CheckIdeCancelamentoExistsByTimeDateHandler> _logger;
 
-        public CheckIdeCancelamentoExistsByTimeDateHandler(IdeCancelamentoRepository ideCancelamentoRepository, ILogger<CheckIdeCancelamentoExistsByCancelOrderHandler> logger)
+        public CheckIdeCancelamentoExistsByTimeDateHandler(IIdeCancelamentoRepository ideCancelamentoRepository, ILogger<CheckIdeCancelamentoExistsByTimeDateHandler> logger)
         {
             _ideCancelamentoRepository = ideCancelamentoRepository;
             _logger = logger;
@@ -32,9 +32,9 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
             {
                 try
                 {
-                    var cityName = await _ideCancelamentoRepository.GetByTimeDate(request.TimeDate);
+                    var timeDate = await _ideCancelamentoRepository.GetByTimeDate(request.TimeDate);
 
-                    if (cityName != null)
+                    if (timeDate != null)
                     {
                         return await Task.FromResult(new CheckIdeCancelamentoExistsByTimeDateResponse(request.Id, true, validationResult));
                     }

@@ -35,9 +35,9 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador
             {
                 try
                 {
-                    var cnpj = await _prestadorRepository.GetByInscricaoMunicipal(request.InscricaoMunicipal);
+                    var inscricaoMunicipal = await _prestadorRepository.GetByInscricaoMunicipal(request.InscricaoMunicipal);
 
-                    if (cnpj != null)
+                    if (inscricaoMunicipal != null)
                     {
                         return await Task.FromResult(new CheckPrestadorExistsByInscricaoMunicipalResponse(request.Id, true, validationResult));
                     }

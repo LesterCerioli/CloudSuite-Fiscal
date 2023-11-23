@@ -47,13 +47,13 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
                         return new CreateDASResponse(command.Id, validationResult);
                     }
 
-                    return new CreateDASResponse(command.Id, "Address already registered");
+                    return new CreateDASResponse(command.Id, "DAS already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateDASResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating DAS");
+                    return new CreateDASResponse(command.Id, "Error creating DAS");
                 }
             }
             return new CreateDASResponse(command.Id, validationResult);

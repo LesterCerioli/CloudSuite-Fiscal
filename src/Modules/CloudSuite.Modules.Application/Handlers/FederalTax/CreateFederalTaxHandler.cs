@@ -50,13 +50,13 @@ namespace CloudSuite.Modules.Application.Handlers.FederalTax
                         return new CreateFederalTaxResponse(command.Id, validationResult);
                     }
 
-                    return new CreateFederalTaxResponse(command.Id, "Address already registered");
+                    return new CreateFederalTaxResponse(command.Id, "Federal Tax already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating FederalTax");
-                    return new CreateFederalTaxResponse(command.Id, "Error creating FederalTax");
+                    _logger.LogError(ex, "Error creating Federal Tax");
+                    return new CreateFederalTaxResponse(command.Id, "Error creating Federal Tax");
                 }
             }
             return new CreateFederalTaxResponse(command.Id, validationResult);

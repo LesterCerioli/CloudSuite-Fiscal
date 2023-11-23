@@ -24,7 +24,7 @@ namespace CloudSuite.Modules.Application.Handlers.Darf
             _logger = logger;
         }
 
-        public async Task<CheckDarfExistsByReferenceMonthResponse> IRequestHandler<CheckDarfExistsByReferenceMonthRequest, CheckDarfExistsByReferenceMonthResponse>.Handle(CheckDarfExistsByReferenceMonthRequest request, CancellationToken cancellationToken)
+        public async Task<CheckDarfExistsByReferenceMonthResponse> Handle(CheckDarfExistsByReferenceMonthRequest request, CancellationToken cancellationToken)
         {
             _logger.LogInformation($"CheckCityByCityNameRequest: {JsonSerializer.Serialize(request)}");
             var validationResult = new CheckDarfExistsByReferenceMonthRequestValidation().Validate(request);
@@ -47,7 +47,6 @@ namespace CloudSuite.Modules.Application.Handlers.Darf
                 }
             }
             return await Task.FromResult(new CheckDarfExistsByReferenceMonthResponse(request.Id, false, validationResult));
-
         }
     }
 }

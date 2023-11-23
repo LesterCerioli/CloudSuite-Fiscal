@@ -6,15 +6,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento.Responses
+namespace CloudSuite.Modules.Application.Handlers.Note.Responses
 {
-    public class CheckIdeCancelamentoExistsByCancelOrderResponse : Response
+    public class CheckNoteExistsByValueResponse : Response
     {
         public Guid RequestId { get; private set; }
         public bool Exists { get; set; }
 
 
-        public CheckIdeCancelamentoExistsByCancelOrderResponse(Guid requestId, bool exists, ValidationResult result)
+        public CheckNoteExistsByValueResponse(Guid requestId, bool exists, ValidationResult result)
         {
             RequestId = requestId;
             Exists = exists;
@@ -24,7 +24,7 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento.Responses
             }
         }
 
-        public CheckIdeCancelamentoExistsByCancelOrderResponse(Guid requestId, string falseValidation)
+        public CheckNoteExistsByValueResponse(Guid requestId, string falseValidation)
         {
             RequestId = requestId;
             Exists = false;

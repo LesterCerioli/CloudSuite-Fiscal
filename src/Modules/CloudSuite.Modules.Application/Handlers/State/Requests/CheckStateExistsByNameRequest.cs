@@ -14,8 +14,6 @@ namespace CloudSuite.Modules.Application.Handlers.State.Requests
 
         public Guid Id { get; private set; }
 
-        [Required(ErrorMessage = "Este campo é de preenchimento obrigatório.")]
-        [StringLength(100)]
         public string? StateName { get; private set; }
 
         public CheckStateExistsByNameRequest(Guid id, string? stateName)

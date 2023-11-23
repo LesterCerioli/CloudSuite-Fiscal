@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 using IdeNFSeENtity = CloudSuite.Modules.Domain.Models.IdeNFSe;
 
 namespace CloudSuite.Modules.Application.Handlers.IdeNFSe
-{
+{/*
     public class CreateIdeNFSeCommand : IRequest<CreateIdeNFSeResponse>
     {
         public string? Number { get; private set; }
@@ -28,4 +28,5 @@ namespace CloudSuite.Modules.Application.Handlers.IdeNFSe
           
         }
     }
+    */
 }

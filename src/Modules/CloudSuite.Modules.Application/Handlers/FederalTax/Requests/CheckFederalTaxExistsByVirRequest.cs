@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.FederalTax.Requests
 
         public Guid Id { get; private set; }
 
-        public decimal? VIR { get; private set; }
+        public decimal VIR { get; private set; }
 
-        public CheckFederalTaxExistsByVirRequest(Guid id, decimal? vIR)
+        public CheckFederalTaxExistsByVirRequest(Guid id, decimal vIR)
         {
             Id = Guid.NewGuid();
             VIR = vIR;

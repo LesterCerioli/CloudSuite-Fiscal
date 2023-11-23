@@ -13,11 +13,11 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public Guid Id { get; private set; }
 
-        public decimal? ProfitsDividends { get; private set; }
+        public decimal ProfitsDividends { get; private set; }
 
-        public CheckDeclaracaoIRExistsByProfitsDividendsRequest(Guid id, decimal? profitsDividends)
+        public CheckDeclaracaoIRExistsByProfitsDividendsRequest(Guid id, decimal profitsDividends)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             ProfitsDividends = profitsDividends;
         }
     }

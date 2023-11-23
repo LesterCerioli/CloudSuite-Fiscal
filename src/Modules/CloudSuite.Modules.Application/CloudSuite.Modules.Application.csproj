@@ -20,11 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Handlers\Address\Requests\" />
-    <Folder Include="Handlers\CancelOrder\" />
     <Folder Include="Handlers\IdeNFSe\Requests\" />
-    <Folder Include="Handlers\Installment\Requests\" />
-    <Folder Include="Handlers\Note\Requests\" />
   </ItemGroup>
 
 </Project>

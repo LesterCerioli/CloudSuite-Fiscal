@@ -39,13 +39,13 @@ namespace CloudSuite.Modules.Application.Handlers.Darf
                         return new CreateDarfResponse(command.Id, validationResult);
                     }
 
-                    return new CreateDarfResponse(command.Id, "Address already registered");
+                    return new CreateDarfResponse(command.Id, "Darf already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateDarfResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating Darf");
+                    return new CreateDarfResponse(command.Id, "Error creating Darf");
                 }
             }
             return new CreateDarfResponse(command.Id, validationResult);

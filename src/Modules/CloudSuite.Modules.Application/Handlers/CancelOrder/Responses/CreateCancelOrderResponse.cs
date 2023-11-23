@@ -1,17 +1,18 @@
-﻿using FluentValidation.Results;
+﻿using CloudSuite.Modules.Application.Core;
+using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CloudSuite.Modules.Application.Handlers.Installment.Responses
+namespace CloudSuite.Modules.Application.Handlers.CancelOrder.Responses
 {
-    public class CreateInstallmentResponse : Response
+    public class CreateCancelOrderResponse : Response
     {
         public Guid RequestId { get; private set; }
 
-        public CreateInstallmentResponse(Guid requestId, ValidationResult result)
+        public CreateCancelOrderResponse(Guid requestId, ValidationResult result)
         {
             RequestId = requestId;
 
@@ -21,7 +22,7 @@ namespace CloudSuite.Modules.Application.Handlers.Installment.Responses
             }
         }
 
-        public CreateInstallmentResponse(Guid requestId, string falseValidation)
+        public CreateCancelOrderResponse(Guid requestId, string falseValidation)
         {
             RequestId = requestId;
             this.AddError(falseValidation);

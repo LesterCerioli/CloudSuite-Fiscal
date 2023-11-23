@@ -13,11 +13,11 @@ namespace CloudSuite.Modules.Application.Handlers.Darf.Requests
 
         public Guid Id { get; set; }
 
-        public DateTime? DueDate { get; private set; }
+        public DateTime DueDate { get; private set; }
 
-        public CheckDarfExistsByDueDateRequest(Guid id, DateTime? dueDate)
+        public CheckDarfExistsByDueDateRequest(Guid id, DateTime dueDate)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             DueDate = dueDate;
         }
     }

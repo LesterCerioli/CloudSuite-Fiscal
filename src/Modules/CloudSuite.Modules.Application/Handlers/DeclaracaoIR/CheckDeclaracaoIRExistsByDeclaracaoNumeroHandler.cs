@@ -36,9 +36,9 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
             {
                 try
                 {
-                    var cityName = await _declaracaoIRRepository.GetByDeclaracoaNumero(request.DeclaracoaNumero);
+                    var declaracaoNumero = await _declaracaoIRRepository.GetByDeclaracaoNumero(request.DeclaracoaNumero);
 
-                    if (cityName != null)
+                    if (declaracaoNumero != null)
                     {
                         return await Task.FromResult(new CheckDeclaracaoIRExistsByDeclaracaoNumeroResponse(request.Id, true, validationResult));
                     }

@@ -1,8 +1,7 @@
 ﻿using CloudSuite.Modules.Application.Handlers.District.Responses;
-using CloudSuite.Modules.Application.Handlers.Installment.Responses;
 using CloudSuite.Modules.Application.Handlers.Note.Responses;
-using CloudSuite.Modules.Application.Validations.Installment;
 using CloudSuite.Modules.Application.Validations.Note;
+using CloudSuite.Modules.Domain.Contracts;
 using MediatR;
 using Microsoft.Extensions.Logging;
 using NetDevPack.Messaging;
@@ -35,10 +34,10 @@ namespace CloudSuite.Modules.Application.Handlers.Note
             {
                 try
                 {
-                    var DASReferenceMonth = await _noteRepository.GetByReferenceMonth(command.ReferenceMonth);
-                    var DASDueDate = await _noteRepository.GetByDueDate(command.DueDate);
-                    var DASDocumentNumber = await _noteRepository.GetByDocumentNumber(command.DocumentNumber);
-                    var DASReferenceYear = await _noteRepository.GetByReferenceYear(command.ReferenceYear);
+                    var DASReferenceMonth = await _noteRepository.GetByCnpj(command.Cnpj);
+                    var DASDueDate = await _noteRepository.GetByNoteNumber(command.NoteNumber);
+                    var DASDocumentNumber = await _noteRepository.GetByValue(command.Value);
+                    var DASReferenceYear = await _noteRepository.GetByEmissionDate(command.EmissionDate);
 
 
                     if (DASReferenceMonth == null && DASDueDate == null && DASDocumentNumber == null && DASReferenceYear == null)
@@ -46,13 +45,13 @@ namespace CloudSuite.Modules.Application.Handlers.Note
                         await _noteRepository.Add(command.GetEntity());
                         return new CreateNoteResponse(command.Id, validationResult);
                     }
-                    return new CreateInstalCreateNoteResponselmentResponse(command.Id, "Address already registered");
+                    return new CreateNoteResponse(command.Id, "Note already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateNoteResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating Note");
+                    return new CreateNoteResponse(command.Id, "Error creating Note");
                 }
             }
             return new CreateNoteResponse(command.Id, validationResult);

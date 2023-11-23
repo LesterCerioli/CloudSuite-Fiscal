@@ -33,9 +33,9 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
             {
                 try
                 {
-                    var cityName = await _dasRepository.GetByDueDate(request.DueDate);
+                    var dueDate = await _dasRepository.GetByDueDate(request.DueDate);
 
-                    if (cityName != null)
+                    if (dueDate != null)
                     {
                         return await Task.FromResult(new CheckDASExistsByDueDateResponse(request.Id, true, validationResult));
                     }

@@ -44,13 +44,13 @@ namespace CloudSuite.Modules.Application.Handlers.District
                         return new CreateDistrictResponse(command.Id, validationResult);
                     }
 
-                    return new CreateDistrictResponse(command.Id, "Address already registered");
+                    return new CreateDistrictResponse(command.Id, "District already registered");
 
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateDistrictResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating District");
+                    return new CreateDistrictResponse(command.Id, "Error creating District");
                 }
             }
             return new CreateDistrictResponse(command.Id, validationResult);

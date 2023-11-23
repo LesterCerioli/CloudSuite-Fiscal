@@ -33,9 +33,9 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador
             {
                 try
                 {
-                    var cnpj = await _prestadorRepository.GetByInscricaoEstadual(request.InscricaoEstadual);
+                    var inscricaoEstadual = await _prestadorRepository.GetByInscricaoEstadual(request.InscricaoEstadual);
 
-                    if (cnpj != null)
+                    if (inscricaoEstadual != null)
                     {
                         return await Task.FromResult(new CheckPrestadorExistsByInscricaoEstadualResponse(request.Id, true, validationResult));
                     }

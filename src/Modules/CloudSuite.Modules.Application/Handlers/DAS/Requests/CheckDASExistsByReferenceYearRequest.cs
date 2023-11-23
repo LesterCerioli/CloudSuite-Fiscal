@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.DAS.Requests
 
         public Guid Id { get; set; }
 
-        public string? ReferenceYear { get; private set; }
+        public string ReferenceYear { get; private set; }
 
-        public CheckDASExistsByReferenceYearRequest(Guid id, string? referenceYear)
+        public CheckDASExistsByReferenceYearRequest(Guid id, string referenceYear)
         {
             Id = Guid.NewGuid();
             ReferenceYear = referenceYear;

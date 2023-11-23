@@ -13,9 +13,9 @@ namespace CloudSuite.Modules.Application.Handlers.FederalTax.Requests
 
         public Guid Id { get; private set; }
 
-        public decimal? VINSS { get; private set; }
+        public decimal VINSS { get; private set; }
 
-        public CheckFederalTaxExistsByVinssRequest(Guid id, decimal? vINSS)
+        public CheckFederalTaxExistsByVinssRequest(Guid id, decimal vINSS)
         {
             Id = Guid.NewGuid();
             VINSS = vINSS;

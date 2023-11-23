@@ -14,9 +14,9 @@ namespace CloudSuite.Modules.Application.Handlers.DAS.Requests
 
         public Guid Id { get; set; }
 
-        public string? DocumentNumber { get; private set; }
+        public string DocumentNumber { get; private set; }
 
-        public CheckDASExistsByDocumentNumberRequest(Guid id, string? documentNumber)
+        public CheckDASExistsByDocumentNumberRequest(Guid id, string documentNumber)
         {
             Id = Guid.NewGuid();
             DocumentNumber = documentNumber;

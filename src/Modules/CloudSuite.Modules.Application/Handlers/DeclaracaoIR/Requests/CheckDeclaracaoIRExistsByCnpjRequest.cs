@@ -18,7 +18,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR.Requests
 
         public CheckDeclaracaoIRExistsByCnpjRequest(Guid id, Cnpj cnpj)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Cnpj = cnpj;
         }
     }

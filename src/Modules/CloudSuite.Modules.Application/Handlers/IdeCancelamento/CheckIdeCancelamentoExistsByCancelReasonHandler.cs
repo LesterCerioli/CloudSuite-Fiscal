@@ -15,10 +15,10 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
 {
     public class CheckIdeCancelamentoExistsByCancelReasonHandler : IRequestHandler<CheckIdeCancelamentoExistsByCancelReasonRequest, CheckIdeCancelamentoExistsByCancelReasonResponse>
     {
-        private readonly IdeCancelamentoRepository _ideCancelamentoRepository;
-        private readonly ILogger<CheckIdeCancelamentoExistsByCancelOrderHandler> _logger;
+        private readonly IIdeCancelamentoRepository _ideCancelamentoRepository;
+        private readonly ILogger<CheckIdeCancelamentoExistsByCancelReasonHandler> _logger;
 
-        public CheckIdeCancelamentoExistsByCancelReasonHandler(IdeCancelamentoRepository ideCancelamentoRepository, ILogger<CheckIdeCancelamentoExistsByCancelOrderHandler> logger)
+        public CheckIdeCancelamentoExistsByCancelReasonHandler(IIdeCancelamentoRepository ideCancelamentoRepository, ILogger<CheckIdeCancelamentoExistsByCancelReasonHandler> logger)
         {
             _ideCancelamentoRepository = ideCancelamentoRepository;
             _logger = logger;

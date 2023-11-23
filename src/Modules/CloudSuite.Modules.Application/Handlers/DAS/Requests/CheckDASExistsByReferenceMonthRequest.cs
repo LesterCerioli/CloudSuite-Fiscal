@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.Handlers.DAS.Requests
 
         public Guid Id { get; set; }
 
-        public string? ReferenceMonth { get; private set; }
+        public string ReferenceMonth { get; private set; }
 
         public CheckDASExistsByReferenceMonthRequest(Guid id, string? referenceMonth)
         {

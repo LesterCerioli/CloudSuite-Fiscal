@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using IdeCancelamentoEntity = CloudSuite.Modules.Domain.Models.IdeCancelamento;
+using CancelOrderEntity = CloudSuite.Modules.Domain.Models.CancelOrder;
 
 namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
 {
@@ -14,11 +15,11 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
     {
         public Guid Id { get; private set; }
 
-        public CancelOrder CancelOrder { get; private set; }
+        public CancelOrderEntity CancelOrder { get; private set; }
 
         public string? CancelReason { get; private set; }
 
-        public DateTimeOffset? TimeDate { get; private set; }
+        public DateTimeOffset TimeDate { get; private set; }
 
         public IdeCancelamentoEntity GetEntity()
         {

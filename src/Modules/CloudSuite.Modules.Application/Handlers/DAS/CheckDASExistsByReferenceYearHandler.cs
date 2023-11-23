@@ -32,9 +32,9 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
             {
                 try
                 {
-                    var cityName = await _dasRepository.GetByReferenceYear(request.ReferenceYear);
+                    var referenceYear = await _dasRepository.GetByReferenceYear(request.ReferenceYear);
 
-                    if (cityName != null)
+                    if (referenceYear != null)
                     {
                         return await Task.FromResult(new CheckDASExistsByReferenceYearResponse(request.Id, true, validationResult));
                     }

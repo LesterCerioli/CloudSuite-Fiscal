@@ -18,10 +18,10 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
 {
     public class CreateIdeCancelamentoHandler : IRequestHandler<CreateIdeCancelamentoCommand, CreateIdeCancelamentoResponse>
     {
-        private readonly IdeCancelamentoRepository _ideCancelamentoRepository;
+        private readonly IIdeCancelamentoRepository _ideCancelamentoRepository;
         private readonly ILogger<CreateIdeCancelamentoHandler> _logger;
 
-        public CreateIdeCancelamentoHandler(IdeCancelamentoRepository ideCancelamentoRepository, ILogger<CreateIdeCancelamentoHandler> logger)
+        public CreateIdeCancelamentoHandler(IIdeCancelamentoRepository ideCancelamentoRepository, ILogger<CreateIdeCancelamentoHandler> logger)
         {
             _ideCancelamentoRepository = ideCancelamentoRepository;
             _logger = logger;
@@ -35,12 +35,12 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
             {
                 try
                 {
-                    var IdCancelOrder = await _ideCancelamentoRepository.GetByCancelOrder(command.CancelOrder);
+                  
                     var IdCancelReason = await _ideCancelamentoRepository.GetByCancelReason(command.CancelReason);
                     var IdTimeDate = await _ideCancelamentoRepository.GetByTimeDate(command.TimeDate);
 
 
-                    if (IdCancelOrder == null && IdCancelReason == null && IdTimeDate == null)
+                    if (IdCancelReason == null && IdTimeDate == null)
                     {
                         await _ideCancelamentoRepository.Add(command.GetEntity());
                         return new CreateIdeCancelamentoResponse(command.Id, validationResult);
@@ -51,8 +51,8 @@ namespace CloudSuite.Modules.Application.Handlers.IdeCancelamento
                 }
                 catch (Exception ex)
                 {
-                    _logger.LogError(ex, "Error creating extract");
-                    return new CreateIdeCancelamentoResponse(command.Id, "Error creating Adress");
+                    _logger.LogError(ex, "Error creating IdeCancelamento");
+                    return new CreateIdeCancelamentoResponse(command.Id, "Error creating IdeCancelamento");
                 }
             }
             return new CreateIdeCancelamentoResponse(command.Id, validationResult);

@@ -14,7 +14,7 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
     {
         public Guid Id { get; set; }
 
-        public string? ReferenceMonth { get; private set; }
+        public string ReferenceMonth { get; private set; }
 
         public DateTime DueDate { get; private set; }
 

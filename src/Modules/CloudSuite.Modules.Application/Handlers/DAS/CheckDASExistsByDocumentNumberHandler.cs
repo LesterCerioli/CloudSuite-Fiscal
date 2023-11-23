@@ -32,9 +32,9 @@ namespace CloudSuite.Modules.Application.Handlers.DAS
             {
                 try
                 {
-                    var cityName = await _dasRepository.GetByDocumentNumber(request.DocumentNumber);
+                    var documentNumber = await _dasRepository.GetByDocumentNumber(request.DocumentNumber);
 
-                    if (cityName != null)
+                    if (documentNumber != null)
                     {
                         return await Task.FromResult(new CheckDASExistsByDocumentNumberResponse(request.Id, true, validationResult));
                     }

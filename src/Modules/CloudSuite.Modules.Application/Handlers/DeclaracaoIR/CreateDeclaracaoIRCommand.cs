@@ -24,19 +24,19 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
 
         public string? BusinessHeader { get; private set; }
 
-        public decimal? TotalIncome { get; private set; }
+        public decimal TotalIncome { get; private set; }
 
         public decimal? SocialSecurity { get; private set; }
 
         public decimal? ComplementContribution { get; private set; }
 
-        public decimal? Alimony { get; private set; }
+        public decimal Alimony { get; private set; }
 
         public string? TaxWithheld { get; private set; }
 
-        public decimal? PaidValueToBusiness { get; private set; }
+        public decimal PaidValueToBusiness { get; private set; }
 
-        public decimal? ProfitsDividends { get; private set; }
+        public decimal ProfitsDividends { get; private set; }
 
 
         public DeclaracaoIREntity GetEntity()
