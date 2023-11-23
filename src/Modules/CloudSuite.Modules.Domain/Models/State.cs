@@ -19,9 +19,11 @@ namespace CloudSuite.Modules.Domain.Models
             CountryId = countryId;
         }
 
-        
+        [Required(ErrorMessage = "The {0} field is required")]
+        [StringLength(100)]
         public string? StateName { get; private set; }
 
+        [Required(ErrorMessage = "The {0} field is required")]
         public string? UF { get; private set; }
 
         public Country Country { get; private set; }
