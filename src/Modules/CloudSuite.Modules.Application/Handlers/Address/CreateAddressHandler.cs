@@ -26,7 +26,7 @@ namespace CloudSuite.Modules.Application.Handlers.Address
 
         public async Task<CreateAddressResponse> Handle(CreateAddressCommand command, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CreateExtractCommand: {JsonSerializer.Serialize(command)}");
+            _logger.LogInformation($"CreateAddressCommand: {JsonSerializer.Serialize(command)}");
             var validationResult = new CreateAddressCommandValidation().Validate(command);
 
             if (validationResult.IsValid)

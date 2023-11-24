@@ -28,7 +28,7 @@ namespace CloudSuite.Modules.Application.Handlers.City
         }
         public async Task<CheckCityExistsByNameResponse> Handle(CheckCityExistsByNameRequest request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CheckFederalTaxExistsByVpisRequest: {JsonSerializer.Serialize(request)}");
+            _logger.LogInformation($"CheckCityExistsByNameRequest: {JsonSerializer.Serialize(request)}");
             var validationResult = new CheckCityExistsByNameRequestValidation().Validate(request);
 
             if (validationResult.IsValid)

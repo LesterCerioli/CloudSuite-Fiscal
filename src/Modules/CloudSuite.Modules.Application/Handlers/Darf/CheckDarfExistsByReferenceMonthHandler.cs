@@ -26,7 +26,7 @@ namespace CloudSuite.Modules.Application.Handlers.Darf
 
         public async Task<CheckDarfExistsByReferenceMonthResponse> Handle(CheckDarfExistsByReferenceMonthRequest request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CheckCityByCityNameRequest: {JsonSerializer.Serialize(request)}");
+            _logger.LogInformation($"CheckDarfExistsByReferenceMonthRequest: {JsonSerializer.Serialize(request)}");
             var validationResult = new CheckDarfExistsByReferenceMonthRequestValidation().Validate(request);
 
             if (validationResult.IsValid)

@@ -28,7 +28,7 @@ namespace CloudSuite.Modules.Application.Handlers.Prestador
         }
         public async Task<CheckPrestadorExistsByInscricaoMunicipalResponse> Handle(CheckPrestadorExistsByInscricaoMunicipalRequest request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CheckDeclaracaoIRExistsByCnpjRequest: {JsonSerializer.Serialize(request)}");
+            _logger.LogInformation($"CheckPrestadorExistsByInscricaoMunicipalRequest: {JsonSerializer.Serialize(request)}");
             var validationResult = new CheckPrestadorExistsByInscricaoMunicipalRequestValidation().Validate(request);
 
             if (validationResult.IsValid)

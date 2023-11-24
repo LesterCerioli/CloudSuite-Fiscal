@@ -28,7 +28,7 @@ namespace CloudSuite.Modules.Application.Handlers.State
         }
         public async Task<CreateStateResponse> Handle(CreateStateCommand command, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CreatePrestadorCommand: {JsonSerializer.Serialize(command)}");
+            _logger.LogInformation($"CreateStateCommand: {JsonSerializer.Serialize(command)}");
             var validationResult = new CreateStateCommandValidation().Validate(command);
 
             if (validationResult.IsValid)

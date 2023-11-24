@@ -29,7 +29,7 @@ namespace CloudSuite.Modules.Application.Handlers.City
 
         public async Task<CreateCityResponse> Handle(CreateCityCommand command, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CreateExtractCommand: {JsonSerializer.Serialize(command)}");
+            _logger.LogInformation($"CreateCityCommand: {JsonSerializer.Serialize(command)}");
             var validationResult = new CreateCityCommandValidation().Validate(command);
 
             if (validationResult.IsValid)

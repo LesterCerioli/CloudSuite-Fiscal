@@ -28,7 +28,7 @@ namespace CloudSuite.Modules.Application.Handlers.DeclaracaoIR
 
         public async Task<CreateDeclaracaoIRResponse> Handle(CreateDeclaracaoIRCommand command, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CreateDASCommand: {JsonSerializer.Serialize(command)}");
+            _logger.LogInformation($"CreateDeclaracaoIRCommand: {JsonSerializer.Serialize(command)}");
             var validationResult = new CreateDeclaracaoIRCommandValidation().Validate(command);
 
             if (validationResult.IsValid)

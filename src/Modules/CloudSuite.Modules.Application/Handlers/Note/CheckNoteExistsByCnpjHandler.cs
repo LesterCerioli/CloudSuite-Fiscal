@@ -28,7 +28,7 @@ namespace CloudSuite.Modules.Application.Handlers.Note
 
         public async Task<CheckNoteExistsByCnpjResponse> Handle(CheckNoteExistsByCnpjRequest request, CancellationToken cancellationToken)
         {
-            _logger.LogInformation($"CheckFederalTaxExistsByVpisRequest: {JsonSerializer.Serialize(request)}");
+            _logger.LogInformation($"CheckNoteExistsByCnpjRequest: {JsonSerializer.Serialize(request)}");
             var validationResult = new CheckNoteExistsByCnpjRequestValidation().Validate(request);
 
             if (validationResult.IsValid)
