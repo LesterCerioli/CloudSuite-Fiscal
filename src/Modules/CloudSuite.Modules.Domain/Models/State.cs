@@ -19,14 +19,11 @@ namespace CloudSuite.Modules.Domain.Models
             CountryId = countryId;
         }
 
-        
-
-        [Required(ErrorMessage="Este campo Ã© de preenchimento obrigatÃ³rio.")]
+        [Required(ErrorMessage="Este campo é de preenchimento obrigatório.")]
         [StringLength(100)]
         public string? StateName { get; private set; }
 
-        [Required(ErrorMessage = "Este cmapo Ã© de preenchimento obrigatÃ³rio.")]
-
+        [Required(ErrorMessage = "Este cmapo é de preenchimento obrigatório.")]
         public string? UF { get; private set; }
 
         public Country Country { get; private set; }
