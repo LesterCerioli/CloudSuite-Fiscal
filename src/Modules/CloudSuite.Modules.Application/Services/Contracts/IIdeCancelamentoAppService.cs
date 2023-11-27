@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.IdeCancelamento;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
 
         Task<IdeCancelamentoViewModel> GetByTimeDate(DateTimeOffset timeDate);
 
-        Task<IdeCancelamentoViewModel> Save(CreateIdeCancelamento createCommand);
+        Task Save(CreateIdeCancelamentoCommand createCommand);
     }
 }

@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.Note;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
 using CloudSuite.Modules.Domain.Models;
 using System;
@@ -19,6 +20,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
 
         Task<NoteViewModel> GetByEmissionDate(DateTime? date);
 
-        Task<NoteViewModel> Save(createNoteCommand createCommand);
+        Task Save(CreateNoteCommand createCommand);
     }
 }

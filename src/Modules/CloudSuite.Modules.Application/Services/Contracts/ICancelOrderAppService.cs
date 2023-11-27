@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.CancelOrder;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
 using System;
 using System.Collections.Generic;

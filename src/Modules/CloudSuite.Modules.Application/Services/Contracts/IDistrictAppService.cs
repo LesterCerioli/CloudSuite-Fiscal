@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.District;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
     {
         Task<DistrictViewModel> GetByName(string name);
 
-        Task<DistrictViewModel> Save(CreateDistrictCommand createCommand);
+        Task Save(CreateDistrictCommand createCommand);
     }
 }

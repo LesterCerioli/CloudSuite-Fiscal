@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.FederalTax;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -20,6 +21,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
 
         Task<FederalTaxViewModel> GetByVCSLL(decimal vCSLL);
 
-        Task<FederalTaxViewModel> Saver(CreateFederalTaxCommand createCommand);
+        Task Save(CreateFederalTaxCommand createCommand);
     }
 }

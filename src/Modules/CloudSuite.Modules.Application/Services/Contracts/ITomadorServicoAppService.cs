@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.TomadorServico;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
 using CloudSuite.Modules.Domain.Models;
 using System;
@@ -15,6 +16,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
 
         Task<TomadorServicoViewModel> GetBySocialReason(string socialReason);
 
-        Task<TomadorServicoViewModel> Save(CreateTomadorServicoCommand createCommand);
+        Task Save(CreateTomadorServicoCommand createCommand);
     }
 }

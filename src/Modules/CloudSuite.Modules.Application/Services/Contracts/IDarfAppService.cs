@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.Darf;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Models;
 using System;
 using System.Collections.Generic;
@@ -18,6 +19,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
 
         Task<DarfViewModel> GetByValidationDate(DateTime validationDate);
                     
-        Task<DarfViewModel> Save(CreateDarfCommand createCommand);
+        Task Save(CreateDarfCommand createCommand);
     }
 }

@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.Prestador;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
 using CloudSuite.Modules.Domain.Models;
 using System;
@@ -21,6 +22,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
 
         Task<PrestadorViewModel> GetByNomeFantasia(string nomeFantasia);
 
-        Task<PrestadorViewModel> Save(CreatePrestadorCommand createCommand);
+        Task Save(CreatePrestadorCommand createCommand);
     }
 }

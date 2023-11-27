@@ -1,4 +1,5 @@
-﻿using CloudSuite.Modules.Application.ViewModels;
+﻿using CloudSuite.Modules.Application.Handlers.DeclaracaoIR;
+using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
 using CloudSuite.Modules.Domain.Models;
 using System;
@@ -25,6 +26,6 @@ namespace CloudSuite.Modules.Application.Services.Contracts
 
         Task<DeclaracaoIRViewModel> GetByProfitsDividends(decimal profitsDividends);
 
-        Task<DeclaracaoIRViewModel> Save(CreateDeclaracaoIRCommand createCommand);
+        Task Save(CreateDeclaracaoIRCommand createCommand);
     }
 }
