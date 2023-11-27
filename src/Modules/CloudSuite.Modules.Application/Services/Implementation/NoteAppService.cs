@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.Note;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
@@ -45,7 +46,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<NoteViewModel>(await _noteRepository.GetByValue(value));
         }
 
-        public async Task<NoteViewModel> Save(createNoteCommand createCommand)
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateNoteCommand createCommand)
         {
             await _noteRepository.Add(createCommand.GetEntity());
         }

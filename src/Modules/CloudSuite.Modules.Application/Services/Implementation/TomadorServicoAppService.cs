@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.TomadorServico;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
@@ -35,9 +36,14 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map < TomadorServicoViewModel>(await _tomadorServicoRepository.GetBySocialReason(socialReason));
         }
 
-        public async Task<TomadorServicoViewModel> Save(CreateTomadorServicoCommand createCommand)
+        public void Dispose()
         {
-            return await _tomadorServicoRepository.Add(createCommand.GetEntity());
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateTomadorServicoCommand createCommand)
+        {
+            await _tomadorServicoRepository.Add(createCommand.GetEntity());
         }
     }
 }

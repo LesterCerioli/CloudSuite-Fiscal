@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.State;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -26,7 +27,7 @@ namespace CloudSuite.Modules.Application.Services.Implementation
 
         public async Task<StateViewModel> GetByStateName(string stateName)
         {
-            return _mapper.Map<StateViewModel>(await _stateRepository.GetByStateName(stateName))a;
+            return _mapper.Map<StateViewModel>(await _stateRepository.GetByStateName(stateName));
         }
 
         public async Task<StateViewModel> GetByUF(string uf)
@@ -34,7 +35,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<StateViewModel>(await _stateRepository.GetByUF(uf));
         }
 
-        public async Task<StateViewModel> Save(CreateStateCommand createCommand)
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateStateCommand createCommand)
         {
             await _stateRepository.Add(createCommand.GetEntity());
         }

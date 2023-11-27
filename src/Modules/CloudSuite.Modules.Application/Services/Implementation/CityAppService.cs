@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.City;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -30,6 +31,11 @@ namespace CloudSuite.Modules.Application.Services.Implementation
         public async Task<CityViewModel> GetByCityName(string cityName)
         {
             return _mapper.Map<CityViewModel>(await _cityRepository.GetByCityName(cityName));
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
 
         public async Task Save(CreateCityCommand commandCreate)

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.Prestador;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
@@ -50,7 +51,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<PrestadorViewModel>(await _prestadorRepository.GetByNomeFantasia(nomeFantasia));
         }
 
-        public async Task<PrestadorViewModel> Save(CreatePrestadorCommand createCommand)
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreatePrestadorCommand createCommand)
         {
             await _prestadorRepository.Add(createCommand.GetEntity());
         }

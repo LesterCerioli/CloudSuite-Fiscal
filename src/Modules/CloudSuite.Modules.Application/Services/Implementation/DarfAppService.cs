@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.Darf;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -44,9 +45,14 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<DarfViewModel>(await _darfRepository.GetByValidationDate(validationDate));
         }
 
-        public Task<DarfViewModel> Save(CreateDarfCommand createCommand)
+        public void Dispose()
         {
-            throw new NotImplementedException();
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateDarfCommand createCommand)
+        {
+            await _darfRepository.Add(createCommand.GetEntity());
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.IdeCancelamento;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -18,7 +19,7 @@ namespace CloudSuite.Modules.Application.Services.Implementation
         private readonly IMediatorHandler _mediator;
         public async Task<IdeCancelamentoViewModel> GetByCancelReason(string cancelReason)
         {
-            return _mapper.Map<IdeCancelamentoViewModel>( await _ideCancelamentoRepository.GetByCancelReason(cancelRaaeason));
+            return _mapper.Map<IdeCancelamentoViewModel>( await _ideCancelamentoRepository.GetByCancelReason(cancelReason));
         }
 
         public async Task<IdeCancelamentoViewModel> GetByTimeDate(DateTimeOffset timeDate)
@@ -26,9 +27,14 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<IdeCancelamentoViewModel>( await _ideCancelamentoRepository.GetByTimeDate(timeDate));
         }
 
-        public async Task<IdeCancelamentoViewModel> Save(CreateIdeCancelamento createCommand)
+        public void Dispose()
         {
-            return await _ideCancelamentoRepository.Add(createCommand.GetEntity());
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateIdeCancelamentoCommand createCommand)
+        {
+            await _ideCancelamentoRepository.Add(createCommand.GetEntity());
         }
     }
 }

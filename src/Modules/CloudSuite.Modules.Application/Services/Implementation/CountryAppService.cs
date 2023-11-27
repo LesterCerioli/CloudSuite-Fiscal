@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.Country;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -33,9 +34,14 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<CountryViewModel>(await _countryRepository.GetbyCountryName(countryName));
         }
 
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
         public async Task Save(CreateCountryCommand commandCreate)
         {
-            return await _countryRepository.Add(commandCreate.GetEntity());
+            await _countryRepository.Add(commandCreate.GetEntity());
         }
     }
 }

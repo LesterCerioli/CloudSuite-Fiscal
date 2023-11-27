@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.FederalTax;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -42,7 +43,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<FederalTaxViewModel>( await _federalTaxRepository.GetByVPIS(vPIS));
         }
 
-        public async Task<FederalTaxViewModel> Saver(CreateFederalTaxCommand createCommand)
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateFederalTaxCommand createCommand)
         {
             await _federalTaxRepository.Add(createCommand.GetEntity());
         }

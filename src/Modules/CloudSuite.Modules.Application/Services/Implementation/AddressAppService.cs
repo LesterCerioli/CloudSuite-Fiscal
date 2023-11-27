@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.Address;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -32,6 +33,10 @@ namespace CloudSuite.Modules.Application.Services.Implementation
         public async Task<AddressViewModel> GetByAddressLine1(string addressLine1)
         {
             return _mapper.Map<AddressViewModel>(await _addressRepository.GetByAddressLine1(addressLine1));
+        }
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
 
         public async Task Save(CreateAddressCommand commandCreate)

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.District;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -22,7 +23,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<DistrictViewModel>( await _districtRepository.GetByName(name));
         }
 
-        public async Task<DistrictViewModel> Save(CreateDistrictCommand createCommand)
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateDistrictCommand createCommand)
         {
             await _districtRepository.Add(createCommand.GetEntity());
         }

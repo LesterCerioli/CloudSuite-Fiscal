@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.CancelOrder;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
@@ -37,6 +38,11 @@ namespace CloudSuite.Modules.Application.Services.Implementation
         public async Task<CancelOrderViewModel> GetByRequestDate(DateTimeOffset requestDate)
         {
             return _mapper.Map<CancelOrderViewModel>(await _cancelOrderRepository.GetByRequestDate(requestDate));
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
 
         public async Task Save(CreateCancelOrderCommand commandCreate)

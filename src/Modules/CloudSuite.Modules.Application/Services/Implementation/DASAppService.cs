@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.DAS;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Domain.Contracts;
@@ -44,7 +45,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<DASViewModel>(await _dASRepository.GetByReferenceYear(referenceYear));
         }
 
-        public async Task<DASViewModel> Save(CreateDASCommand createCommand)
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateDASCommand createCommand)
         {
             await _dASRepository.Add(createCommand.GetEntity());
         }

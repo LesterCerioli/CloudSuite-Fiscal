@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using CloudSuite.Modules.Application.Handlers.DeclaracaoIR;
 using CloudSuite.Modules.Application.Services.Contracts;
 using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
@@ -60,7 +61,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<DeclaracaoIRViewModel>(await _declaracaoIRRepository.GetByTotalIncome(totalIncome));
         }
 
-        public async Task<DeclaracaoIRViewModel> Save(CreateDeclaracaoIRCommand createCommand)
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
+        }
+
+        public async Task Save(CreateDeclaracaoIRCommand createCommand)
         {
             await _declaracaoIRRepository.Add(createCommand.GetEntity());
         }
