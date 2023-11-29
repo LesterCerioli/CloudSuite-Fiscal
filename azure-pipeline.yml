@@ -15,7 +15,7 @@ jobs:
     displayName: 'Use .NET Core sdk'
     inputs:
       packageType: 'sdk'
-      version: '6.0.125'
+      version: '6.0.'
   - script: dotnet build ./CloudSuite.sln
     displayName: 'dotnet build'
   - task: DotNetCoreCLI@2
