@@ -9,7 +9,7 @@ jobs:
 
 - job: Linux
   pool:
-    name: 'DK3'
+    name: 'DK4'
   steps:
   - task: UseDotNet@2
     displayName: 'Use .NET Core sdk'
