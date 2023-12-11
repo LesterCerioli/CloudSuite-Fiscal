@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class DistrictViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Estado")]
         [Required(ErrorMessage = "Campo Estado é obrigatorio.")]
