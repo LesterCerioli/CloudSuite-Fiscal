@@ -4,6 +4,7 @@ using CloudSuite.Modules.Application.ViewModels;
 using CloudSuite.Modules.Common.ValueObjects;
 using CloudSuite.Modules.Domain.Contracts;
 using CloudSuite.Modules.Domain.Models;
+using Microsoft.VisualBasic;
 using Moq;
 using NetDevPack.Mediator;
 using System;
@@ -18,8 +19,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
     public class DarfAppServiceTests
     {
         [Theory]
-        [InlineData("Outubro", "2022", 788.32, "2378432323", "2783672392", "736483362634", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
-        public async Task GetByReferenceMonth_ShouldReturnsCompanyViewModel(string referenceMonth, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
+        [InlineData("Outubro", "22-01-2001","2022", 788.32, "2378432323", "2783672392", "736483362634", "12-12-2012", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
+        public async Task GetByReferenceMonth_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
@@ -30,7 +31,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
-            var darfTaxEntity = new Darf(referenceMonth, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue);
+            var darfTaxEntity = new Darf(referenceMonth, dueDate, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, validationDate,  periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue);
             darfRepositoryMock.Setup(repo => repo.GetByReferenceMonth(referenceMonth)).ReturnsAsync(darfTaxEntity);
 
             var expectedViewModel = new DarfViewModel()
@@ -110,8 +111,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "2022", 788.32, "2378432323", "2783672392", "736483362634", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
-        public async Task GetByDueDate_ShouldReturnsCompanyViewModel(string referenceMonth, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
+        [InlineData("Outubro", "22-01-2001", "2022", 788.32, "2378432323", "2783672392", "736483362634", "12-12-2012", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
+        public async Task GetByDueDate_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
@@ -122,8 +123,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
-            var darfEntity = new Darf(referenceMonth, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue);
-            darfRepositoryMock.Setup(repo => repo.GetByDueDate(darfEntity.DueDate)).ReturnsAsync(darfEntity);
+            var darfEntity = new Darf(referenceMonth, dueDate, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, validationDate, periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue); darfRepositoryMock.Setup(repo => repo.GetByDueDate(darfEntity.DueDate)).ReturnsAsync(darfEntity);
 
             var expectedViewModel = new DarfViewModel()
             {
@@ -202,8 +202,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "2022", 788.32, "2378432323", "2783672392", "736483362634", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
-        public async Task GetByDocumentNumber_ShouldReturnsCompanyViewModel(string referenceMonth, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
+        [InlineData("Outubro", "22-01-2001", "2022", 788.32, "2378432323", "2783672392", "736483362634", "12-12-2012", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
+        public async Task GetByDocumentNumber_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
@@ -214,7 +214,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
-            var darfEntity = new Darf(referenceMonth, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue);
+            var darfEntity = new Darf(referenceMonth, dueDate, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, validationDate, periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue); darfRepositoryMock.Setup(repo => repo.GetByDueDate(darfEntity.DueDate)).ReturnsAsync(darfEntity);
             darfRepositoryMock.Setup(repo => repo.GetByDocumentNumber(documentNumber)).ReturnsAsync(darfEntity);
 
             var expectedViewModel = new DarfViewModel()
@@ -294,8 +294,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "2022", 788.32, "2378432323", "2783672392", "736483362634", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
-        public async Task GetByValidationDate_ShouldReturnsCompanyViewModel(string referenceMonth, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
+        [InlineData("Outubro", "22-01-2001", "2022", 788.32, "2378432323", "2783672392", "736483362634", "12-12-2012", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
+        public async Task GetByValidationDate_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
@@ -306,7 +306,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
-            var darfEntity = new Darf(referenceMonth, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue);
+            var darfEntity = new Darf(referenceMonth, dueDate, referenceYear, darfPaymentValue, recuboDeclaroNumero, documentNumber, barCode, validationDate, periodoApuracao, new Cnpj(cnpj), receitaCode, mainValue, amountFine, interest, totalValue); darfRepositoryMock.Setup(repo => repo.GetByDueDate(darfEntity.DueDate)).ReturnsAsync(darfEntity);
             darfRepositoryMock.Setup(repo => repo.GetByValidationDate(darfEntity.ValidationDate)).ReturnsAsync(darfEntity);
 
             var expectedViewModel = new DarfViewModel()
