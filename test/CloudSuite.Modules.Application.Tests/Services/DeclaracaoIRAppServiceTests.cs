@@ -272,9 +272,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("70.798.790/0001-88")]
-        [InlineData("26.419.285/0001-93")]
-        [InlineData("90.285.713/0001-31")]
+        [InlineData("336.651.000-54")]
+        [InlineData("151.730.680-94")]
+        [InlineData("904.820.060-13")]
         public async Task GetByCpf_ShouldHandleInvalidMappingResult(string cpf)
         {
             // Arrange
@@ -781,4 +781,5 @@ namespace CloudSuite.Modules.Application.Tests.Services
             await Assert.ThrowsAsync<ArgumentException>(() => declaracaoIRAppService.Save(createCompanyCommand));
         }
     }
+
 }

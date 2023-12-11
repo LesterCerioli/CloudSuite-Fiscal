@@ -584,4 +584,5 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
     }
+
 }

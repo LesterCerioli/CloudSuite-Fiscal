@@ -19,9 +19,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
     public class DASAppServiceTests
     {
         [Theory]
-        [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "15-04-1993", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "18-07-1993", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Outubro", "10-12-2023", "2023", "2000", "283789234789347", "6587346857969934863")]
+        [InlineData("Março", "09-11-2016", "2022", "3500", "283789234789347", "6587346857969934863")]
+        [InlineData("Dezembro", "05-03-2017", "2020", "5000", "039485627830451", "0293803924834545939")]
         public async Task GetDASByReferenceMonth_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             var dasRepositoryMock = new Mock<IDASRepository>();
@@ -40,7 +40,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
             {
                 Id = dasEntity.Id,
                 ReferenceMonth = referenceMonth,
-                DueDate = dueDate,
+                DueDate = dasEntity.DueDate,
                 ReferenceYear = referenceYear,
                 PaymentValue = paymentValue,
                 DocumentNumber = documentNumber,
@@ -107,27 +107,27 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
         [Theory]
         [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "15-04-1993", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "18-07-1993", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Março", "05-03-2017", "2022", "3500", "283789234789347", "6587346857969934863")]
+        [InlineData("Dezembro", "02-07-2018", "2020", "5000", "039485627830451", "0293803924834545939")]
         public async Task GetDASByDueDate_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             var dasRepositoryMock = new Mock<IDASRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
-            var countryAppService = new DASAppService(
+            var dasAppService = new DASAppService(
                 dasRepositoryMock.Object,
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
             var dasEntity = new DAS(referenceMonth, dueDate, referenceYear, paymentValue, documentNumber, barCode);
-            dasRepositoryMock.Setup(repo => repo.GetByReferenceMonth(referenceMonth)).ReturnsAsync(dasEntity);
+            dasRepositoryMock.Setup(repo => repo.GetByDueDate(dasEntity.DueDate)).ReturnsAsync(dasEntity);
 
             var expectedViewModel = new DASViewModel()
             {
                 Id = dasEntity.Id,
                 ReferenceMonth = referenceMonth,
-                DueDate = dueDate,
+                DueDate = dasEntity.DueDate,
                 ReferenceYear = referenceYear,
                 PaymentValue = paymentValue,
                 DocumentNumber = documentNumber,
@@ -137,17 +137,14 @@ namespace CloudSuite.Modules.Application.Tests.Services
             mapperMock.Setup(mapper => mapper.Map<DASViewModel>(dasEntity)).Returns(expectedViewModel);
 
             // Act
-            var result = await countryAppService.GetByDueDate(dueDate);
+            var result = await dasAppService.GetByDueDate(dasEntity.DueDate);
 
             // Assert
             Assert.Equal(expectedViewModel, result);
         }
 
-        [Theory]
-        [InlineData("11-02-2023")]
-        [InlineData("17-12-2023")]
-        [InlineData("02-11-2023")]
-        public async Task GetDASByDueDate_ShouldHandleNullRepositoryResult(DateTime dueDate)
+        [Fact]
+        public async Task GetDASByDueDate_ShouldHandleNullRepositoryResult()
         {
             // Arrange
             var dasRepositoryMock = new Mock<IDASRepository>();
@@ -159,21 +156,18 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
-            dasRepositoryMock.Setup(repo => repo.GetByReferenceMonth(It.IsAny<string>()))
+            dasRepositoryMock.Setup(repo => repo.GetByDueDate(It.IsAny<DateTime>()))
                 .ReturnsAsync((DAS)null); // Simulate null result from the repository
 
             // Act
-            var result = await dasAppService.GetByDueDate(dueDate);
+            var result = await dasAppService.GetByDueDate(DateTime.Now);
 
             // Assert
             Assert.Null(result);
         }
 
-        [Theory]
-        [InlineData("11-02-2023")]
-        [InlineData("17-12-2023")]
-        [InlineData("02-11-2023")]
-        public async Task GetDASByDueDate_ShouldHandleInvalidMappingResult(DateTime dueDate)
+        [Fact]
+        public async Task GetDASByDueDate_ShouldHandleInvalidMappingResult()
         {
             // Arrange
             var dasRepositoryMock = new Mock<IDASRepository>();
@@ -189,32 +183,32 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 .ThrowsAsync(new ArgumentException("Invalid data")); // Simulate null result from the repository
 
             // Assert
-            await Assert.ThrowsAsync<ArgumentException>(() => dasAppService.GetByDueDate(dueDate));
+            await Assert.ThrowsAsync<ArgumentException>(() => dasAppService.GetByDueDate(DateTime.Now));
         }
 
         [Theory]
         [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "15-04-1993", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "18-07-1993", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Março", "05-08-2020", "2022", "3500", "283789234789347", "6587346857969934863")]
+        [InlineData("Dezembro", "12-10-2019", "2020", "5000", "039485627830451", "0293803924834545939")]
         public async Task GetByDocumentNumber_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             var dasRepositoryMock = new Mock<IDASRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
-            var countryAppService = new DASAppService(
+            var dasAppService = new DASAppService(
                 dasRepositoryMock.Object,
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
             var dasEntity = new DAS(referenceMonth, dueDate, referenceYear, paymentValue, documentNumber, barCode);
-            dasRepositoryMock.Setup(repo => repo.GetByDocumentNumber(referenceMonth)).ReturnsAsync(dasEntity);
+            dasRepositoryMock.Setup(repo => repo.GetByDocumentNumber(documentNumber)).ReturnsAsync(dasEntity);
 
             var expectedViewModel = new DASViewModel()
             {
                 Id = dasEntity.Id,
                 ReferenceMonth = referenceMonth,
-                DueDate = dueDate,
+                DueDate = dasEntity.DueDate,
                 ReferenceYear = referenceYear,
                 PaymentValue = paymentValue,
                 DocumentNumber = documentNumber,
@@ -224,7 +218,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
             mapperMock.Setup(mapper => mapper.Map<DASViewModel>(dasEntity)).Returns(expectedViewModel);
 
             // Act
-            var result = await countryAppService.GetByDocumentNumber(documentNumber);
+            var result = await dasAppService.GetByDocumentNumber(documentNumber);
 
             // Assert
             Assert.Equal(expectedViewModel, result);
@@ -280,9 +274,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "15-04-1993", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "18-07-1993", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Outubro", "09-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
+        [InlineData("Março", "08-09-2021", "2022", "3500", "283789234789347", "6587346857969934863")]
+        [InlineData("Dezembro", "11-12-2023", "2020", "5000", "039485627830451", "0293803924834545939")]
         public async Task GetByReferenceYear_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             var dasRepositoryMock = new Mock<IDASRepository>();
@@ -295,13 +289,13 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 mediatorHandlerMock.Object);
 
             var dasEntity = new DAS(referenceMonth, dueDate, referenceYear, paymentValue, documentNumber, barCode);
-            dasRepositoryMock.Setup(repo => repo.GetByReferenceYear(referenceMonth)).ReturnsAsync(dasEntity);
+            dasRepositoryMock.Setup(repo => repo.GetByReferenceYear(referenceYear)).ReturnsAsync(dasEntity);
 
             var expectedViewModel = new DASViewModel()
             {
                 Id = dasEntity.Id,
                 ReferenceMonth = referenceMonth,
-                DueDate = dueDate,
+                DueDate = dasEntity.DueDate,
                 ReferenceYear = referenceYear,
                 PaymentValue = paymentValue,
                 DocumentNumber = documentNumber,
@@ -359,7 +353,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
                 mapperMock.Object,
                 mediatorHandlerMock.Object);
 
-            dasRepositoryMock.Setup(repo => repo.GetByDocumentNumber(It.IsAny<string>()))
+            dasRepositoryMock.Setup(repo => repo.GetByReferenceYear(It.IsAny<string>()))
                 .ThrowsAsync(new ArgumentException("Invalid data")); // Simulate null result from the repository
 
             // Assert
@@ -368,8 +362,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
         [Theory]
         [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "15-04-1993", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "18-07-1993", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Dezembro", "07-02-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
+        [InlineData("Dezembro", "01-01-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
         public async Task Save_ShouldAddCompanyToRepository(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             // Arrange
@@ -385,8 +379,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
             var createDASCommand = new CreateDASCommand()
             {
                 ReferenceMonth = referenceMonth,
-                DueDate = dueDate,
                 ReferenceYear = referenceYear,
+                DueDate = dueDate,
                 PaymentValue = paymentValue,
                 DocumentNumber = documentNumber,
                 BarCode = barCode
@@ -400,9 +394,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "15-04-1993", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "18-07-1993", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Outubro", "10-12-2023", "2023", "2000", "283789234789347", "6587346857969934863")]
+        [InlineData("Março", "09-11-2023", "2022", "3500", "283789234789347", "6587346857969934863")]
+        [InlineData("Dezembro", "08-10-2023", "2020", "5000", "039485627830451", "0293803924834545939")]
         public async Task Save_ShouldHandleNullRepositoryResult(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             //Arrange
@@ -418,8 +412,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
             var createDASCommand = new CreateDASCommand()
             {
                 ReferenceMonth = referenceMonth,
-                DueDate = dueDate,
                 ReferenceYear = referenceYear,
+                DueDate = dueDate,
                 PaymentValue = paymentValue,
                 DocumentNumber = documentNumber,
                 BarCode = barCode
@@ -434,8 +428,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
         [Theory]
         [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "15-04-1993", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "18-07-1993", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Março", "08-05-2022", "2022", "3500", "283789234789347", "6587346857969934863")]
+        [InlineData("Dezembro", "08-05-2022", "2020", "5000", "039485627830451", "0293803924834545939")]
         public async Task Save_ShouldHandleInvalidMappingResult(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
 
@@ -468,4 +462,5 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
     }
+
 }

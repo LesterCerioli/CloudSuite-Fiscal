@@ -19,7 +19,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
     public class DarfAppServiceTests
     {
         [Theory]
-        [InlineData("Outubro", "22-01-2001","2022", 788.32, "2378432323", "2783672392", "736483362634", "12-12-2012", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
+        [InlineData("Outubro", "08-05-2022","2022", 788.32, "2378432323", "2783672392", "736483362634", "12-12-2012", "23-10-2023", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
         public async Task GetByReferenceMonth_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
@@ -384,5 +384,6 @@ namespace CloudSuite.Modules.Application.Tests.Services
             // Assert
             await Assert.ThrowsAsync<ArgumentException>(() => darfAppService.GetByValidationDate(validationDate));
         }
+
     }
 }

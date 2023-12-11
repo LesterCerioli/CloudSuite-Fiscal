@@ -209,5 +209,6 @@ namespace CloudSuite.Modules.Application.Tests.Services
             // Act and Assert
             await Assert.ThrowsAsync<ArgumentException>(() => countryAppService.Save(createCompanyCommand));
         }
+
     }
 }
