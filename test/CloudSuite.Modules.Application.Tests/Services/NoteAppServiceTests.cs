@@ -27,7 +27,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         [InlineData("99.802.891/0001-67", "87677", 94.65)]
         public async Task GetByCnpj_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -71,7 +71,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByCnpj_ShouldHandleNullRepositoryResult(string cnpj)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -97,7 +97,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByCnpj_ShouldHandleInvalidMappingResult(string cnpj)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -119,7 +119,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
         public async Task GetByNoteNumber_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -163,7 +163,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByNoteNumber_ShouldHandleNullRepositoryResult(string noteNumber)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -189,7 +189,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByNoteNumber_ShouldHandleInvalidMappingResult(string noteNumber)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -211,7 +211,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
         public async Task GetByValue_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -256,7 +256,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByValue_ShouldHandleNullRepositoryResult(decimal value)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -282,7 +282,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByValue_ShouldHandleInvalidMappingResult(decimal value)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -304,7 +304,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
         public async Task GetByEmissionDate_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -349,7 +349,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByEmissionDate_ShouldHandleNullRepositoryResult(DateTime emissionDate)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -375,7 +375,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task GetByEmissionDate_ShouldHandleInvalidMappingResult(DateTime emissionDate)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -397,7 +397,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
         public async Task Save_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -426,7 +426,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
         public async Task Save_ShouldHandleNullRepositoryResult(string cnpj, string noteNumber, decimal value)
         {
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
@@ -455,7 +455,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
         public async Task Save_ShouldHandleInvalidMappingResult(string cnpj, string noteNumber, decimal value)
         {
             // Arrange
-            var noteRepositoryMock = new Mock<IdeCancelamentoRepository>();
+            var noteRepositoryMock = new Mock<INoteRepository>();
             var mediatorHandlerMock = new Mock<IMediatorHandler>();
             var mapperMock = new Mock<IMapper>();
 
