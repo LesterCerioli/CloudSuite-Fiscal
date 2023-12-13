@@ -176,9 +176,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("289.409.128.328")]
-        [InlineData("289.088.794.339")]
-        [InlineData("519.481.861.989")]
+        [InlineData("1298046792380167508972365879346578")]
+        [InlineData("7380146587903465783645897643875343")]
+        [InlineData("8398493849382039480239840239840293")]
         public async Task GetByInscricaoEstadual_ShouldHandleInvalidMappingResult(string inscricaoEstadual)
         {
             // Arrange
@@ -196,6 +196,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
             // Assert
             await Assert.ThrowsAsync<ArgumentException>(() => prestadorAppService.GetByInscricaoEstadual(inscricaoEstadual));
+
         }
 
         [Theory]
