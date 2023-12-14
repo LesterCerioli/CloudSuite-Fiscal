@@ -21,9 +21,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
     {
 
         [Theory]
-        [InlineData("10-06-2020", "09-11-2016", "Desistencia", "47.224.882/0001-32")]
-        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "42.483.790/0001-53")]
-        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "65.025.775/0001-67")]
+        [InlineData("10-06-2020", "09-11-2016", "Desistencia", "34.202.565/0001-73")]
+        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "40.367.759/0001-21")]
+        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "33.576.577/0001-03")]
         public async Task GetByCnpj_ShouldReturnsCompanyViewModel(DateTimeOffset requestDate, DateTimeOffset timeDate, string cancelReason, string cnpj)
         {
             var cancelOrderRepositoryRepositoryMock = new Mock<ICancelOrderRepository>();
@@ -59,9 +59,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03")]
-        [InlineData("06.485.306/0001-61")]
-        [InlineData("99.802.891/0001-67")]
+        [InlineData("66.564.975/0001-50")]
+        [InlineData("33.999.555/0001-48")]
+        [InlineData("92.772.088/0001-88")]
         public async Task GetbyCnpj_ShouldHandleNullRepositoryResult(string cnpj)
         {
             // Arrange
@@ -85,9 +85,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03")]
-        [InlineData("06.485.306/0001-61")]
-        [InlineData("99.802.891/0001-67")]
+        [InlineData("81.390.750/0001-19")]
+        [InlineData("54.403.570/0001-51")]
+        [InlineData("20.249.017/0001-94")]
         public async Task GetbyCnpj_ShouldHandleInvalidMappingResult(string cnpj)
         {
             // Arrange
@@ -195,9 +195,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("10-06-2020", "47.224.882/0001-32")]
-        [InlineData("05-03-2017", "42.483.790/0001-53")]
-        [InlineData("09-11-2016", "65.025.775/0001-67")]
+        [InlineData("10-06-2020", "75.524.498/0001-90")]
+        [InlineData("05-03-2017", "06.546.252/0001-05")]
+        [InlineData("09-11-2016", "93.020.793/0001-91")]
         public async Task Save_ShouldReturnsCompanyViewModel(DateTimeOffset requestDate, string cnpj)
         {
             var cancelOrderRepositoryRepositoryMock = new Mock<ICancelOrderRepository>();
@@ -223,9 +223,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("10-06-2020", "09-11-2016", "Desistencia", "47.224.882/0001-32")]
-        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "42.483.790/0001-53")]
-        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "65.025.775/0001-67")]
+        [InlineData("10-06-2020", "09-11-2016", "Desistencia", "45.241.026/0001-60")]
+        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "79.644.315/0001-21")]
+        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "48.248.533/0001-13")]
         public async Task Save_ShouldHandleNullRepositoryResult(DateTimeOffset requestDate, DateTimeOffset timeDate, string cancelReason, string cnpj)
         {
             var cancelOrderRepositoryRepositoryMock = new Mock<ICancelOrderRepository>();

@@ -21,9 +21,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
     public class StateAppServiceTests
     {
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437")]
-        [InlineData("06.485.306/0001-61", "080.863.092.761")]
-        [InlineData("99.802.891/0001-67", "354.156.758.100")]
+        [InlineData("Bahia", "BA")]
+        [InlineData("Rio de Janeiro", "RJ")]
+        [InlineData("Paraiba", "PB")]
         public async Task GetByStateName_ShouldReturnsCompanyViewModel(string stateName, string uf)
         {
             var stateRepositoryMock = new Mock<IStateRepository>();
@@ -106,9 +106,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437")]
-        [InlineData("06.485.306/0001-61", "080.863.092.761")]
-        [InlineData("99.802.891/0001-67", "354.156.758.100")]
+        [InlineData("Sanata Catarina", "SC")]
+        [InlineData("Maranhão", "MA")]
+        [InlineData("Pernambuco", "PE")]
         public async Task GetByUF_ShouldReturnsCompanyViewModel(string stateName, string uf)
         {
             var stateRepositoryMock = new Mock<IStateRepository>();
@@ -191,9 +191,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437")]
-        [InlineData("06.485.306/0001-61", "080.863.092.761")]
-        [InlineData("99.802.891/0001-67", "354.156.758.100")]
+        [InlineData("Goias", "GO")]
+        [InlineData("Rio Grande do Norte", "RN")]
+        [InlineData("Acre", "AC")]
         public async Task Save_ShouldReturnsCompanyViewModel(string stateName, string uf)
         {
             var stateRepositoryMock = new Mock<IStateRepository>();
@@ -219,9 +219,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437")]
-        [InlineData("06.485.306/0001-61", "080.863.092.761")]
-        [InlineData("99.802.891/0001-67", "354.156.758.100")]
+        [InlineData("Amazonas", "AM")]
+        [InlineData("Para", "PA")]
+        [InlineData("Rio Grande do Sul", "RS")]
         public async Task Save_ShouldHandleNullRepositoryResult(string stateName, string uf)
         {
             var stateRepositoryMock = new Mock<IStateRepository>();
@@ -246,9 +246,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437")]
-        [InlineData("06.485.306/0001-61", "080.863.092.761")]
-        [InlineData("99.802.891/0001-67", "354.156.758.100")]
+        [InlineData("Espirito Santo", "ES")]
+        [InlineData("Minas Gerais", "MG")]
+        [InlineData("Distrito Federal", "DF")]
         public async Task Save_ShouldHandleInvalidMappingResult(string stateName, string uf)
         {
             // Arrange

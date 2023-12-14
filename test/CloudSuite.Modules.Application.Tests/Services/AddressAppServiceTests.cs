@@ -20,9 +20,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
     public class AddressAppServiceTests
     {
         [Theory]
-        [InlineData("54.446.262/0001-03", "John Doe")]
+        [InlineData("54.446.262/0001-03", "Tony Stark")]
         [InlineData("06.485.306/0001-61", "Jessica Jones")]
-        [InlineData("99.802.891/0001-67", "Malory")]
+        [InlineData("99.802.891/0001-67", "Steve Rogers")]
         public async Task GetByAddressLine1_ShouldReturnsCompanyViewModel(string addressLine, string contactName)
         {
             var addressRepositoryMock = new Mock<IAddressRepository>();
@@ -104,9 +104,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "John Doe")]
-        [InlineData("06.485.306/0001-61", "Jessica Jones")]
-        [InlineData("99.802.891/0001-67", "Malory")]
+        [InlineData("47.720.204/0001-60", "Peter Parker")]
+        [InlineData("19.807.699/0001-24", "Mary Jane")]
+        [InlineData("74.658.700/0001-04", "Ned Stark")]
         public async Task Save_ShouldReturnsCompanyViewModel(string addressLine, string contactName)
         {
             var addressRepositoryMock = new Mock<IAddressRepository>();
@@ -123,7 +123,6 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
             var createCommand = new CreateAddressCommand()
             {
-                Id = addressEntity.Id,
                 ContactName = contactName,
                 AddressLine1 = addressLine
             };
@@ -136,9 +135,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "John Doe")]
-        [InlineData("06.485.306/0001-61", "Jessica Jones")]
-        [InlineData("99.802.891/0001-67", "Malory")]
+        [InlineData("65.988.820/0001-89", "Wally West")]
+        [InlineData("65.486.979/0001-03", "Bruce Wayne")]
+        [InlineData("34.414.259/0001-09", "Dick Grayson")]
         public async Task Save_ShouldHandleNullRepositoryResult(string addressLine, string contactName)
         {
             var addressRepositoryMock = new Mock<IAddressRepository>();
@@ -155,7 +154,6 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
             var createCommand = new CreateAddressCommand()
             {
-                Id = addressEntity.Id,
                 ContactName = contactName,
                 AddressLine1 = addressLine
             };
@@ -167,9 +165,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "John Doe")]
-        [InlineData("06.485.306/0001-61", "Jessica Jones")]
-        [InlineData("99.802.891/0001-67", "Malory")]
+        [InlineData("11.247.786/0001-62", "Harley Quinzel")]
+        [InlineData("57.463.010/0001-80", "Jason Todd")]
+        [InlineData("06.780.664/0001-05", "Barry Allen")]
         public async Task Save_ShouldHandleInvalidMappingResult(string addressLine, string contactName)
         {
             // Arrange
@@ -187,7 +185,6 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
             var createCommand = new CreateAddressCommand()
             {
-                Id = addressEntity.Id,
                 ContactName = contactName,
                 AddressLine1 = addressLine
             };

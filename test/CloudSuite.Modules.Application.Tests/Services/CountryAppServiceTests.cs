@@ -141,9 +141,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Irlanda", "IRL", true, true, true, true, true)]
-        [InlineData("Japão", "JPA", true, false, true, false, true)]
-        [InlineData("China", "CHN", false, false, false, false, false)]
+        [InlineData("Arabia Saudita", "ARB", true, true, true, true, true)]
+        [InlineData("Nova Zelandia", "NWZ", true, false, true, false, true)]
+        [InlineData("Inglaterra", "ING", false, false, false, false, false)]
         public async Task Save_ShouldHandleNullRepositoryResult(string countryName, string code3, bool isBillingEnable, bool isCityEnabled, bool isShippingEnabled, bool isZipCodeEnable, bool isDistrictEnable)
         {
             //Arrange

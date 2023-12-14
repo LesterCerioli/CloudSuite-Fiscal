@@ -19,8 +19,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
     {
         [Theory]
         [InlineData("10-06-2020", "09-11-2016", "Desistencia", "47.224.882/0001-32")]
-        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "42.483.790/0001-53")]
-        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "65.025.775/0001-67")]
+        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "78.705.891/0001-79")]
+        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "39.946.453/0001-40")]
         public async Task GetByCancelReason_ShouldReturnsCompanyViewModel(DateTimeOffset requestDate, DateTimeOffset timeDate, string cancelReason, string cnpj)
         {
             var cancelOrderRepositoryRepositoryMock = new Mock<IIdeCancelamentoRepository>();
@@ -56,9 +56,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03")]
-        [InlineData("06.485.306/0001-61")]
-        [InlineData("99.802.891/0001-67")]
+        [InlineData("53.210.856/0001-58")]
+        [InlineData("49.087.732/0001-50")]
+        [InlineData("21.957.521/0001-01")]
         public async Task GetByCancelReason_ShouldHandleNullRepositoryResult(string cancelReason)
         {
             // Arrange
@@ -82,9 +82,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03")]
+        [InlineData("09.890.041/0001-75")]
         [InlineData("06.485.306/0001-61")]
-        [InlineData("99.802.891/0001-67")]
+        [InlineData("74.771.710/0001-51")]
         public async Task GetByCancelReason_ShouldHandleInvalidMappingResult(string cancelReason)
         {
             // Arrange
@@ -105,9 +105,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("10-06-2020", "09-11-2016", "Desistencia", "47.224.882/0001-32")]
-        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "42.483.790/0001-53")]
-        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "65.025.775/0001-67")]
+        [InlineData("10-06-2020", "09-11-2016", "Desistencia", "87.305.383/0001-94")]
+        [InlineData("05-03-2017", "05-03-2017", "Produto falso", "84.199.132/0001-84")]
+        [InlineData("09-11-2016", "10-09-2023", "Não quero mais", "14.345.739/0001-40")]
         public async Task GetByTimeDate_ShouldReturnsCompanyViewModel(DateTimeOffset requestDate, DateTimeOffset timeDate, string cancelReason, string cnpj)
         {
             var cancelOrderRepositoryRepositoryMock = new Mock<IIdeCancelamentoRepository>();

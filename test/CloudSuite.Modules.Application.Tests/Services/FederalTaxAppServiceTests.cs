@@ -21,8 +21,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
     {
         [Theory]
         [InlineData(2234.12, 69584.321, 9483.292, 11.234, 2200.93, true, true, true, true, true)]
-        [InlineData(6234.43, 345.21, 384237859.23, 342.12, 83.21, false, true, false, true, false)]
-        [InlineData(22.30, 3321.32, 321.95, 873.21, 55.32, false, false, false, false, false)]
+        [InlineData(1234.56, 78910.111, 1213.141, 15.161, 1718.19, false, false, false, false, false)]
+        [InlineData(2021.22, 2324.252, 2627.282, 29.303, 3132.33, true, false, true, false, true)]
         public async Task GetByVPIS_ShouldReturnsCompanyViewModel(decimal vpis, decimal vcofins, decimal vir, decimal vinss, decimal vcsll, bool vpisspecified, bool vConfinsspecified, bool vIrsSpecifed, bool vInssSpecifed, bool vCsllspecified)
         {
             var federalTaxRepositoryMock = new Mock<IFederalTaxRepository>();
@@ -88,9 +88,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12)]
-        [InlineData(384237859.23)]
-        [InlineData(873.21)]
+        [InlineData(4567.89)]
+        [InlineData(1234.56)]
+        [InlineData(7891.01)]
         public async Task GetByVPIS_ShouldHandleInvalidMappingResult(decimal vpis)
         {
             // Arrange
@@ -111,9 +111,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12, 69584.321, 9483.292, 11.234, 2200.93, true, true, true, true, true)]
-        [InlineData(6234.43, 345.21, 384237859.23, 342.12, 83.21, false, true, false, true, false)]
-        [InlineData(22.30, 3321.32, 321.95, 873.21, 55.32, false, false, false, false, false)]
+        [InlineData(3456.78, 91011.121, 1314.151, 16.171, 1819.20, false, true, false, true, false)]
+        [InlineData(1234.56, 78910.111, 1213.141, 15.161, 1718.19, false, false, false, false, false)]
+        [InlineData(2021.22, 2324.252, 2627.282, 29.303, 3132.33, true, false, true, false, true)]
         public async Task GetByVCOFINS_ShouldReturnsCompanyViewModel(decimal vpis, decimal vcofins, decimal vir, decimal vinss, decimal vcsll, bool vpisspecified, bool vConfinsspecified, bool vIrsSpecifed, bool vInssSpecifed, bool vCsllspecified)
         {
             var federalTaxRepositoryMock = new Mock<IFederalTaxRepository>();
@@ -179,9 +179,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12)]
-        [InlineData(384237859.23)]
-        [InlineData(873.21)]
+        [InlineData(1234.56)]
+        [InlineData(7891.01)]
+        [InlineData(4567.89)]
         public async Task GetByVCOFINS_ShouldHandleInvalidMappingResult(decimal vcofins)
         {
             // Arrange
@@ -244,9 +244,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12)]
-        [InlineData(384237859.23)]
-        [InlineData(873.21)]
+        [InlineData(1234.56)]
+        [InlineData(7891.01)]
+        [InlineData(4567.89)]
         public async Task GetByVIR_ShouldHandleNullRepositoryResult(decimal vir)
         {
             // Arrange
@@ -270,9 +270,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12)]
-        [InlineData(384237859.23)]
-        [InlineData(873.21)]
+        [InlineData(3210.98)]
+        [InlineData(7654.32)]
+        [InlineData(1098.76)]
         public async Task GetByVIR_ShouldHandleInvalidMappingResult(decimal vir)
         {
             // Arrange
@@ -293,9 +293,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12, 69584.321, 9483.292, 11.234, 2200.93, true, true, true, true, true)]
-        [InlineData(6234.43, 345.21, 384237859.23, 342.12, 83.21, false, true, false, true, false)]
-        [InlineData(22.30, 3321.32, 321.95, 873.21, 55.32, false, false, false, false, false)]
+        [InlineData(1234.56, 78910.111, 1213.141, 15.161, 1718.19, false, false, false, false, false)]
+        [InlineData(2021.22, 2324.252, 2627.282, 29.303, 3132.33, true, false, true, false, true)]
+        [InlineData(3456.78, 91011.121, 1314.151, 16.171, 1819.20, false, true, false, true, false)]
         public async Task GetByVINSS_ShouldReturnsCompanyViewModel(decimal vpis, decimal vcofins, decimal vir, decimal vinss, decimal vcsll, bool vpisspecified, bool vConfinsspecified, bool vIrsSpecifed, bool vInssSpecifed, bool vCsllspecified)
         {
             var federalTaxRepositoryMock = new Mock<IFederalTaxRepository>();
@@ -384,9 +384,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12, 69584.321, 9483.292, 11.234, 2200.93, true, true, true, true, true)]
-        [InlineData(6234.43, 345.21, 384237859.23, 342.12, 83.21, false, true, false, true, false)]
-        [InlineData(22.30, 3321.32, 321.95, 873.21, 55.32, false, false, false, false, false)]
+        [InlineData(2021.22, 2324.252, 2627.282, 29.303, 3132.33, true, false, true, false, true)]
+        [InlineData(3456.78, 91011.121, 1314.151, 16.171, 1819.20, false, true, false, true, false)]
+        [InlineData(9876.54, 32109.876, 5432.109, 21.098, 7654.32, true, true, false, false, true)]
         public async Task GetByVCSLL_ShouldReturnsCompanyViewModel(decimal vpis, decimal vcofins, decimal vir, decimal vinss, decimal vcsll, bool vpisspecified, bool vConfinsspecified, bool vIrsSpecifed, bool vInssSpecifed, bool vCsllspecified)
         {
             var federalTaxRepositoryMock = new Mock<IFederalTaxRepository>();
@@ -426,9 +426,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12)]
-        [InlineData(384237859.23)]
-        [InlineData(873.21)]
+        [InlineData(1234.56)]
+        [InlineData(7891.01)]
+        [InlineData(4567.89)]
         public async Task GetByVCSLL_ShouldHandleNullRepositoryResult(decimal vcsll)
         {
             // Arrange
@@ -452,9 +452,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12)]
-        [InlineData(384237859.23)]
-        [InlineData(873.21)]
+        [InlineData(3210.98)]
+        [InlineData(7654.32)]
+        [InlineData(1098.76)]
         public async Task GetByVCSLL_ShouldHandleInvalidMappingResult(decimal vcsll)
         {
             // Arrange
@@ -475,9 +475,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12, 69584.321, 9483.292, 11.234, 2200.93, true, true, true, true, true)]
-        [InlineData(6234.43, 345.21, 384237859.23, 342.12, 83.21, false, true, false, true, false)]
-        [InlineData(22.30, 3321.32, 321.95, 873.21, 55.32, false, false, false, false, false)]        
+        [InlineData(6677.88, 9911.001, 2233.445, 41.667, 8899.11, true, false, false, true, false)]
+        [InlineData(2233.44, 5566.777, 8899.111, 51.223, 3344.55, false, false, true, true, false)]
+        [InlineData(6677.88, 9911.001, 2233.445, 61.667, 8899.11, true, true, false, false, true)]
         public async Task Save_ShouldReturnsCompanyViewModel(decimal vpis, decimal vcofins, decimal vir, decimal vinss, decimal vcsll, bool vpisspecified, bool vConfinsspecified, bool vIrsSpecifed, bool vInssSpecifed, bool vCsllspecified)
         {
             var federalTaxRepositoryMock = new Mock<IFederalTaxRepository>();
@@ -511,9 +511,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12, 69584.321, 9483.292, 11.234, 2200.93, true, true, true, true, true)]
-        [InlineData(6234.43, 345.21, 384237859.23, 342.12, 83.21, false, true, false, true, false)]
-        [InlineData(22.30, 3321.32, 321.95, 873.21, 55.32, false, false, false, false, false)]
+        [InlineData(2233.44, 5566.777, 8899.111, 71.223, 3344.55, false, true, true, false, false)]
+        [InlineData(6677.88, 9911.001, 2233.445, 81.667, 8899.11, true, false, true, false, true)]
+        [InlineData(2233.44, 5566.777, 8899.111, 91.223, 3344.55, false, true, false, true, false)]
         public async Task Save_ShouldHandleNullRepositoryResult(decimal vpis, decimal vcofins, decimal vir, decimal vinss, decimal vcsll, bool vpisspecified, bool vConfinsspecified, bool vIrsSpecifed, bool vInssSpecifed, bool vCsllspecified)
         {
             var federalTaxRepositoryMock = new Mock<IFederalTaxRepository>();
@@ -546,9 +546,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(2234.12, 69584.321, 9483.292, 11.234, 2200.93, true, true, true, true, true)]
-        [InlineData(6234.43, 345.21, 384237859.23, 342.12, 83.21, false, true, false, true, false)]
-        [InlineData(22.30, 3321.32, 321.95, 873.21, 55.32, false, false, false, false, false)]
+        [InlineData(6677.88, 9911.001, 2233.445, 101.667, 8899.11, true, true, true, false, false)]
+        [InlineData(2233.44, 5566.777, 8899.111, 111.223, 3344.55, false, false, false, true, true)]
+        [InlineData(6677.88, 9911.001, 2233.445, 121.667, 8899.11, true, true, false, true, false)]
         public async Task Save_ShouldHandleInvalidMappingResult(decimal vpis, decimal vcofins, decimal vir, decimal vinss, decimal vcsll, bool vpisspecified, bool vConfinsspecified, bool vIrsSpecifed, bool vInssSpecifed, bool vCsllspecified)
         {
             // Arrange

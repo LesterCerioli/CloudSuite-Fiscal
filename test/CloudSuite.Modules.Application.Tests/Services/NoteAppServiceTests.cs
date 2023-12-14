@@ -22,9 +22,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
     public class NoteAppServiceTests
     {
         [Theory]
-        [InlineData("54.446.262/0001-03", "82763", 22.22)]
+        [InlineData("58.067.572/0001-78", "43632", 22.22)]
         [InlineData("06.485.306/0001-61", "23657", 32.87)]
-        [InlineData("99.802.891/0001-67", "87677", 94.65)]
+        [InlineData("04.644.392/0001-82", "78563", 94.65)]
         public async Task GetByCnpj_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
             var noteRepositoryMock = new Mock<INoteRepository>();
@@ -65,9 +65,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03")]
-        [InlineData("06.485.306/0001-61")]
-        [InlineData("99.802.891/0001-67")]
+        [InlineData("31.489.054/0001-96")]
+        [InlineData("29.339.145/0001-01")]
+        [InlineData("33.376.019/0001-96")]
         public async Task GetByCnpj_ShouldHandleNullRepositoryResult(string cnpj)
         {
             // Arrange
@@ -91,9 +91,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03")]
-        [InlineData("06.485.306/0001-61")]
-        [InlineData("99.802.891/0001-67")]
+        [InlineData("86.586.691/0001-72")]
+        [InlineData("36.138.291/0001-26")]
+        [InlineData("61.010.306/0001-13")]
         public async Task GetByCnpj_ShouldHandleInvalidMappingResult(string cnpj)
         {
             // Arrange
@@ -114,9 +114,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "82763782367323", 22.22)]
-        [InlineData("06.485.306/0001-61", "23657289348467", 32.87)]
-        [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
+        [InlineData("51.587.640/0001-80", "82763782367323", 22.22)]
+        [InlineData("87.076.160/0001-00", "23657289348467", 32.87)]
+        [InlineData("18.945.089/0001-24", "87375648390303", 94.65)]
         public async Task GetByNoteNumber_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
             var noteRepositoryMock = new Mock<INoteRepository>();
@@ -206,9 +206,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "82763782367323", 22.22)]
-        [InlineData("06.485.306/0001-61", "23657289348467", 32.87)]
-        [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
+        [InlineData("66.758.181/0001-28", "23534654654643", 22.22)]
+        [InlineData("66.758.181/0001-28", "23657289348467", 7321.34)]
+        [InlineData("59.048.242/0001-06", "21321434325454", 12.211)]
         public async Task GetByValue_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
             var noteRepositoryMock = new Mock<INoteRepository>();
@@ -250,9 +250,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(32.56)]
-        [InlineData(87.87)]
-        [InlineData(98.12)]
+        [InlineData(3210.98)]
+        [InlineData(7654.32)]
+        [InlineData(1098.76)]
         public async Task GetByValue_ShouldHandleNullRepositoryResult(decimal value)
         {
             // Arrange
@@ -276,9 +276,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData(32.56)]
-        [InlineData(87.87)]
-        [InlineData(98.12)]
+        [InlineData(1234.56)]
+        [InlineData(7891.01)]
+        [InlineData(4567.89)]
         public async Task GetByValue_ShouldHandleInvalidMappingResult(decimal value)
         {
             // Arrange
@@ -392,8 +392,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "82763782367323", 22.22)]
-        [InlineData("06.485.306/0001-61", "23657289348467", 32.87)]
+        [InlineData("54.446.262/0001-03", "82763782367323", 3210.98)]
+        [InlineData("06.485.306/0001-61", "23657289348467", 9876.54)]
         [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
         public async Task Save_ShouldReturnsCompanyViewModel(string cnpj, string noteNumber, decimal value)
         {
@@ -421,9 +421,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "82763782367323", 22.22)]
+        [InlineData("54.446.262/0001-03", "82763782367323", 7891.01)]
         [InlineData("06.485.306/0001-61", "23657289348467", 32.87)]
-        [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
+        [InlineData("99.802.891/0001-67", "87375648390303", 1098.76)]
         public async Task Save_ShouldHandleNullRepositoryResult(string cnpj, string noteNumber, decimal value)
         {
             var noteRepositoryMock = new Mock<INoteRepository>();
@@ -450,7 +450,7 @@ namespace CloudSuite.Modules.Application.Tests.Services
 
         [Theory]
         [InlineData("54.446.262/0001-03", "82763782367323", 22.22)]
-        [InlineData("06.485.306/0001-61", "23657289348467", 32.87)]
+        [InlineData("06.485.306/0001-61", "23657289348467", 3210.98)]
         [InlineData("99.802.891/0001-67", "87375648390303", 94.65)]
         public async Task Save_ShouldHandleInvalidMappingResult(string cnpj, string noteNumber, decimal value)
         {

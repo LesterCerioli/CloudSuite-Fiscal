@@ -106,9 +106,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "05-03-2017", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "02-07-2018", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Janeiro", "10-01-2024", "2026", "2300", "283789234789350", "6587346857969934866")]
+        [InlineData("Fevereiro", "20-02-2024", "2027", "2400", "283789234789351", "6587346857969934867")]
+        [InlineData("Março", "30-03-2024", "2028", "2500", "283789234789352", "6587346857969934868")]
         public async Task GetDASByDueDate_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             var dasRepositoryMock = new Mock<IDASRepository>();
@@ -187,9 +187,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "05-08-2020", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "12-10-2019", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Abril", "10-04-2024", "2029", "2600", "283789234789353", "6587346857969934869")]
+        [InlineData("Junho", "30-06-2024", "2031", "2800", "283789234789355", "6587346857969934871")]
+        [InlineData("Julho", "10-07-2024", "2032", "2900", "283789234789356", "6587346857969934872")]
         public async Task GetByDocumentNumber_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             var dasRepositoryMock = new Mock<IDASRepository>();
@@ -274,9 +274,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "09-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
+        [InlineData("Maio", "20-05-2024", "2030", "2700", "283789234789354", "6587346857969934870")]
         [InlineData("Março", "08-09-2021", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "11-12-2023", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Agosto", "20-08-2024", "2033", "3000", "283789234789357", "6587346857969934873")]
         public async Task GetByReferenceYear_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             var dasRepositoryMock = new Mock<IDASRepository>();
@@ -361,9 +361,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "07-02-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "01-01-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
+        [InlineData("Setembro", "30-09-2024", "2034", "3100", "283789234789358", "6587346857969934874")]
+        [InlineData("Outubro", "10-10-2024", "2035", "3200", "283789234789359", "6587346857969934875")]
+        [InlineData("Novembro", "20-11-2024", "2036", "3300", "283789234789360", "6587346857969934876")]
         public async Task Save_ShouldAddCompanyToRepository(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
             // Arrange
@@ -427,9 +427,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "08-05-2022", "2023", "2000", "283789234789347", "6587346857969934863")]
-        [InlineData("Março", "08-05-2022", "2022", "3500", "283789234789347", "6587346857969934863")]
-        [InlineData("Dezembro", "08-05-2022", "2020", "5000", "039485627830451", "0293803924834545939")]
+        [InlineData("Abril", "10-04-2025", "2041", "3800", "283789234789365", "6587346857969934881")]
+        [InlineData("Maio", "20-05-2025", "2042", "3900", "283789234789366", "6587346857969934882")]
+        [InlineData("Junho", "30-06-2025", "2043", "4000", "283789234789367", "6587346857969934883")]
         public async Task Save_ShouldHandleInvalidMappingResult(string referenceMonth, DateTime dueDate, string referenceYear, string paymentValue, string documentNumber, string barCode)
         {
 

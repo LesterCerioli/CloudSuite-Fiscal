@@ -21,8 +21,8 @@ namespace CloudSuite.Modules.Application.Tests.Services
     {
         [Theory]
         [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("22.022.699/0001-23", "123.456.789.01", "987.654.321.10", "12.345.678-9", "Empresa Exemplo Ltda", "Empresa Exemplo", 2)]
+        [InlineData("23.302.139/0001-95", "234.567.890.12", "876.543.210.98", "23.456.789-0", "Exemplo Comércio Ltda", "Exemplo Comércio", 3)]
         public async Task GetByCnpj_ShouldReturnsCompanyViewModel(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             var prestadorRepositoryMock = new Mock<IPrestadorRepository>();
@@ -60,9 +60,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("26.514.455/0001-19")]
-        [InlineData("50.159.125/0001-37")]
-        [InlineData("22.924.442/0001-67")]
+        [InlineData("86.847.798/0001-27")]
+        [InlineData("86.412.279/0001-36")]
+        [InlineData("97.785.424/0001-40")]
         public async Task GetByCnpj_ShouldHandleNullRepositoryResult(string cnpj)
         {
             // Arrange
@@ -86,9 +86,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("26.514.455/0001-19")]
-        [InlineData("50.159.125/0001-37")]
-        [InlineData("22.924.442/0001-67")]
+        [InlineData("49.317.440/0001-66")]
+        [InlineData("02.142.194/0001-95")]
+        [InlineData("00.012.377/0001-60")]
         public async Task GetByCnpj_ShouldHandleInvalidMappingResult(string cnpj)
         {
             // Arrange
@@ -109,9 +109,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("96.746.617/0001-20", "345.678.901.23", "765.432.109.87", "34.567.890-1", "Comércio Exemplo Ltda", "Comércio Exemplo", 4)]
+        [InlineData("74.952.543/0001-45", "456.789.012.34", "654.321.098.76", "45.678.901-2", "Ltda Exemplo Empresa", "Ltda Exemplo", 5)]
+        [InlineData("07.782.203/0001-26", "567.890.123.45", "543.210.987.65", "56.789.012-3", "Empresa Ltda Exemplo", "Empresa Ltda", 6)]
         public async Task GetByInscricaoEstadual_ShouldReturnsCompanyViewModel(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             var prestadorRepositoryMock = new Mock<IPrestadorRepository>();
@@ -200,9 +200,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("84.230.466/0001-73", "678.901.234.56", "432.109.876.54", "67.890.123-4", "Exemplo Empresa Ltda", "Exemplo Empresa", 7)]
+        [InlineData("20.488.026/0001-38", "789.012.345.67", "321.098.765.43", "78.901.234-5", "Comércio Ltda Exemplo", "Comércio Ltda", 8)]
+        [InlineData("08.603.960/0001-58", "890.123.456.78", "210.987.654.32", "89.012.345-6", "Ltda Comércio Exemplo", "Ltda Comércio", 9)]
         public async Task GetByDocTomadorEstrangeiro_ShouldReturnsCompanyViewModel(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             var prestadorRepositoryMock = new Mock<IPrestadorRepository>();
@@ -290,9 +290,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("42.834.733/0001-71", "123.456.789.01", "987.654.321.10", "12.345.678-9", "Empresa Exemplo Ltda", "Empresa Exemplo", 11)]
+        [InlineData("85.289.558/0001-91", "234.567.890.12", "876.543.210.98", "23.456.789-0", "Exemplo Comércio Ltda", "Exemplo Comércio", 12)]
+        [InlineData("76.389.759/0001-70", "345.678.901.23", "765.432.109.87", "34.567.890-1", "Comércio Exemplo Ltda", "Comércio Exemplo", 13)]
         public async Task GetByInscricaoMunicipal_ShouldReturnsCompanyViewModel(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             var prestadorRepositoryMock = new Mock<IPrestadorRepository>();
@@ -380,9 +380,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("71.376.604/0001-85", "456.789.012.34", "654.321.098.76", "45.678.901-2", "Ltda Exemplo Empresa", "Ltda Exemplo", 14)]
+        [InlineData("94.610.220/0001-80", "567.890.123.45", "543.210.987.65", "56.789.012-3", "Empresa Ltda Exemplo", "Empresa Ltda", 15)]
+        [InlineData("36.781.699/0001-11", "678.901.234.56", "432.109.876.54", "67.890.123-4", "Exemplo Empresa Ltda", "Exemplo Empresa", 16)]
         public async Task GetByNomeFantasia_ShouldReturnsCompanyViewModel(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             var prestadorRepositoryMock = new Mock<IPrestadorRepository>();
@@ -470,9 +470,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("74.362.685/0001-52", "789.012.345.67", "321.098.765.43", "78.901.234-5", "Comércio Ltda Exemplo", "Comércio Ltda", 17)]
+        [InlineData("19.361.788/0001-90", "890.123.456.78", "210.987.654.32", "89.012.345-6", "Ltda Comércio Exemplo", "Ltda Comércio", 18)]
+        [InlineData("43.295.388/0001-08", "901.234.567.89", "109.876.543.21", "90.123.456-7", "Exemplo Ltda Comércio", "Exemplo Ltda", 19)]
         public async Task Save_ShouldReturnsCompanyViewModel(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             var prestadorRepositoryMock = new Mock<IPrestadorRepository>();
@@ -503,9 +503,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("98.451.053/0001-23", "456.789.012.34", "654.321.098.76", "45.678.901-2", "Ltda Exemplo Empresa", "Ltda Exemplo", 23)]
+        [InlineData("70.631.189/0001-04", "567.890.123.45", "543.210.987.65", "56.789.012-3", "Empresa Ltda Exemplo", "Empresa Ltda", 24)]
+        [InlineData("93.380.587/0001-92", "678.901.234.56", "432.109.876.54", "67.890.123-4", "Exemplo Empresa Ltda", "Exemplo Empresa", 25)]
         public async Task Save_ShouldHandleNullRepositoryResult(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             var prestadorRepositoryMock = new Mock<IPrestadorRepository>();
@@ -535,9 +535,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("54.446.262/0001-03", "385.903.095.437", "289.409.128.328", "21.904.074-6", "Olivia e Sophia Filmagens Ltda", "Olivia e Sophia Filmagens", 1)]
-        [InlineData("06.485.306/0001-61", "080.863.092.761", "289.088.794.339", "49.599.874-6", "Isaac e Danilo Pães e Doces Ltda", "Isaac e Danilo Pães e Doces", 2)]
-        [InlineData("99.802.891/0001-67", "354.156.758.100", "519.481.861.989", "41.462.104-9", "Alessandra e Clarice Casa Noturna Ltda", "Alessandra e Clarice Casa Noturna", 3)]
+        [InlineData("95.214.406/0001-83", "123.456.789.01", "987.654.321.10", "12.345.678-9", "Empresa Exemplo Ltda", "Empresa Exemplo", 20)]
+        [InlineData("37.182.511/0001-81", "234.567.890.12", "876.543.210.98", "23.456.789-0", "Exemplo Comércio Ltda", "Exemplo Comércio", 21)]
+        [InlineData("19.193.804/0001-82", "345.678.901.23", "765.432.109.87", "34.567.890-1", "Comércio Exemplo Ltda", "Comércio Exemplo", 22)]
         public async Task Save_ShouldHandleInvalidMappingResult(string cnpj, string inscricaoMunicipal, string inscricaoEstadual, string docTomadorEstrangeiro, string socialReason, string nomeFantasia, int tipo)
         {
             // Arrange

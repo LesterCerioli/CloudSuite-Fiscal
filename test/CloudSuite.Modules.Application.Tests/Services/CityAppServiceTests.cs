@@ -53,9 +53,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Alemanha")]
-        [InlineData("Mexico")]
-        [InlineData("China")]
+        [InlineData("Berlim")]
+        [InlineData("Cidade do Mexico")]
+        [InlineData("Pequim")]
         public async Task GetByCityName_ShouldHandleNullRepositoryResult(string cityName)
         {
             // Arrange
@@ -79,9 +79,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Chile")]
-        [InlineData("Uruguai")]
-        [InlineData("Paraguai")]
+        [InlineData("Santiago")]
+        [InlineData("Montivideu")]
+        [InlineData("Assunção")]
         public async Task GetByCityName_ShouldHandleInvalidMappingResult(string cityName)
         {
             //Arrange

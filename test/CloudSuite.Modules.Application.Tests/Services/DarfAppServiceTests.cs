@@ -19,7 +19,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
     public class DarfAppServiceTests
     {
         [Theory]
-        [InlineData("Outubro", "10-12-2023", "2022", 788.32, "2378432323", "2783672392", "736483362634", "09-11-2016", "05-03-2017", "62.193.782/0001-80", "234", "2234", 2234.23, 223456.21, 3234435.11)]
+        [InlineData("Outubro", "10-12-2023", "2022", 788.32, "2378432323", "2783672392", "736483362634", "09-11-2016", "05-03-2017", "24.953.200/0001-27", "234", "2234", 2234.23, 223456.21, 3234435.11)]
+        [InlineData("Novembro", "10-12-2023", "2023", 900.50, "2387432323", "2783672393", "736483362635", "10-12-2016", "06-04-2017", "90.827.628/0001-58", "235", "2235", 2235.23, 223457.21, 3234436.11)]
+        [InlineData("Dezembro", "10-12-2023", "2024", 1000.60, "2396432323", "2783672394", "736483362636", "11-01-2017", "07-05-2017", "91.629.606/0001-46", "236", "2236", 2236.23, 223458.21, 3234437.11)]
         public async Task GetByReferenceMonth_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
@@ -111,9 +113,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "05-08-2020", "2020", 788.32, "2378432323", "65783453567", "5683765877689", "02-05-2020", "12-10-2019", "62.193.782/0001-80", "234", "2234", 65473.23, 756.21, 23534.11)]
-        [InlineData("Novembro", "10-12-2023", "2023", 349.32, "123244632", "35467365763", "35873467245672", "08-05-2023", "12-10-2019", "62.193.782/0001-80", "234", "2234", 2234.23, 967856.21, 7456.11)]
-        [InlineData("Dezembro", "09-08-2019", "2019", 1234332.32, "7685667658", "9746578769", "736483362634", "04-05-2018", "12-10-2019", "62.193.782/0001-80", "234", "2234", 89754.23, 3245.21, 234.11)]
+        [InlineData("Outubro", "10-12-2023", "2020", 788.32, "2378432323", "65783453567", "5683765877689", "02-05-2020", "12-10-2019", "26.235.779/0001-18", "234", "2234", 65473.23, 756.21, 23534.11)]
+        [InlineData("Novembro", "10-12-2023", "2023", 349.32, "123244632", "35467365763", "35873467245672", "08-05-2023", "12-10-2019", "67.014.958/0001-02", "234", "2234", 2234.23, 967856.21, 7456.11)]
+        [InlineData("Dezembro", "10-12-2023", "2019", 1234332.32, "7685667658", "9746578769", "736483362634", "04-05-2018", "12-10-2019", "80.031.981/0001-73", "234", "2234", 89754.23, 3245.21, 234.11)]
         public async Task GetByDueDate_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
@@ -204,9 +206,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "05-08-2020", "2020", 788.32, "2378432323", "65783453567", "5683765877689", "02-05-2020", "12-10-2019", "62.193.782/0001-80", "234", "2234", 65473.23, 756.21, 23534.11)]
-        [InlineData("Novembro", "10-12-2023", "2023", 349.32, "123244632", "35467365763", "35873467245672", "08-05-2023", "12-10-2019", "62.193.782/0001-80", "234", "2234", 2234.23, 967856.21, 7456.11)]
-        [InlineData("Dezembro", "09-08-2019", "2019", 1234332.32, "7685667658", "9746578769", "736483362634", "04-05-2018", "12-10-2019", "62.193.782/0001-80", "234", "2234", 89754.23, 3245.21, 234.11)]
+        [InlineData("Outubro", "10-12-2023", "2020", 788.32, "2378432323", "65783453567", "5683765877689", "02-05-2020", "12-10-2019", "07.272.847/0001-74", "234", "2234", 65473.23, 756.21, 23534.11)]
+        [InlineData("Novembro", "10-12-2023", "2023", 349.32, "123244632", "35467365763", "35873467245672", "08-05-2023", "12-10-2019", "57.912.682/0001-26", "234", "2234", 2234.23, 967856.21, 7456.11)]
+        [InlineData("Dezembro", "10-12-2023", "2019", 1234332.32, "7685667658", "9746578769", "736483362634", "04-05-2018", "12-10-2019", "31.033.790/0001-35", "234", "2234", 89754.23, 3245.21, 234.11)]
         public async Task GetByDocumentNumber_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
@@ -298,9 +300,9 @@ namespace CloudSuite.Modules.Application.Tests.Services
         }
 
         [Theory]
-        [InlineData("Outubro", "05-08-2020", "2020", 788.32, "2378432323", "65783453567", "5683765877689", "02-05-2020", "12-10-2019", "62.193.782/0001-80", "234", "2234", 65473.23, 756.21, 23534.11)]
-        [InlineData("Novembro", "10-12-2023", "2023", 349.32, "123244632", "35467365763", "35873467245672", "08-05-2023", "12-10-2019", "62.193.782/0001-80", "234", "2234", 2234.23, 967856.21, 7456.11)]
-        [InlineData("Dezembro", "09-08-2019", "2019", 1234332.32, "7685667658", "9746578769", "736483362634", "04-05-2018", "12-10-2019", "62.193.782/0001-80", "234", "2234", 89754.23, 3245.21, 234.11)]
+        [InlineData("Outubro", "10-12-2023", "2020", 788.32, "2378432323", "65783453567", "5683765877689", "02-05-2020", "12-10-2019", "00.541.001/0001-43", "234", "2234", 65473.23, 756.21, 23534.11)]
+        [InlineData("Novembro", "10-12-2023", "2023", 349.32, "123244632", "35467365763", "35873467245672", "08-05-2023", "12-10-2019", "34.364.071/0001-95", "234", "2234", 2234.23, 967856.21, 7456.11)]
+        [InlineData("Dezembro", "10-12-2023", "2019", 1234332.32, "7685667658", "9746578769", "736483362634", "04-05-2018", "12-10-2019", "28.533.472/0001-29", "234", "2234", 89754.23, 3245.21, 234.11)]
         public async Task GetByValidationDate_ShouldReturnsCompanyViewModel(string referenceMonth, DateTime dueDate, string referenceYear, decimal darfPaymentValue, string recuboDeclaroNumero, string documentNumber, string barCode, DateTime validationDate, DateTime periodoApuracao, string cnpj, string receitaCode, string mainValue, decimal amountFine, decimal interest, decimal totalValue)
         {
             var darfRepositoryMock = new Mock<IDarfRepository>();
