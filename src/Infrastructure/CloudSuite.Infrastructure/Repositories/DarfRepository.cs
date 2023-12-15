@@ -35,7 +35,7 @@ namespace CloudSuite.Infrastructure.Repositories
 			return await DbSet.FirstOrDefaultAsync(c => c.DocumentNumber == documentNumber);
 		}
 
-		public async Task<Darf> GetByDueDate(DateTime duedate)
+		public async Task<Darf> GetByDueDate(DateTime? duedate)
 		{
 			return await DbSet.FirstOrDefaultAsync(c => c.DueDate == duedate);
 		}
@@ -45,7 +45,7 @@ namespace CloudSuite.Infrastructure.Repositories
 			return await DbSet.FirstOrDefaultAsync(c => c.ReferenceMonth == referenceMonth);
 		}
 
-		public async Task<Darf> GetByValidationDate(DateTime validationDate)
+		public async Task<Darf> GetByValidationDate(DateTime? validationDate)
 		{
 			return await DbSet.FirstOrDefaultAsync(c => c.ValidationDate == validationDate);
 		}

@@ -19,7 +19,7 @@ namespace CloudSuite.Modules.Application.ViewModels
 
         [DisplayName("Data de Vencimento do DAS")]
         [Required(ErrorMessage = "Campo Data de Vencimento é obrigatorio.")]
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         [DisplayName("Ano de Referencia do DAS")]
         [Required(ErrorMessage = "Campo Ano de Referencia é obrigatorio.")]

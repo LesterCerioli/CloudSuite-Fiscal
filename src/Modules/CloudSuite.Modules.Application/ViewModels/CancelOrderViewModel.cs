@@ -15,10 +15,6 @@ namespace CloudSuite.Modules.Application.ViewModels
         [Key]
         public Guid Id { get; set; }
 
-        [DisplayName("Id de Cancelameto")]
-        [Required(ErrorMessage = "Campo IdeCancelamento é obrigatorio.")]
-        public string IdeCancelamento { get; set; }
-
         [DisplayName("Data da Requisição")]
         [Required(ErrorMessage = "Campo Data da Requisição é obrigatorio.")]
         public DateTimeOffset RequestDate { get; set; }

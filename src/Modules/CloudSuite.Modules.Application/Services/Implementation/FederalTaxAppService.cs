@@ -14,9 +14,16 @@ namespace CloudSuite.Modules.Application.Services.Implementation
 {
     public class FederalTaxAppService : IFederalTaxAppService
     {
-        IFederalTaxRepository _federalTaxRepository;
-        IMapper _mapper;
-        IMediatorHandler _mediator;
+        private readonly IFederalTaxRepository _federalTaxRepository;
+        private readonly IMapper _mapper;
+        private readonly IMediatorHandler _mediator;
+
+        public FederalTaxAppService(IFederalTaxRepository federalTaxRepository, IMapper mapper, IMediatorHandler mediator)
+        {
+            _federalTaxRepository = federalTaxRepository;
+            _mapper = mapper;
+            _mediator = mediator;
+        }
 
         public async Task<FederalTaxViewModel> GetByVCOFINS(decimal vCOFINS)
         {

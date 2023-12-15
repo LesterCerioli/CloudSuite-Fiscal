@@ -13,27 +13,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class NoteViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
-
-        [DisplayName("Tomador de Serviço")]
-        [Required(ErrorMessage = "Campo Tomador Servico é obrigatorio.")]
-        public string TomadorServico { get; set; }
-
-        [DisplayName("Endereço")]
-        [Required(ErrorMessage = "Campo Endereço é obrigatorio.")]
-        public string Address { get; set; }
-
-        [DisplayName("País")]
-        [Required(ErrorMessage = "Campo País é obrigatorio.")]
-        public string Country { get; set; }
-
-        [DisplayName("Distrito")]
-        [Required(ErrorMessage = "Campo Distrito é obrigatorio.")]
-        public string District { get; set; }
-
-        [DisplayName("Prestador de Serviço")]
-        [Required(ErrorMessage = "Campo Prestador de Serviço é obrigatorio.")]
-        public string Prestador { get; set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Cnpj")]
         [Required(ErrorMessage = "Campo Cnpj é obrigatorio.")]

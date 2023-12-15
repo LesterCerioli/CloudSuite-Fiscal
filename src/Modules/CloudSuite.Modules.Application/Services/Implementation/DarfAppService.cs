@@ -30,7 +30,7 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<DarfViewModel>(await _darfRepository.GetByDocumentNumber(documentNumber));
         }
 
-        public async Task<DarfViewModel> GetByDueDate(DateTime duedate)
+        public async Task<DarfViewModel> GetByDueDate(DateTime? duedate)
         {
             return _mapper.Map<DarfViewModel>(await _darfRepository.GetByDueDate(duedate));
         }
@@ -40,7 +40,7 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<DarfViewModel>(await _darfRepository.GetByReferenceMonth(referenceMonth));
         }
 
-        public async Task<DarfViewModel> GetByValidationDate(DateTime validationDate)
+        public async Task<DarfViewModel> GetByValidationDate(DateTime? validationDate)
         {
             return _mapper.Map<DarfViewModel>(await _darfRepository.GetByValidationDate(validationDate));
         }

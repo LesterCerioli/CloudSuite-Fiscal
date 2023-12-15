@@ -35,7 +35,7 @@ namespace CloudSuite.Infrastructure.Repositories
 			return await DbSet.FirstOrDefaultAsync(c => c.DocumentNumber == documentNumber);
 		}
 
-		public async Task<DAS> GetByDueDate(DateTime dueDate)
+		public async Task<DAS> GetByDueDate(DateTime? dueDate)
 		{
 			return await DbSet.FirstOrDefaultAsync(c => c.DueDate == dueDate);
 		}
@@ -69,5 +69,5 @@ namespace CloudSuite.Infrastructure.Repositories
 		{
 			Db.Dispose();
 		}
-	}
+    }
 }

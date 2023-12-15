@@ -5,7 +5,7 @@ namespace CloudSuite.Modules.Domain.Models
 {
     public class Darf : Entity, IAggregateRoot
     {
-        public Darf(string? referenceMonth, DateTime? dueDate, 
+        public Darf(string? referenceMonth, DateTime dueDate, 
             string? referenceYear, decimal? darfPaymentValue, 
             string? recuboDeclaroNumero, string? documentNumber, 
             string? barCode, DateTime? validationDate, 
@@ -55,8 +55,8 @@ namespace CloudSuite.Modules.Domain.Models
 
         public string? MainValue { get; private set; }
 
-        
         public decimal? AmountFine  { get; private set; }
+
         public bool? IsInstallment { get; private set; }
         
         public decimal? Interest { get; private set; }
@@ -65,10 +65,5 @@ namespace CloudSuite.Modules.Domain.Models
 
         public Prestador Prestador { get; private set; }
 
-        
-
-
-
-        
     }
 }

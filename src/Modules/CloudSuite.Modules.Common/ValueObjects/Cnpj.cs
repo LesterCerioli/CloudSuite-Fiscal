@@ -12,11 +12,6 @@ namespace CloudSuite.Modules.Common.ValueObjects
             SetCnpjNumber(cnpjNumber);
         }
 
-        // Default constructor
-        public Cnpj()
-        {
-        }
-
         // Property to access the CNPJ number
         public string CnpjNumber => _cnpjNumber;
 
@@ -45,7 +40,7 @@ namespace CloudSuite.Modules.Common.ValueObjects
                 return false;
 
             // Remove non-digit characters
-            cnpjNumber = cnpjNumber.Trim().Replace(".", "").Replace("-", "").Replace("/", "");
+            cnpjNumber = new string(cnpjNumber.Where(char.IsDigit).ToArray());
 
             // CNPJ must have 14 digits
             if (cnpjNumber.Length != 14)
@@ -61,7 +56,7 @@ namespace CloudSuite.Modules.Common.ValueObjects
         // Private method to check for repeated digits
         private bool IsRepeatedDigits(string cnpjNumber)
         {
-            return cnpjNumber == new string(cnpjNumber[0], 14);
+            return cnpjNumber.Distinct().Count() == 1;
         }
 
         // Private method to validate the CNPJ checksum
@@ -96,10 +91,18 @@ namespace CloudSuite.Modules.Common.ValueObjects
             // Compare the calculated checksum digits with the provided ones
             return (int.Parse(cnpjNumber[12].ToString()) == digit1) && (int.Parse(cnpjNumber[13].ToString()) == digit2);
         }
-        
+
+        //yield return CnpjNumber;: O comando yield return é usado para fornecer um valor à coleção sem encerrar a execução do método. Neste caso, o valor retornado é o CnpjNumber da instância da classe.
+
+        //O propósito desta implementação é fornecer os componentes que serão usados 
+        //para verificar a igualdade entre duas instâncias da classe Cnpj.Quando você compara dois objetos de valor, é comum usar todos os seus campos(ou propriedades) para determinar se são iguais.
+        //Portanto, o GetEqualityComponents retorna uma coleção contendo o CnpjNumber como o único componente para a comparação de igualdade.Se todos os componentes na coleção forem iguais entre duas
+        //instâncias, essas instâncias são consideradas iguais
+
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            throw new NotImplementedException();
+            yield return CnpjNumber;
         }
     }
 }

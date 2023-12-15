@@ -30,7 +30,7 @@ namespace CloudSuite.Modules.Application.Services.Implementation
             return _mapper.Map<DASViewModel>(await _dASRepository.GetByDocumentNumber(documentNumber));
         }
 
-        public async Task<DASViewModel> GetByDueDate(DateTime dueDate)
+        public async Task<DASViewModel> GetByDueDate(DateTime? dueDate)
         {
             return _mapper.Map<DASViewModel>(await _dASRepository.GetByDueDate(dueDate));
         }

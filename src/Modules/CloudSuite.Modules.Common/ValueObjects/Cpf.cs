@@ -9,12 +9,10 @@ namespace CloudSuite.Modules.Common.ValueObjects
         public Cpf(string cpfNumber)
         {
             if (!IsValid(cpfNumber))
-                throw new Exception("N�mero de CPF Inv�lido");
-
+                throw new Exception("Número de CPF Inválido");
 
             _cpfNumber = cpfNumber;
         }
-
 
         public Cpf()
         {
@@ -29,7 +27,7 @@ namespace CloudSuite.Modules.Common.ValueObjects
 
         private bool IsValid(string cpfNumber)
         {
-            //Valida��o do CPF
+            //Validação do CPF
             if (string.IsNullOrWhiteSpace(cpfNumber))
                 return false;
 
@@ -64,10 +62,10 @@ namespace CloudSuite.Modules.Common.ValueObjects
 
             return true;
         }
-        
+
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            throw new NotImplementedException();
+            yield return _cpfNumber;
         }
     }
 }
