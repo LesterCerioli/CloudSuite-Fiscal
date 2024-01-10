@@ -12,11 +12,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class IdeCancelamentoViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
-
-        [DisplayName("Ordem de Cancelamento")]
-        [Required(ErrorMessage = "Campo Ordem de Cancelamento é obrigatorio.")]
-        public string CancelOrder { get; set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Razão do Cancelamento")]
         [Required(ErrorMessage = "Campo Razão do Cancelamento é obrigatorio.")]

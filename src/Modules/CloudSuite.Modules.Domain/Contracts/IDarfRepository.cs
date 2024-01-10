@@ -7,11 +7,11 @@ namespace CloudSuite.Modules.Domain.Contracts
     {
         Task<Darf> GetByReferenceMonth(string referenceMonth);
 
-        Task<Darf> GetByDueDate(DateTime duedate) ;
+        Task<Darf> GetByDueDate(DateTime? duedate) ;
 
         Task<Darf> GetByDocumentNumber(string documentNumber);
 
-        Task<Darf> GetByValidationDate(DateTime validationDate);
+        Task<Darf> GetByValidationDate(DateTime? validationDate);
 
         Task<IEnumerable<Darf>> GetList();
 

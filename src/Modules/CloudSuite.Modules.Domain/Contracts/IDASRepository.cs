@@ -7,7 +7,7 @@ namespace CloudSuite.Modules.Domain.Contracts
 
         Task<DAS> GetByReferenceMonth(string referenceMonth);
 
-        Task<DAS> GetByDueDate(DateTime dueDate);
+        Task<DAS> GetByDueDate(DateTime? dueDate);
         
         Task<DAS> GetByDocumentNumber(string documentNumber);
 

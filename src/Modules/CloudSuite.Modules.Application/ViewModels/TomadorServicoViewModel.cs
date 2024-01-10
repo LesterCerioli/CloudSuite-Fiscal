@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class TomadorServicoViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Cnpj")]
         [Required(ErrorMessage = "Campo Cnpj é obrigatorio.")]
@@ -38,10 +38,6 @@ namespace CloudSuite.Modules.Application.ViewModels
         [DisplayName("Nome Fantasia")]
         [Required(ErrorMessage = "Campo Nome Fantasia é obrigatorio.")]
         public string NomeFantasia { get; set; }
-
-        [DisplayName("Endereço")]
-        [Required(ErrorMessage = "Campo Endereço é obrigatorio.")]
-        public string Address { get; set; }
 
         [DisplayName("Tipo")]
         [Required(ErrorMessage = "Campo Tipo é obrigatorio.")]

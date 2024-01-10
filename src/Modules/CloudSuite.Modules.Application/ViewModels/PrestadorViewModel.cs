@@ -13,7 +13,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class PrestadorViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Cnpj")]
         [Required(ErrorMessage = "Campo Cnpj é obrigatorio.")]

@@ -7,7 +7,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class DarfViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Mês de Referencia do Darf")]
         [Required(ErrorMessage = "Campo Mês de Referencia é obrigatorio.")]
@@ -15,7 +15,7 @@ namespace CloudSuite.Modules.Application.ViewModels
 
         [DisplayName("Data de Vencimento do Darf")]
         [Required(ErrorMessage = "Campo Data de Vencimento é obrigatorio.")]
-        public DateTime DueDate { get; set; }
+        public DateTime? DueDate { get; set; }
 
         [DisplayName("Ano de Referencia do Darf")]
         [Required(ErrorMessage = "Campo Ano de Referencia é obrigatorio.")]
@@ -39,7 +39,7 @@ namespace CloudSuite.Modules.Application.ViewModels
 
         [DisplayName("Data de Validade do Darf")]
         [Required(ErrorMessage = "Campo Data de Validade é obrigatorio.")]
-        public DateTime ValidationDate { get; set; }
+        public DateTime? ValidationDate { get; set; }
 
         [DisplayName("Periodo de Apuração do Darf")]
         [Required(ErrorMessage = "Campo Periodo de Apuração é obrigatorio.")]

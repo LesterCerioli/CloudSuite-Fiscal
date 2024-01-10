@@ -17,6 +17,14 @@ namespace CloudSuite.Modules.Application.Services.Implementation
         private readonly IIdeCancelamentoRepository _ideCancelamentoRepository;
         private readonly IMapper _mapper;
         private readonly IMediatorHandler _mediator;
+
+        public IdeCancelamentoAppService(IIdeCancelamentoRepository ideCancelamentoRepository, IMapper mapper, IMediatorHandler mediator)
+        {
+            _ideCancelamentoRepository = ideCancelamentoRepository;
+            _mapper = mapper;
+            _mediator = mediator;
+        }
+
         public async Task<IdeCancelamentoViewModel> GetByCancelReason(string cancelReason)
         {
             return _mapper.Map<IdeCancelamentoViewModel>( await _ideCancelamentoRepository.GetByCancelReason(cancelReason));

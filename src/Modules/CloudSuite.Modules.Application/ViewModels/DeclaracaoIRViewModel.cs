@@ -12,7 +12,7 @@ namespace CloudSuite.Modules.Application.ViewModels
     public class DeclaracaoIRViewModel
     {
         [Key]
-        public Guid Id { get; private set; }
+        public Guid Id { get; set; }
 
         [DisplayName("Numero da Declaração")]
         [Required(ErrorMessage = "Campo Numero da Declaração é obrigatorio.")]

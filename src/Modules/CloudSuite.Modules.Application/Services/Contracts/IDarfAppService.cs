@@ -13,11 +13,11 @@ namespace CloudSuite.Modules.Application.Services.Contracts
     {
         Task<DarfViewModel> GetByReferenceMonth(string referenceMonth);
 
-        Task<DarfViewModel> GetByDueDate(DateTime duedate);
+        Task<DarfViewModel> GetByDueDate(DateTime? duedate);
 
         Task<DarfViewModel> GetByDocumentNumber(string documentNumber);
 
-        Task<DarfViewModel> GetByValidationDate(DateTime validationDate);
+        Task<DarfViewModel> GetByValidationDate(DateTime? validationDate);
                     
         Task Save(CreateDarfCommand createCommand);
     }

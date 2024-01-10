@@ -38,12 +38,12 @@ namespace CloudSuite.Modules.Application.Services.Implementation
 
         public async Task<PrestadorViewModel> GetByInscricaoEstadual(string inscricaoEstadual)
         {
-            return _mapper.Map<PrestadorViewModel>(await _prestadorRepository.GetByNomeFantasia(inscricaoEstadual));
+            return _mapper.Map<PrestadorViewModel>(await _prestadorRepository.GetByInscricaoEstadual(inscricaoEstadual));
         }
 
         public async Task<PrestadorViewModel> GetByInscricaoMunicipal(string inscricaoMunicipal)
         {
-            return _mapper.Map<PrestadorViewModel>(await _prestadorRepository.GetByInscricaoEstadual(inscricaoMunicipal));
+            return _mapper.Map<PrestadorViewModel>(await _prestadorRepository.GetByInscricaoMunicipal(inscricaoMunicipal));
         }
 
         public async Task<PrestadorViewModel> GetByNomeFantasia(string nomeFantasia)
