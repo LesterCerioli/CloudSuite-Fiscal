@@ -7,8 +7,8 @@ namespace CloudSuite.MultTenant.Fiscal.Domain.ValueObjects
 
         protected override IEnumerable<object> GetEqualityComponents()
         {
-            
+            throw new NotImplementedException();
         }
-        
+
     }
 }

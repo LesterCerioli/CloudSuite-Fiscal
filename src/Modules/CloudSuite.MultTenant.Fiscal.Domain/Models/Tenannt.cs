@@ -1,10 +1,11 @@
+using CloudSuite.MultTenant.Fiscal.Domain.ValueObjects;
 using NetDevPack.Domain;
 
 namespace CloudSuite.MultTenant.Fiscal.Domain.Models
 {
     public class Tenannt : Entity, IAggregateRoot
     {
-        public string? TenantNumber { get; provate set; }
+        public string? TenantNumber { get; private set; }
 
         public string? CompanyName { get; private set; }
 
