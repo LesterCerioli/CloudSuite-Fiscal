@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{6DDC0FD1-3AAF-4CEB-A1F3-524CF714DC16}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{E04C9219-3573-44CF-949B-0A2E9F9F72A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudSuite.MultTenant.Fiscal.Domain", "src\Modules\CloudSuite.MultTenant.Fiscal.Domain\CloudSuite.MultTenant.Fiscal.Domain.csproj", "{5E82F247-1147-43FC-AFE6-FD3AD688B7FB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CloudSuite.MultTenant.Fiscal..Application", "src\Modules\CloudSuite.MultTenant.Fiscal..Application\CloudSuite.MultTenant.Fiscal..Application.csproj", "{5527679E-69C0-4578-8491-733526C059D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5E82F247-1147-43FC-AFE6-FD3AD688B7FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E82F247-1147-43FC-AFE6-FD3AD688B7FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E82F247-1147-43FC-AFE6-FD3AD688B7FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E82F247-1147-43FC-AFE6-FD3AD688B7FB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5527679E-69C0-4578-8491-733526C059D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5527679E-69C0-4578-8491-733526C059D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5527679E-69C0-4578-8491-733526C059D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5527679E-69C0-4578-8491-733526C059D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E04C9219-3573-44CF-949B-0A2E9F9F72A1} = {6DDC0FD1-3AAF-4CEB-A1F3-524CF714DC16}
+		{5E82F247-1147-43FC-AFE6-FD3AD688B7FB} = {E04C9219-3573-44CF-949B-0A2E9F9F72A1}
+		{5527679E-69C0-4578-8491-733526C059D5} = {E04C9219-3573-44CF-949B-0A2E9F9F72A1}
+	EndGlobalSection
+EndGlobal
